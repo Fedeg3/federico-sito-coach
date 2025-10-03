@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Federico Grianti - Sport Mental Coach</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --white: #FFFFFF;
+            --ice-white: #F8FCFF;
+            --light-blue: #E3F2FD;
+            --sky-blue: #90CAF9;
+            --medium-blue: #42A5F5;
+            --deep-blue: #1976D2;
+            --text-dark: #1a1a1a;
+            --text-gray: #4a4a4a;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--ice-white);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 5%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            letter-spacing: 0.3px;
+        }
+
+        nav a:hover {
+            color: var(--medium-blue);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 5% 80px;
+            background: linear-gradient(135deg, var(--white) 0%, var(--light-blue) 100%);
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--deep-blue);
+            line-height: 1.2;
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            color: var(--text-gray);
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        .hero .motto {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--medium-blue);
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .hero .values {
+            font-size: 1rem;
+            color: var(--text-gray);
+            margin-bottom: 3rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+        }
+
+        .video-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 3rem auto;
+            background: var(--white);
+            padding: 1rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .video-placeholder {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: var(--light-blue);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--medium-blue);
+            font-size: 1.1rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--medium-blue);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(66, 165, 245, 0.3);
+        }
+
+        .cta-button:hover {
+            background: var(--deep-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(66, 165, 245, 0.4);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 100px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            color: var(--deep-blue);
+            margin-bottom: 2rem;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Chi Sono */
+        #chi-sono {
+            background: var(--white);
+        }
+
+        .bio-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .credentials {
+            background: var(--light-blue);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--medium-blue);
+        }
+
+        .credentials h3 {
+            color: var(--deep-blue);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .credentials ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .credentials li {
+            padding: 0.5rem 0;
+            color: var(--text-gray);
+            font-size: 1rem;
+        }
+
+        .credentials li::before {
+            content: "✓ ";
+            color: var(--medium-blue);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        /* Il Mio Metodo */
+        #metodo {
+            background: linear-gradient(135deg, var(--ice-white) 0%, var(--white) 100%);
+        }
+
+        .metodo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .metodo-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid var(--medium-blue);
+        }
+
+        .metodo-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
+
+        .metodo-card h3 {
+            color: var(--deep-blue);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .metodo-card p {
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        /* Libro Section */
+        #libro {
+            background: var(--white);
+        }
+
+        .libro-content {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .libro-cover {
+            width: 100%;
+            height: 400px;
+            background: var(--light-blue);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--medium-blue);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .libro-info h3 {
+            color: var(--deep-blue);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .amazon-button {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: #FF9900;
+            color: var(--text-dark);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .amazon-button:hover {
+            background: #FFA500;
+            transform: translateY(-2px);
+        }
+
+        /* Servizi */
+        #servizi {
+            background: var(--light-blue);
+        }
+
+        .servizi-list {
+            margin-top: 2rem;
+        }
+
+        .servizio-item {
+            background: var(--white);
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--medium-blue);
+        }
+
+        .servizio-item h3 {
+            color: var(--deep-blue);
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+        }
+
+        /* Contatti */
+        #contatti {
+            background: var(--white);
+            text-align: center;
+        }
+
+        .contact-info {
+            margin: 3rem 0;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: var(--light-blue);
+            color: var(--deep-blue);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--medium-blue);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--deep-blue);
+            color: white;
+            text-align: center;
+            padding: 2rem 5%;
+        }
+
+        footer p {
+            color: white;
+        }
+
+        .sport-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            section {
+                padding: 60px 5%;
+            }
+
+            section h2 {
+                font-size: 2rem;
+            }
+
+            .metodo-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .libro-content {
+                grid-template-columns: 1fr;
+            }
+
+            .social-links {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#chi-sono">Chi Sono</a></li>
+            <li><a href="#metodo">Il Mio Metodo</a></li>
+            <li><a href="#libro">Il Libro</a></li>
+            <li><a href="#servizi">Servizi</a></li>
+            <li><a href="#contatti">Contatti</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Federico Grianti</h1>
+        <p class="subtitle">Sport Mental Coach</p>
+        <p class="motto">"There are no elevators for success. You have to take the stairs"</p>
+        <p class="values">DISCIPLINA • CARATTERE • PERSONALITÀ</p>
+        
+        <div class="video-container">
+            <div class="video-placeholder">
+                [Video introduttivo - Inserire link OneDrive]
+            </div>
+        </div>
+
+        <a href="#contatti" class="cta-button">Prenota una Sessione Gratuita</a>
+    </section>
+
+    <!-- Sport Images Section -->
+    <section style="padding: 60px 5%; background: var(--white);">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto;">
+            <div class="sport-image" style="height: 300px; background: var(--light-blue); border-radius: 12px; display: flex; align-items: center; justify-content: center; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                <span style="color: var(--medium-blue); font-weight: 600;">[Foto Sci Alpino]</span>
+            </div>
+            <div class="sport-image" style="height: 300px; background: var(--light-blue); border-radius: 12px; display: flex; align-items: center; justify-content: center; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                <span style="color: var(--medium-blue); font-weight: 600;">[Foto Tennis]</span>
+            </div>
+            <div class="sport-image" style="height: 300px; background: var(--light-blue); border-radius: 12px; display: flex; align-items: center; justify-content: center; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                <span style="color: var(--medium-blue); font-weight: 600;">[Foto Ciclismo]</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chi Sono -->
+    <section id="chi-sono">
+        <h2>Chi Sono</h2>
+        <div class="bio-content">
+            <div>
+                <p>Sono <strong>Federico Grianti</strong>, Sport Mental Coach dal 2007 e appassionato studioso del funzionamento della mente umana.</p>
+                
+                <p>Dopo diversi anni come coach aziendale, ho iniziato ad appassionarmi al Coaching sportivo, affascinato dall'osservare l'atteggiamento mentale dei campioni dello sci e di altri sport. Qui su Instagram e YouTube, mi dedico a divulgare quello che ho imparato in questi anni sul funzionamento della mente umana, al fine di aiutare gli atleti a ottenere performance straordinarie.</p>
+
+                <p>Attualmente collaboro con lo <strong>Ski Racing Camp</strong>, un sci club che prepara atleti per l'ingresso in squadre nazionali e gare di Coppa Europa e Coppa del Mondo di sci alpino, seguendo 3 atleti nel loro percorso. In passato ho seguito individualmente 2 atleti di Coppa del Mondo.</p>
+
+                <p>La mia filosofia è autenticità prima di tutto: condivido solo ciò che ho testato personalmente, per aiutare gli altri a crescere senza fronzoli. Credo nella disciplina come chiave del successo, nella comunità e nella positività.</p>
+            </div>
+
+            <div class="credentials">
+                <h3>Certificazioni e Formazione</h3>
+                <ul>
+                    <li>Certified Master Practitioner in PNL (2007)</li>
+                    <li>Business Coach Certified - Corporate Coach U (2008)</li>
+                    <li>Ex membro ICF (International Coaching Federation)</li>
+                    <li>Autore del libro "Sciare con la Mente"</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Il Mio Metodo -->
+    <section id="metodo">
+        <h2>Il Mio Metodo</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">Il mio approccio al Mental Coaching si distingue per l'integrazione di tre pilastri fondamentali che vanno oltre le tecniche tradizionali.</p>
+        
+        <div class="metodo-grid">
+            <div class="metodo-card">
+                <h3>🧘 Meditazione e Tecniche Orientali</h3>
+                <p>Integro pratiche meditative e tecniche di rilassamento mentale derivate dalle discipline orientali. La meditazione non è misticismo, ma un allenamento scientifico della mente che migliora concentrazione, consapevolezza e gestione dello stress. Pratiche come il Body Scan e la respirazione diaframmatica sono strumenti potenti per atleti di alto livello.</p>
+            </div>
+
+            <div class="metodo-card">
+                <h3>🧠 Approccio Neuroscientifico</h3>
+                <p>Spiego in modo divulgativo come funziona tecnicamente la nostra mente, basandomi sulle più recenti scoperte delle neuroscienze. Comprendere i meccanismi cerebrali dell'ansia da prestazione, della concentrazione e della motivazione permette di utilizzare strategie mirate ed efficaci, non solo "trucchi" motivazionali.</p>
+            </div>
+
+            <div class="metodo-card">
+                <h3>💪 Disciplina come Fondamento</h3>
+                <p>La disciplina è il fil rouge di tutto il mio lavoro. Non esistono scorciatoie per il successo. La motivazione è importante, ma senza disciplina quotidiana, azione costante e carattere solido, rimane sterile. Ogni tecnica che insegno richiede pratica, impegno e dedizione nel tempo.</p>
+            </div>
+        </div>
+
+        <p style="text-align: center; margin-top: 3rem; font-size: 1.1rem; color: var(--text-gray);">
+            Oltre alle tecniche classiche (visualizzazione, ancoraggi, respirazione), il mio metodo si distingue per questa integrazione unica di sapere orientale, scienza occidentale e disciplina pratica.
+        </p>
+    </section>
+
+    <!-- Libro -->
+    <section id="libro">
+        <h2>Il Libro</h2>
+        <div class="libro-content">
+            <div class="libro-cover">
+                [Copertina "Sciare con la Mente"]
+            </div>
+            <div class="libro-info">
+                <h3>Sciare con la Mente</h3>
+                <p>Un manuale pratico che unisce le tecniche di mental coaching sportivo con la passione per lo sci alpino. Scopri come migliorare le tue performance sulla neve allenando la tua mente.</p>
+                <p>Il libro esplora l'importanza della preparazione mentale, della gestione dell'ansia da gara, delle tecniche di visualizzazione specifiche per lo sci e molto altro.</p>
+                <a href="https://amz.cx/3XT8" target="_blank" class="amazon-button">📚 Acquista su Amazon</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servizi -->
+    <section id="servizi">
+        <h2>Come Lavoro</h2>
+        
+        <div class="servizi-list">
+            <div class="servizio-item">
+                <h3>Sessioni Individuali</h3>
+                <p>Percorsi personalizzati di Mental Coaching per atleti che vogliono migliorare le proprie performance, gestire l'ansia da gara, aumentare la concentrazione e sviluppare una mentalità vincente.</p>
+            </div>
+
+            <div class="servizio-item">
+                <h3>Lavoro con Squadre e Sci Club</h3>
+                <p>Collaborazioni con team sportivi per sviluppare coesione di gruppo, gestione della pressione competitiva e preparazione mentale pre-gara. Attualmente lavoro con lo Ski Racing Camp.</p>
+            </div>
+
+            <div class="servizio-item">
+                <h3>Contenuti Formativi</h3>
+                <p>Creo contenuti educativi su Instagram e YouTube con esercizi pratici, tecniche di respirazione, meditazioni guidate e spiegazioni neuroscientifiche accessibili a tutti gli atleti.</p>
+            </div>
+
+            <div class="servizio-item">
+                <h3>Ambiti di Applicazione</h3>
+                <p>Sebbene lo sport sia il mio campo di applicazione principale, i principi e le tecniche che insegno sono validi per ogni ambito della vita quotidiana e lavorativa: gestione dello stress, miglioramento delle performance, sviluppo personale.</p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="#contatti" class="cta-button">Prenota una Sessione Gratuita</a>
+        </div>
+    </section>
+
+    <!-- Contatti -->
+    <section id="contatti">
+        <h2>Contatti</h2>
+        <p style="max-width: 600px; margin: 0 auto;">Sei pronto a portare la tua performance al livello successivo? Contattami per una sessione gratuita di Mental Coaching.</p>
+        
+        <div class="contact-info">
+            <p style="font-size: 1.2rem; font-weight: 600; color: var(--deep-blue);">Email: info@federicogrianti.it</p>
+        </div>
+
+        <div class="social-links">
+            <a href="https://www.instagram.com/federico_grianti_coaching/" target="_blank" class="social-link">
+                📸 Instagram
+            </a>
+            <a href="https://www.youtube.com/@federico_grianti_coaching" target="_blank" class="social-link">
+                🎥 YouTube
+            </a>
+            <a href="https://www.linkedin.com/in/federicogrianti" target="_blank" class="social-link">
+                💼 LinkedIn
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Federico Grianti - Sport Mental Coach. Tutti i diritti riservati.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8;">Disciplina • Carattere • Personalità</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add active class to nav on scroll
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('section');
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('nav a').forEach(link => {
+                link.style.color = '';
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.style.color = 'var(--medium-blue)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
