@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -343,7 +344,7 @@
         .social-link {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.8rem;
             padding: 1rem 2rem;
             background: var(--light-blue);
             color: var(--deep-blue);
@@ -353,10 +354,111 @@
             transition: all 0.3s ease;
         }
 
+        .social-link i {
+            font-size: 1.5rem;
+        }
+
         .social-link:hover {
             background: var(--medium-blue);
             color: white;
             transform: translateY(-3px);
+        }
+
+        .whatsapp-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1rem 2.5rem;
+            background: #25D366;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            margin: 2rem 0;
+        }
+
+        .whatsapp-button:hover {
+            background: #20BA5A;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4);
+        }
+
+        .whatsapp-button i {
+            font-size: 1.5rem;
+        }
+
+        /* Form Styles */
+        .contact-form {
+            max-width: 600px;
+            margin: 3rem auto;
+            background: var(--light-blue);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .contact-form h3 {
+            color: var(--deep-blue);
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid var(--white);
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+            background: var(--white);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--medium-blue);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 1rem 2rem;
+            background: var(--medium-blue);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(66, 165, 245, 0.3);
+        }
+
+        .form-submit:hover {
+            background: var(--deep-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(66, 165, 245, 0.4);
         }
 
         /* Footer */
@@ -565,19 +667,59 @@
         <h2>Contatti</h2>
         <p style="max-width: 600px; margin: 0 auto;">Sei pronto a portare la tua performance al livello successivo? Contattami per una sessione gratuita di Mental Coaching.</p>
         
+        <!-- Contact Form -->
+        <div class="contact-form">
+            <h3>📋 Prenota una Sessione Gratuita</h3>
+            <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                <input type="hidden" name="form-name" value="contact">
+                <p style="display: none;">
+                    <label>Don't fill this out: <input name="bot-field"></label>
+                </p>
+                
+                <div class="form-group">
+                    <label for="name">Nome e Cognome *</label>
+                    <input type="text" id="name" name="name" required placeholder="Il tuo nome completo">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required placeholder="tua@email.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Messaggio (opzionale)</label>
+                    <textarea id="message" name="message" placeholder="Raccontami brevemente di cosa hai bisogno..."></textarea>
+                </div>
+                
+                <button type="submit" class="form-submit">Invia Richiesta</button>
+            </form>
+        </div>
+
+        <!-- WhatsApp Button -->
+        <div style="text-align: center; margin: 3rem 0;">
+            <a href="https://wa.me/393482330700?text=Ciao%20Federico,%20vorrei%20informazioni%20sul%20Mental%20Coaching" target="_blank" class="whatsapp-button">
+                <i class="fab fa-whatsapp"></i>
+                Chatta con me su WhatsApp
+            </a>
+        </div>
+
         <div class="contact-info">
-            <p style="font-size: 1.2rem; font-weight: 600; color: var(--deep-blue);">Email: coaching@federicogrianticoach.com</p>
+            <p style="font-size: 1.2rem; font-weight: 600; color: var(--deep-blue); margin-bottom: 0.5rem;">📧 Email Diretta:</p>
+            <p style="font-size: 1.1rem; color: var(--text-gray);">coaching@federicogrianticoach.com</p>
         </div>
 
         <div class="social-links">
             <a href="https://www.instagram.com/federico_grianti_coaching/" target="_blank" class="social-link">
-                📸 Instagram
+                <i class="fab fa-instagram"></i>
+                Instagram
             </a>
             <a href="https://www.youtube.com/@federico_grianti_coaching" target="_blank" class="social-link">
-                🎥 YouTube
+                <i class="fab fa-youtube"></i>
+                YouTube
             </a>
             <a href="https://www.linkedin.com/in/federicogrianti" target="_blank" class="social-link">
-                💼 LinkedIn
+                <i class="fab fa-linkedin"></i>
+                LinkedIn
             </a>
         </div>
     </section>
