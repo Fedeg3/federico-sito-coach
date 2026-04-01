@@ -524,7 +524,7 @@
   form.addEventListener("submit",async e=>{
     e.preventDefault();
     const action=form.getAttribute("action");
-    if(action.includes("XXXXXXXX")){form.style.display="none";success.style.display="block";return}
+    if(action.includes("meepzpdw")){form.style.display="none";success.style.display="block";return}
     try{const res=await fetch(action,{method:"POST",body:new FormData(form),headers:{"Accept":"application/json"}});
     if(res.ok){form.style.display="none";success.style.display="block"}
     else{alert("Errore. Scrivimi a coaching@federicogrianticoach.com")}}
