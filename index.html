@@ -206,7 +206,7 @@
   </style>
 </head>
 <body>
- 
+
 <nav id="navbar">
   <div class="nav-logo">Federico Grianti</div>
   <ul class="nav-links">
@@ -220,7 +220,7 @@
   </ul>
   <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
- 
+
 <section id="hero">
   <div class="hero-left">
     <p class="hero-eyebrow">Mental Coach &middot; Dal 2007</p>
@@ -244,7 +244,7 @@
     </svg>
   </div>
 </section>
- 
+
 <div id="specchio">
   <div class="specchio-inner">
     <p class="specchio-label">Ti riconosci?</p>
@@ -260,7 +260,7 @@
     </div>
   </div>
 </div>
- 
+
 <section id="approccio">
   <div class="approccio-header fade-up">
     <p class="label-sezione">Il Metodo</p>
@@ -303,11 +303,11 @@
     </div>
   </div>
 </section>
- 
+
 <section id="chi-sono">
   <div class="chi-foto fade-up">
     <img src="fedeg1.png" alt="Federico Grianti"/>
- 
+
   </div>
   <div class="chi-content fade-up d1">
     <p class="label-sezione">Chi Sono</p>
@@ -325,7 +325,7 @@
     </div>
   </div>
 </section>
- 
+
 <section id="come-lavoro">
   <div class="lavoro-header fade-up">
     <p class="label-sezione">Come Lavoro</p>
@@ -366,7 +366,7 @@
     <a href="#contatti" class="btn-primario">Prenota ora &rarr;</a>
   </div>
 </section>
- 
+
 <section id="shorts">
   <div class="shorts-header">
     <div class="fade-up">
@@ -399,7 +399,7 @@
     </a>
   </div>
 </section>
- 
+
 <section id="podcast">
   <div class="podcast-header fade-up">
     <p class="label-sezione">Podcast</p>
@@ -430,7 +430,7 @@
   </div>
   <p class="podcast-nota fade-up">Podcast realizzati con <strong>NotebookLM</strong> da Google &middot; Disponibili presto su Spotify, Apple Podcasts e YouTube.<br/><a href="#contatti">Iscriviti alla lista d&apos;attesa &rarr;</a></p>
 </section>
- 
+
 <section id="libro">
   <div class="libro-cover fade-up">
     <img src="copertina libro.png" alt="Sciare con la Mente – Federico Grianti"/>
@@ -451,7 +451,7 @@
     <a href="https://amz.cx/3XT8" target="_blank" rel="noopener" class="btn-primario">&#128218; Acquista su Amazon</a>
   </div>
 </section>
- 
+
 <section id="contatti">
   <div class="contatti-left fade-up">
     <p class="label-sezione">Parliamoci</p>
@@ -490,7 +490,7 @@
     <div id="form-success">&#10003; Messaggio ricevuto.<br/><span style="font-size:.88rem;font-family:var(--sans);color:var(--grigio);">Ti rispondo entro 24 ore.</span></div>
   </div>
 </section>
- 
+
 <footer>
   <div>
     <div class="footer-logo">Federico Grianti</div>
@@ -508,9 +508,9 @@
   </div>
   <p class="footer-copy">&copy; 2025 Federico Grianti &middot; Mental Coach &middot; federicogrianticoach.com</p>
 </footer>
- 
+
 <a href="https://wa.me/393482330700?text=Ciao%20Federico,%20vorrei%20una%20prima%20sessione%20gratuita" target="_blank" rel="noopener" class="wa-float" aria-label="Scrivimi su WhatsApp">💬</a>
- 
+
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   const navbar=document.getElementById("navbar");
   window.addEventListener("scroll",()=>navbar.classList.toggle("scrolled",window.scrollY>60));
@@ -531,5 +531,9 @@
     catch{alert("Errore di connessione. Scrivimi via WhatsApp.")}
   });
   window.addEventListener("scroll",()=>{
-    let current="";
-    do
+cument.querySelectorAll("section[id],div[id]").forEach(s=>{if(window.scrollY>=s.offsetTop-130)current=s.id});
+    document.querySelectorAll(".nav-links a").forEach(a=>{a.style.color=a.getAttribute("href")==="#"+current?"var(--verde)":""});
+  });
+</script>
+</body>
+</html>
