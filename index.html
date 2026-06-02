@@ -382,12 +382,12 @@
       <cite>— Marco, Manager, 52 anni · Milano</cite>
     </div>
     <div class="testim-card fade-up d1">
-      <blockquote>"Ero molto confusa sul mio futuro nella azienda in cui lavoravo. Ho ritrovato me stessa e il piacere di ribilanciare il mio ruolo lavorativo con quello familiare"</blockquote>
-      <cite>— Marina,Imprenditrice, 47 anni · Bologna</cite>
+      <blockquote>"Ero molto confusa sul mio futuro nella azienda in cui lavoravo. Ho ritrovato me stessa e il piacere di ribilanciare il mio ruolo lavorativo con quello familiare."</blockquote>
+      <cite>— Marina, Imprenditrice, 47 anni · Bologna</cite>
     </div>
     <div class="testim-card fade-up d2">
-      <blockquote>"Pensavo di essere ormai troppo anziano per potermi rimettere a correre. E invece ho ricalibrato i miei obiettivi superando i limiti mentali che credevo di avere. Adesso ho una routine da seguire e mi sento di poter fare sempre meglio"</blockquote>
-      <cite>— Matteo,Sportivo amatoriale, 58 anni · Torino</cite>
+      <blockquote>"Pensavo di essere ormai troppo anziano per potermi rimettere a correre. E invece ho ricalibrato i miei obiettivi superando i limiti mentali che credevo di avere. Adesso ho una routine da seguire e mi sento di poter fare sempre meglio."</blockquote>
+      <cite>— Matteo, Sportivo amatoriale, 58 anni · Torino</cite>
     </div>
   </div>
 </section>
@@ -430,21 +430,11 @@
     <p class="lead">Conversazioni brevi sulla mente, sulla vita e su quel sé che aspetta di essere ascoltato. Ogni episodio è un punto di partenza — non di arrivo.</p>
   </div>
   <div class="podcast-grid">
-    <div class="podcast-card presto fade-up">
-      <span class="pod-presto-badge">In arrivo</span>
-      <div class="pod-num">01</div>
-      <div class="pod-info"><p class="pod-ep">Episodio 1</p><h3>Perché la tua mente non è il tuo nemico</h3><p>Il primo passo per cambiare qualcosa è capire come funziona davvero quello strumento che usi ogni giorno senza manuale.</p><p class="pod-min">~ 12 min</p></div>
-    </div>
-    <div class="podcast-card fade-up d1">
+    <div class="podcast-card fade-up">
       <div class="pod-num">02</div>
       <div class="pod-info"><p class="pod-ep">Episodio 2</p><h3>Felicità: perché la cerchi nel posto sbagliato</h3><p>Il 47% del tempo la mente è altrove. Non dove sei, non nel momento che vivi. Cos'è il Default Mode Network, perché la mente è un ostacolo, e tre cose concrete per rimuoverlo.</p><iframe width="100%" height="185" src="https://www.youtube.com/embed/l7KbiSoO70o" title="L'Arte di Essere – Ep.2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;margin-top:14px;display:block;"></iframe><a href="https://youtu.be/l7KbiSoO70o" target="_blank" rel="noopener" style="display:inline-block;margin-top:8px;font-size:.82rem;color:#C47F35;font-weight:700;text-decoration:none;">&#9654; Ascolta su YouTube</a><p class="pod-min">~ 16 min</p></div>
     </div>
-    <div class="podcast-card presto fade-up d2">
-      <span class="pod-presto-badge">In arrivo</span>
-      <div class="pod-num">03</div>
-      <div class="pod-info"><p class="pod-ep">Episodio 3</p><h3>Il bias di negatività: perché il cervello ricorda solo i fallimenti</h3><p>Neuroscienze accessibili per capire perché siamo tutti programmati per ricordare il dolore con inchiostro indelebile.</p><p class="pod-min">~ 14 min</p></div>
-    </div>
-    <div class="podcast-card fade-up d3">
+    <div class="podcast-card fade-up d1">
       <div class="pod-num">04</div>
       <div class="pod-info"><p class="pod-ep">Episodio 4</p><h3>Vivi la tua vocazione, ancorché imperfetta</h3><p>La differenza tra la vita che stai vivendo e quella che senti di dover vivere. E perché quella piccola voce ha sempre ragione.</p><iframe width="100%" height="185" src="https://www.youtube.com/embed/J6EoTwBulYI?list=PL0cIpWb-3VpHaKdZAgKBPl96BrOlMODFN" title="L'Arte di Essere – Ep.4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;margin-top:14px;display:block;"></iframe><a href="https://youtu.be/J6EoTwBulYI" target="_blank" rel="noopener" style="display:inline-block;margin-top:8px;font-size:.82rem;color:#C47F35;font-weight:700;text-decoration:none;">&#9654; Ascolta su YouTube</a><p class="pod-min">~ 15 min</p></div>
     </div>
@@ -541,7 +531,6 @@
   form.addEventListener("submit",async e=>{
     e.preventDefault();
     const action=form.getAttribute("action");
-    if(action.includes("XXXXXXXX")){form.style.display="none";success.style.display="block";return}
     try{const res=await fetch(action,{method:"POST",body:new FormData(form),headers:{"Accept":"application/json"}});
     if(res.ok){form.style.display="none";success.style.display="block"}
     else{alert("Errore. Scrivimi a coaching@federicogrianticoach.com")}}
