@@ -117,6 +117,14 @@
     .sessione-box{background:var(--verde-dim);border:1px solid rgba(74,103,65,0.18);border-radius:var(--radius);padding:2.5rem 3rem;display:flex;align-items:center;gap:3rem;flex-wrap:wrap}
     .sessione-box .sess-testo h3{font-family:var(--serif);font-size:1.5rem;color:var(--marrone);margin-bottom:.5rem}
     .sessione-box .sess-testo p{font-size:.88rem;color:var(--grigio)}
+    #testimonianze{background:var(--crema)}
+    .testim-header{max-width:680px;margin-bottom:4rem}
+    .testim-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+    .testim-card{padding:2.5rem 2.2rem 2rem 2.2rem;background:var(--bianco);border-left:3px solid var(--verde);border-radius:var(--radius);transition:var(--tr);position:relative}
+    .testim-card:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(30,26,22,0.06)}
+    .testim-card blockquote{font-family:var(--serif);font-size:1rem;font-style:italic;color:var(--marrone);line-height:1.7;margin-bottom:1.5rem;position:relative}
+    .testim-card blockquote::before{content:'"';font-family:var(--serif);font-size:3.5rem;color:var(--ocra);line-height:0;position:absolute;top:.9rem;left:-.4rem;opacity:.45}
+    .testim-card cite{display:block;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--grigio);font-style:normal;border-top:1px solid rgba(74,103,65,0.12);padding-top:1rem}
     #shorts{background:var(--crema)}
     .shorts-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3rem;flex-wrap:wrap;gap:1.5rem}
     .link-canale{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--verde);display:flex;align-items:center;gap:.4rem;transition:gap .3s}
@@ -198,6 +206,7 @@
       .tre-componenti{grid-template-columns:1fr;gap:2px}
       .lavoro-grid{grid-template-columns:1fr}
       .maieutica-box{grid-template-columns:1fr;padding:2rem;gap:2rem}
+      .testim-grid{grid-template-columns:1fr}
       .podcast-grid{grid-template-columns:1fr}
       .shorts-grid{grid-template-columns:repeat(2,1fr)}
       footer{flex-direction:column;text-align:center;padding:2.5rem 1.5rem}
@@ -212,6 +221,7 @@
     <li><a href="#approccio">Il Metodo</a></li>
     <li><a href="#chi-sono">Chi Sono</a></li>
     <li><a href="#come-lavoro">Come Lavoro</a></li>
+    <li><a href="#testimonianze">Testimonianze</a></li>
     <li><a href="#shorts">Video</a></li>
     <li><a href="#podcast">Podcast</a></li>
     <li><a href="#libro">Il Libro</a></li>
@@ -223,7 +233,7 @@
   <div class="hero-left">
     <p class="hero-eyebrow">Mental Coach &middot; Dal 2007</p>
     <h1>Hai smesso<br/>di ascoltarti.<br/><em>È qui che<br/>ricomincia tutto.</em></h1>
-    <p class="hero-body">Non sono qui per dirti cosa fare o come fare di più.<br/>Sono qui per aiutarti a ritrovare quella voce dentro di te che hai smesso di sentire da un pezzo.</p>
+    <p class="hero-body">Non sono qui per dirti cosa fare o come fare di più.<br/>Sono qui per aiutarti a ritrovare quella voce dentro di te che hai smesso di sentire da un pezzo. E a darti strumenti concreti per capire come funziona la tua mente — e usarla a tuo favore.</p>
     <blockquote class="hero-motto">"Vivi la tua vocazione, ancorché imperfetta,<br/>anziché quella perfetta di qualcun altro."</blockquote>
     <div>
       <a href="#contatti" class="btn-primario">Prima sessione gratuita</a>
@@ -329,7 +339,7 @@
     <div class="lavoro-card fade-up">
       <div class="card-icon">💬</div>
       <h3>Sessioni individuali via Zoom</h3>
-      <p>Un'ora di conversazione autentica. Non ti dico cosa fare — ti faccio le domande giuste. Puoi anche scegliere solo audio: a volte parlare senza essere visti libera di più.</p>
+      <p>Un'ora di conversazione autentica. Non ti dico cosa fare — ti faccio le domande giuste. Da ogni sessione esci con almeno 2-3 strumenti concreti da applicare nei giorni successivi. Puoi anche scegliere solo audio: a volte parlare senza essere visti libera di più.</p>
       <div class="card-detail">Zoom · Audio Call · Messaggistica di supporto</div>
     </div>
     <div class="lavoro-card fade-up d1">
@@ -354,9 +364,31 @@
   <div class="sessione-box fade-up">
     <div class="sess-testo">
       <h3>Prima sessione gratuita · 1 ora</h3>
-      <p>Parliamo. Senza impegno, senza aspettative. Solo per capire se c'è qualcosa di vero da cui partire insieme.</p>
+      <p>In 60 minuti: ascolto la tua situazione, ti do 2-3 strumenti pratici, e vediamo se ha senso andare avanti insieme. Senza impegno, senza aspettative.</p>
     </div>
     <a href="#contatti" class="btn-primario">Prenota ora &rarr;</a>
+  </div>
+</section>
+<section id="testimonianze">
+  <div class="testim-header fade-up">
+    <p class="label-sezione">Testimonianze</p>
+    <h2>Le parole di chi ha già <em>iniziato.</em></h2>
+    <div class="separatore"></div>
+    <p class="lead">Le condivido in forma anonima, come hanno chiesto. Sono persone reali, percorsi reali — manager, sportivi, imprenditori che a un certo punto hanno deciso di ricominciare ad ascoltarsi.</p>
+  </div>
+  <div class="testim-grid">
+    <div class="testim-card fade-up">
+      <blockquote>"Ho ritrovato chiarezza dove pensavo non ce ne fosse più. E ho smesso di sentirmi solo dentro la testa."]</blockquote>
+      <cite>— Marco, Manager, 52 anni · Milano</cite>
+    </div>
+    <div class="testim-card fade-up d1">
+      <blockquote>[DA SOSTITUIRE — seconda citazione. Idealmente da una donna in transizione professionale. Mantieni il tono diretto, niente superlativi tipo "fantastico" o "incredibile" — non sono nel tono del sito.]</blockquote>
+      <cite>— Imprenditrice, 47 anni · Bologna</cite>
+    </div>
+    <div class="testim-card fade-up d2">
+      <blockquote>[DA SOSTITUIRE — terza citazione, possibilmente da uno sportivo amatoriale o da qualcuno che ha lavorato sulla performance. Parla di un piccolo cambiamento concreto, non di una rivoluzione.]</blockquote>
+      <cite>— Sportivo amatoriale, 58 anni · Torino</cite>
+    </div>
   </div>
 </section>
 <section id="shorts">
@@ -444,12 +476,14 @@
     <p class="label-sezione">Parliamoci</p>
     <h2>Una conversazione.<br/><em>Senza impegno.</em></h2>
     <div class="separatore"></div>
-    <p class="lead">La prima ora è gratuita. Non è una vendita — è un incontro. Vediamo se c'è qualcosa di vero da cui partire insieme.</p>
+    <p class="lead">La prima ora è gratuita. In 60 minuti: ascolto la tua situazione, ti do 2-3 strumenti pratici, e vediamo se ha senso andare avanti insieme. Non è una vendita — è un incontro.</p>
     <div class="contact-items" style="margin-top:2rem;">
       <a href="https://wa.me/393482330700?text=Ciao%20Federico,%20vorrei%20una%20prima%20sessione%20gratuita" target="_blank" rel="noopener" class="contact-item">
         <span class="ci-icon">💬</span><div><strong>WhatsApp</strong><span>+39 348 233 0700</span></div>
       </a>
-      <a href="mailto:coaching@federicogrianticoach.com">coaching@federicogrianticoach.com</a>
+      <a href="mailto:coaching@federicogrianticoach.com" class="contact-item">
+        <span class="ci-icon">✉️</span><div><strong>Email</strong><span>coaching@federicogrianticoach.com</span></div>
+      </a>
     </div>
   </div>
   <div class="contatti-right fade-up d1">
@@ -482,15 +516,16 @@
   </div>
   <ul class="footer-links">
     <li><a href="#approccio">Metodo</a></li><li><a href="#chi-sono">Chi Sono</a></li>
-    <li><a href="#come-lavoro">Come Lavoro</a></li><li><a href="#shorts">Video</a></li>
-    <li><a href="#podcast">Podcast</a></li><li><a href="#contatti">Contatti</a></li>
+    <li><a href="#come-lavoro">Come Lavoro</a></li><li><a href="#testimonianze">Testimonianze</a></li>
+    <li><a href="#shorts">Video</a></li><li><a href="#podcast">Podcast</a></li>
+    <li><a href="#contatti">Contatti</a></li>
   </ul>
   <div class="social-row">
     <a href="https://www.instagram.com/federico_grianti_coach/" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram">IG</a>
     <a href="https://www.youtube.com/@federico_grianti_coach" target="_blank" rel="noopener" class="social-btn" aria-label="YouTube">YT</a>
     <a href="https://www.linkedin.com/in/federicogrianti" target="_blank" rel="noopener" class="social-btn" aria-label="LinkedIn">in</a>
   </div>
-  <p class="footer-copy">&copy; 2025 Federico Grianti &middot; Mental Coach &middot; federicogrianticoach.com</p>
+  <p class="footer-copy">&copy; 2025&ndash;2026 Federico Grianti &middot; Mental Coach &middot; federicogrianticoach.com</p>
 </footer>
 <a href="https://wa.me/393482330700?text=Ciao%20Federico,%20vorrei%20una%20prima%20sessione%20gratuita" target="_blank" rel="noopener" class="wa-float" aria-label="Scrivimi su WhatsApp">💬</a>
 <script>
@@ -513,6 +548,7 @@
     catch{alert("Errore di connessione. Scrivimi via WhatsApp.")}
   });
   window.addEventListener("scroll",()=>{
+    let current="";
     document.querySelectorAll("section[id],div[id]").forEach(s=>{if(window.scrollY>=s.offsetTop-130)current=s.id});
     document.querySelectorAll(".nav-links a").forEach(a=>{a.style.color=a.getAttribute("href")==="#"+current?"var(--verde)":""});
   });
