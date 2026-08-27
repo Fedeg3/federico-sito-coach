@@ -1,4 +1,5 @@
 
+
 esercizi.txt
 
 Pagina
@@ -133,7 +134,7 @@ Pagina
     <h2>Dove te li mando?</h2>
     <p class="sub">Lascia il tuo indirizzo: ricevi subito un'email con tutti e otto gli esercizi.</p>
 
-    <form action="https://49660902.sibforms.com/serve/MUIFAC496F1Aknxv7L6qW52HYjTC139ltv3jubDHfLExEu3v6LiX---WZ7PirJAX8rgP6y5A89cCcfhmy5iOcdUUqYEWF-EF5eXdsmIeP90jDQPgWWIKnmu_4aKgCHd0LkDzzJjOgBhUuMreP8Ucwa_UWlgAnLW9t3CKpJ257hTHYlvCnHg1LGd_Q9CE4_ySxhZp1dw8iEYyaGF6vw==" method="POST" autocomplete="off">
+    <form id="formEsercizi" action="https://49660902.sibforms.com/serve/MUIFAC496F1Aknxv7L6qW52HYjTC139ltv3jubDHfLExEu3v6LiX---WZ7PirJAX8rgP6y5A89cCcfhmy5iOcdUUqYEWF-EF5eXdsmIeP90jDQPgWWIKnmu_4aKgCHd0LkDzzJjOgBhUuMreP8Ucwa_UWlgAnLW9t3CKpJ257hTHYlvCnHg1LGd_Q9CE4_ySxhZp1dw8iEYyaGF6vw==" method="POST" autocomplete="off">
       <div class="campo">
         <label for="EMAIL">La tua email</label>
         <input type="email" id="EMAIL" name="EMAIL" placeholder="la@tua.email" required />
@@ -147,7 +148,7 @@ Pagina
         <label for="consenso">Acconsento a ricevere gli esercizi e le comunicazioni di Federico Grianti. Posso disiscrivermi in qualsiasi momento con un clic.</label>
       </div>
 
-      <button type="submit" class="btn-invia">Ricevi gli esercizi</button>
+      <button type="submit" class="btn-invia" id="btnInvia">Ricevi gli esercizi</button>
       <p class="rassicura">Nessuno spam. Ti scrivo solo quando ho qualcosa di utile.</p>
     </form>
   </div>
@@ -232,6 +233,29 @@ Pagina
   <p class="f-copy">&copy; 2025&ndash;2026 Federico Grianti &middot; Mental Coach &middot; federicogrianticoach.com</p>
 </footer>
 
+<script>
+  // Invia il modulo a Brevo e porta l'utente alla pagina di conferma
+  // (senza questo, Brevo restituisce una risposta tecnica {"success":true})
+  (function () {
+    var form = document.getElementById("formEsercizi");
+    var btn = document.getElementById("btnInvia");
+    if (!form) return;
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      btn.disabled = true;
+      btn.textContent = "Invio in corso…";
+      fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        mode: "no-cors"
+      }).catch(function () {
+        /* la richiesta parte comunque: proseguiamo */
+      }).then(function () {
+        window.location.href = "conferma.html";
+      });
+    });
+  })();
+</script>
 <!-- Cloudflare Web Analytics -->
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "a7d8d8e46abb44df91eb2146f98ba45f"}'></script>
 <!-- End Cloudflare Web Analytics -->
