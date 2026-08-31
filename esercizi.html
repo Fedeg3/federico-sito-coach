@@ -1,6 +1,5 @@
 
-
-esercizi.txt
+esercizi_v2.txt
 
 Pagina
 1
@@ -12,21 +11,21 @@ Pagina
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Esercizi gratuiti | Federico Grianti — Mental Coach</title>
-  <meta name="description" content="Otto protocolli pratici di mental coaching: sport, lavoro, longevità mentale. Neuroscienze applicate, esercizi concreti. Ricevili gratis via email." />
+  <title>Non stai peggiorando. Sei disallenato. | Federico Grianti</title>
+  <meta name="description" content="5 esercizi per riallenare attenzione e memoria dopo i 50. Dieci minuti al giorno, due settimane. Basati su ricerche pubblicate. Gratis." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://federicogrianticoach.com/esercizi.html" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://federicogrianticoach.com/esercizi.html" />
-  <meta property="og:title" content="Otto esercizi pratici di mental coaching — gratis" />
-  <meta property="og:description" content="Sport, lavoro, longevità mentale. Protocolli concreti basati sulle neuroscienze. Lascia la tua email e li ricevi subito." />
+  <meta property="og:title" content="Non stai peggiorando. Sei disallenato." />
+  <meta property="og:description" content="5 esercizi per riallenare attenzione e memoria dopo i 50. Dieci minuti al giorno, due settimane." />
   <meta property="og:image" content="https://federicogrianticoach.com/fedeg1.png" />
   <meta property="og:locale" content="it_IT" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
   <style>
-    :root{--crema:#F7F2EA;--bianco:#FEFCF8;--verde:#4A6741;--verde-chiaro:#6B8F62;--verde-dim:rgba(74,103,65,0.10);--ocra:#C47F35;--ocra-dim:rgba(196,127,53,0.12);--carbone:#1E1A16;--marrone:#3D2E1E;--grigio:#7A7268;--grigio-chiaro:#B0A99E;--serif:"Playfair Display",Georgia,serif;--sans:"Lato",system-ui,sans-serif;--radius:6px;--tr:0.38s cubic-bezier(0.25,0.46,0.45,0.94)}
+    :root{--crema:#F7F2EA;--bianco:#FEFCF8;--verde:#4A6741;--verde-dim:rgba(74,103,65,0.10);--ocra:#C47F35;--ocra-dim:rgba(196,127,53,0.12);--carbone:#1E1A16;--marrone:#3D2E1E;--grigio:#7A7268;--grigio-chiaro:#B0A99E;--serif:"Playfair Display",Georgia,serif;--sans:"Lato",system-ui,sans-serif;--radius:6px;--tr:0.38s cubic-bezier(0.25,0.46,0.45,0.94)}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth;font-size:16px}
     body{background:var(--crema);color:var(--carbone);font-family:var(--sans);font-weight:300;line-height:1.75;overflow-x:hidden}
@@ -34,105 +33,79 @@ Pagina
     img{max-width:100%;display:block}
     a{color:inherit;text-decoration:none}
     body::after{content:"";position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:9998;opacity:.5}
-    ::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:var(--crema)}::-webkit-scrollbar-thumb{background:var(--verde);border-radius:2px}
 
-    .topbar{padding:1.5rem 3rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(74,103,65,0.12);background:var(--bianco)}
-    .topbar-logo{font-family:var(--serif);font-size:1.1rem;color:var(--verde);font-weight:500}
-    .topbar-back{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--grigio);transition:color .3s}
-    .topbar-back:hover{color:var(--verde)}
+    .marchio{padding:1.4rem 3rem;font-family:var(--serif);font-size:1.05rem;color:var(--verde);border-bottom:1px solid rgba(74,103,65,0.12);background:var(--bianco)}
 
-    .hero-lp{background:var(--bianco);padding:4.5rem 3rem 5rem;display:grid;grid-template-columns:1.05fr .95fr;gap:5rem;align-items:center;border-bottom:1px solid rgba(74,103,65,0.12)}
-    .hero-lp-testo{max-width:560px}
-    .eyebrow{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--verde);margin-bottom:1.5rem;display:flex;align-items:center;gap:1rem}
-    .eyebrow::before{content:"";display:block;width:30px;height:1px;background:var(--verde)}
-    h1{font-family:var(--serif);font-size:clamp(2.3rem,4vw,3.5rem);line-height:1.15;font-weight:500;color:var(--marrone);margin-bottom:1.5rem}
-    h1 em{font-style:italic;color:var(--verde)}
-    .hero-lp-testo p.intro{font-size:1.03rem;color:var(--grigio);line-height:1.85;margin-bottom:1.6rem}
-    .punti{list-style:none;margin-bottom:.5rem}
-    .punti li{font-size:.92rem;color:var(--grigio);padding:.4rem 0;display:flex;align-items:flex-start;gap:.8rem;line-height:1.7}
-    .punti li::before{content:"◆";color:var(--ocra);font-size:.4rem;flex-shrink:0;margin-top:.75rem}
+    .hero{background:var(--bianco);padding:4rem 3rem 4.5rem;display:grid;grid-template-columns:1.05fr .95fr;gap:4.5rem;align-items:center}
+    .occhiello{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--verde);margin-bottom:1.4rem;display:flex;align-items:center;gap:1rem}
+    .occhiello::before{content:"";display:block;width:30px;height:1px;background:var(--verde)}
+    h1{font-family:var(--serif);font-size:clamp(2.2rem,4.2vw,3.5rem);line-height:1.14;font-weight:500;color:var(--marrone);margin-bottom:1.2rem}
+    h1 em{font-style:normal;color:var(--verde)}
+    .sottotitolo{font-family:var(--serif);font-style:italic;font-size:1.18rem;color:var(--ocra);line-height:1.6;margin-bottom:1.8rem}
+    .ponte{font-size:.95rem;color:var(--grigio);line-height:1.8;padding-left:1.1rem;border-left:2px solid rgba(74,103,65,0.25);margin-bottom:1.8rem}
+    .dentro{list-style:none}
+    .dentro li{font-size:.93rem;color:var(--grigio);padding:.35rem 0;display:flex;align-items:flex-start;gap:.75rem;line-height:1.7}
+    .dentro li::before{content:"◆";color:var(--ocra);font-size:.38rem;flex-shrink:0;margin-top:.72rem}
 
-    .form-card{background:var(--crema);border:1.5px solid rgba(74,103,65,0.2);border-radius:var(--radius);padding:2.8rem 2.6rem;box-shadow:0 10px 40px rgba(30,26,22,0.07)}
-    .form-card h2{font-family:var(--serif);font-size:1.6rem;font-weight:500;color:var(--marrone);margin-bottom:.6rem;line-height:1.3}
-    .form-card .sub{font-size:.88rem;color:var(--grigio);line-height:1.7;margin-bottom:1.8rem}
-    .campo{margin-bottom:1.1rem}
+    .card{background:var(--crema);border:1.5px solid rgba(74,103,65,0.2);border-radius:var(--radius);padding:2.6rem 2.4rem;box-shadow:0 10px 40px rgba(30,26,22,0.07)}
+    .card h2{font-family:var(--serif);font-size:1.5rem;font-weight:500;color:var(--marrone);margin-bottom:.5rem;line-height:1.3}
+    .card .sub{font-size:.87rem;color:var(--grigio);line-height:1.7;margin-bottom:1.7rem}
     .campo label{display:block;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--grigio);margin-bottom:.5rem}
     .campo input[type=email]{width:100%;background:var(--bianco);border:1.5px solid rgba(74,103,65,0.2);color:var(--carbone);padding:.95rem 1.2rem;font-family:var(--sans);font-size:.95rem;border-radius:var(--radius);outline:none;transition:border-color .3s;-webkit-appearance:none}
     .campo input[type=email]:focus{border-color:var(--verde)}
-    .consenso{display:flex;align-items:flex-start;gap:.7rem;margin:1.3rem 0 1.6rem}
+    .consenso{display:flex;align-items:flex-start;gap:.7rem;margin:1.2rem 0 1.5rem}
     .consenso input[type=checkbox]{margin-top:.35rem;width:16px;height:16px;flex-shrink:0;accent-color:var(--verde);cursor:pointer}
-    .consenso label{font-size:.78rem;color:var(--grigio);line-height:1.6;cursor:pointer}
-    .btn-invia{width:100%;background:var(--verde);color:var(--bianco);padding:1.05rem 2rem;font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border-radius:99px;border:1.5px solid var(--verde);cursor:pointer;font-family:var(--sans);transition:var(--tr)}
-    .btn-invia:hover{background:transparent;color:var(--verde);transform:translateY(-2px)}
-    .rassicura{font-size:.75rem;color:var(--grigio-chiaro);text-align:center;margin-top:1.1rem;line-height:1.6}
+    .consenso label{font-size:.76rem;color:var(--grigio);line-height:1.6;cursor:pointer}
+    .btn{width:100%;background:var(--verde);color:var(--bianco);padding:1.05rem 2rem;font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border-radius:99px;border:1.5px solid var(--verde);cursor:pointer;font-family:var(--sans);transition:var(--tr)}
+    .btn:hover{background:transparent;color:var(--verde);transform:translateY(-2px)}
+    .rassicura{font-size:.74rem;color:var(--grigio-chiaro);text-align:center;margin-top:1rem;line-height:1.6}
     .input--hidden{position:absolute!important;left:-9999px!important;opacity:0!important;height:0!important;width:0!important}
 
-    .vetrina{padding:5rem 3rem}
-    .vetrina-head{max-width:640px;margin:0 auto 3.5rem;text-align:center}
-    .vetrina-head h2{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.5rem);font-weight:500;color:var(--marrone);margin-bottom:1rem}
-    .vetrina-head h2 em{font-style:italic;color:var(--verde)}
-    .vetrina-head p{font-size:.96rem;color:var(--grigio);line-height:1.8}
-    .griglia{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.3rem;max-width:1180px;margin:0 auto}
-    .scheda{background:var(--bianco);border:1.5px solid rgba(74,103,65,0.12);border-radius:var(--radius);padding:1.9rem 1.8rem;transition:var(--tr)}
-    .scheda:hover{border-color:var(--verde);transform:translateY(-3px);box-shadow:0 8px 25px rgba(30,26,22,0.06)}
-    .tag{display:inline-block;font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;padding:.28rem .75rem;border-radius:99px;font-weight:700;margin-bottom:.9rem}
-    .tag-sport{background:var(--ocra-dim);color:var(--ocra)}
-    .tag-work{background:var(--verde-dim);color:var(--verde)}
-    .tag-long{background:rgba(30,26,22,0.08);color:var(--marrone)}
-    .tag-trasv{background:rgba(176,169,158,0.20);color:var(--grigio)}
-    .scheda h3{font-family:var(--serif);font-size:1.18rem;font-weight:500;color:var(--marrone);margin-bottom:.6rem;line-height:1.3}
-    .scheda p{font-size:.84rem;color:var(--grigio);line-height:1.7;margin-bottom:.9rem}
-    .scheda .quanti{font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--grigio-chiaro);padding-top:.8rem;border-top:1px solid rgba(74,103,65,0.12)}
+    .prova{background:var(--crema);padding:3.5rem 3rem;border-top:1px solid rgba(74,103,65,0.12)}
+    .prova-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:120px 1fr;gap:2.2rem;align-items:center}
+    .prova img{width:120px;height:120px;object-fit:cover;object-position:top;border-radius:50%;filter:sepia(8%)}
+    .prova p{font-size:.93rem;color:var(--grigio);line-height:1.85}
+    .prova strong{color:var(--marrone);font-weight:700}
 
-    .chiusura{background:var(--verde);color:var(--bianco);padding:4.5rem 3rem;text-align:center}
-    .chiusura h2{font-family:var(--serif);font-size:clamp(1.7rem,3vw,2.3rem);font-weight:400;line-height:1.35;margin-bottom:1.3rem;color:var(--bianco)}
-    .chiusura h2 em{font-style:italic;color:rgba(255,255,255,0.72)}
-    .chiusura p{font-size:.95rem;color:rgba(255,255,255,0.8);line-height:1.8;max-width:620px;margin:0 auto 2.2rem}
-    .btn-chiaro{display:inline-block;background:var(--bianco);color:var(--verde);padding:1rem 2.4rem;font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border-radius:99px;border:1.5px solid var(--bianco);transition:var(--tr)}
-    .btn-chiaro:hover{background:transparent;color:var(--bianco);transform:translateY(-2px)}
+    .studi{background:var(--bianco);padding:3rem;border-top:1px solid rgba(74,103,65,0.12)}
+    .studi-inner{max-width:900px;margin:0 auto}
+    .studi h3{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--verde);margin-bottom:1.2rem}
+    .studi p{font-size:.8rem;color:var(--grigio-chiaro);line-height:1.9}
 
-    footer{background:var(--marrone);color:rgba(255,255,255,0.65);padding:2.8rem 3rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem}
-    .f-logo{font-family:var(--serif);font-size:1.05rem;color:rgba(255,255,255,0.9)}
-    .f-sub{font-size:.75rem;color:rgba(255,255,255,0.5);margin-top:.25rem}
-    .f-links{display:flex;gap:1.4rem;list-style:none;flex-wrap:wrap}
-    .f-links a{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,0.5);transition:color .3s}
-    .f-links a:hover{color:rgba(255,255,255,0.9)}
-    .f-copy{font-size:.7rem;color:rgba(255,255,255,0.3);width:100%;border-top:1px solid rgba(255,255,255,0.08);padding-top:1.3rem}
+    footer{background:var(--marrone);color:rgba(255,255,255,0.45);padding:2rem 3rem;text-align:center;font-size:.72rem;line-height:1.8}
 
     @media(max-width:900px){
-      .topbar{padding:1.1rem 1.4rem}
-      .hero-lp{grid-template-columns:1fr;gap:3rem;padding:3rem 1.4rem 3.5rem}
-      .form-card{padding:2rem 1.6rem}
-      .vetrina{padding:3.5rem 1.4rem}
-      .chiusura{padding:3.5rem 1.4rem}
-      footer{flex-direction:column;text-align:center;padding:2.2rem 1.4rem}
-      .f-links{justify-content:center}
+      .marchio{padding:1.1rem 1.4rem}
+      .hero{grid-template-columns:1fr;gap:2.5rem;padding:2.5rem 1.4rem 3rem}
+      .card{padding:1.9rem 1.5rem}
+      .prova,.studi{padding:2.5rem 1.4rem}
+      .prova-inner{grid-template-columns:1fr;gap:1.3rem;text-align:center}
+      .prova img{margin:0 auto}
+      footer{padding:1.8rem 1.4rem}
     }
   </style>
 </head>
 <body>
 
-<div class="topbar">
-  <a href="index.html" class="topbar-logo">Federico Grianti</a>
-  <a href="index.html" class="topbar-back">&larr; Torna al sito</a>
-</div>
+<div class="marchio">Federico Grianti</div>
 
-<section class="hero-lp">
-  <div class="hero-lp-testo">
-    <p class="eyebrow">Risorse gratuite</p>
-    <h1>Otto esercizi pratici.<br/><em>Nessuna teoria.</em></h1>
-    <p class="intro">Sono i protocolli che uso con atleti, manager e professionisti — quelli che nascono dai miei video e che mi vengono chiesti più spesso. Ogni PDF spiega il meccanismo neuroscientifico dietro l'esercizio e cosa fare, concretamente, da domani mattina.</p>
-    <ul class="punti">
-      <li>Otto protocolli su sport, lavoro e longevità mentale</li>
-      <li>Studi citati, non frasi motivazionali</li>
-      <li>Li ricevi tutti insieme, in un'unica email</li>
-      <li>Gratis, e restano tuoi</li>
+<section class="hero">
+  <div>
+    <p class="occhiello">Documento gratuito</p>
+    <h1>Non stai peggiorando.<br/><em>Sei disallenato.</em></h1>
+    <p class="sottotitolo">5 esercizi per riallenare attenzione e memoria dopo i 50.<br/>Dieci minuti al giorno, per due settimane.</p>
+    <p class="ponte">Se sei arrivato dal video sul recupero cognitivo: è questo che ti avevo detto di preparare. Qui c'è la parte pratica.</p>
+    <ul class="dentro">
+      <li>Cinque esercizi, ognuno con la ricerca da cui nasce — citata per esteso</li>
+      <li>Un piano di quattordici giorni che sta in dieci minuti</li>
+      <li>Il moltiplicatore fisico che vale più di tutti e cinque messi insieme</li>
+      <li>E quando invece conviene smettere di allenarsi e parlare con un medico</li>
     </ul>
   </div>
 
-  <div class="form-card">
-    <h2>Dove te li mando?</h2>
-    <p class="sub">Lascia il tuo indirizzo: ricevi subito un'email con tutti e otto gli esercizi.</p>
+  <div class="card">
+    <h2>Dove te lo mando?</h2>
+    <p class="sub">Lascia il tuo indirizzo: ricevi il PDF completo in un minuto.</p>
 
     <form id="formEsercizi" action="https://49660902.sibforms.com/serve/MUIFAC496F1Aknxv7L6qW52HYjTC139ltv3jubDHfLExEu3v6LiX---WZ7PirJAX8rgP6y5A89cCcfhmy5iOcdUUqYEWF-EF5eXdsmIeP90jDQPgWWIKnmu_4aKgCHd0LkDzzJjOgBhUuMreP8Ucwa_UWlgAnLW9t3CKpJ257hTHYlvCnHg1LGd_Q9CE4_ySxhZp1dw8iEYyaGF6vw==" method="POST" autocomplete="off">
       <div class="campo">
@@ -145,97 +118,34 @@ Pagina
 
       <div class="consenso">
         <input type="checkbox" id="consenso" required />
-        <label for="consenso">Acconsento a ricevere gli esercizi e le comunicazioni di Federico Grianti. Posso disiscrivermi in qualsiasi momento con un clic.</label>
+        <label for="consenso">Acconsento a ricevere il documento e le comunicazioni di Federico Grianti. Posso disiscrivermi con un clic, in qualsiasi momento.</label>
       </div>
 
-      <button type="submit" class="btn-invia" id="btnInvia">Ricevi gli esercizi</button>
-      <p class="rassicura">Nessuno spam. Ti scrivo solo quando ho qualcosa di utile.</p>
+      <button type="submit" class="btn" id="btnInvia">Ricevi il documento</button>
+      <p class="rassicura">Gratis. Niente spam. Ti scrivo solo quando ho qualcosa di utile.</p>
     </form>
   </div>
 </section>
 
-<section class="vetrina">
-  <div class="vetrina-head">
-    <h2>Cosa trovi <em>dentro.</em></h2>
-    <p>Ogni esercizio nasce da una domanda che mi è stata fatta davvero — sotto un video, in un messaggio, in una sessione.</p>
-  </div>
-
-  <div class="griglia">
-    <div class="scheda">
-      <span class="tag tag-sport">Sport</span>
-      <h3>Checklist Pre-Gara Mentale</h3>
-      <p>Il protocollo in 10 punti che uso con i miei atleti prima di ogni competizione. Azioni concrete per le ore che precedono la gara.</p>
-      <div class="quanti">10 esercizi &middot; 8 pagine</div>
-    </div>
-    <div class="scheda">
-      <span class="tag tag-sport">Sport</span>
-      <h3>Dialogo Interiore</h3>
-      <p>Sette esercizi per allenare la voce nella testa nei momenti che contano. Basati sulle ricerche sul self-talk e sulle routine pre-performance degli atleti d'élite.</p>
-      <div class="quanti">7 esercizi &middot; 6 pagine</div>
-    </div>
-    <div class="scheda">
-      <span class="tag tag-sport">Sport</span>
-      <h3>Sistema di Recovery</h3>
-      <p>Cinque step per accelerare il ritorno da un infortunio: dal reset della paura nelle prime 72 ore al test di prontezza prima del rientro.</p>
-      <div class="quanti">5 step &middot; 5 pagine</div>
-    </div>
-    <div class="scheda">
-      <span class="tag tag-work">Lavoro</span>
-      <h3>Sguardo Sotto Pressione</h3>
-      <p>Cinque esercizi per restare lucido nei momenti che contano. La tecnica del "quiet eye" dallo sport agonistico applicata alla vita professionale.</p>
-      <div class="quanti">5 esercizi &middot; 4 pagine</div>
-    </div>
-    <div class="scheda">
-      <span class="tag tag-long">Longevità</span>
-      <h3>Memoria Over 60</h3>
-      <p>Dieci esercizi per allenare la memoria dopo i sessant'anni. Non è declino: è disallenamento. Routine ripetibili nella vita di ogni giorno.</p>
-      <div class="quanti">10 esercizi &middot; 6 pagine</div>
-    </div>
-    <div class="scheda">
-      <span class="tag tag-trasv">Trasversale</span>
-      <h3>La Motivazione Arriva Dopo</h3>
-      <p>Cinque esercizi per restare in movimento quando la carica non c'è. Perché i neuroni della motivazione si accendono mentre agisci, non prima.</p>
-      <div class="quanti">5 esercizi &middot; 5 pagine</div>
-    </div>
-    <div class="scheda">
-      <span class="tag tag-trasv">Trasversale</span>
-      <h3>Esercizi di Gratitudine</h3>
-      <p>Cinque pratiche quotidiane per allenare il cervello alla gratitudine, con il meccanismo neuroscientifico dietro ognuna.</p>
-      <div class="quanti">5 esercizi &middot; 4 pagine</div>
-    </div>
-    <div class="scheda">
-      <span class="tag tag-trasv">Trasversale</span>
-      <h3>Turista del Tempo</h3>
-      <p>Sette esercizi per tornare al presente. La mente passa quasi metà del tempo altrove: questi esercizi interrompono il pattern.</p>
-      <div class="quanti">7 esercizi &middot; 5 pagine</div>
-    </div>
+<section class="prova">
+  <div class="prova-inner">
+    <img src="fedeg1.png" alt="Federico Grianti" />
+    <p>Sono <strong>Federico Grianti</strong>, mental coach dal 2007. Ho lavorato con atleti di Coppa del Mondo, imprenditori e professionisti, e ho scritto «Sciare con la Mente». <strong>Ho 69 anni</strong>: quello che trovi in questo documento non è una teoria che ho letto da qualche parte — è il lavoro che faccio ogni giorno anche su me stesso.</p>
   </div>
 </section>
 
-<section class="chiusura">
-  <h2>Gli esercizi sono un punto di partenza.<br/><em>Non un punto di arrivo.</em></h2>
-  <p>Un protocollo scritto vale per tutti. Il tuo caso, no. Se vuoi capire dove si inceppa la tua situazione specifica, la prima sessione è gratuita — un'ora, senza impegno, senza vendita.</p>
-  <a href="index.html#contatti" class="btn-chiaro">Prenota la prima sessione</a>
+<section class="studi">
+  <div class="studi-inner">
+    <h3>Le ricerche citate nel documento</h3>
+    <p>Levy &amp; Slade, <em>JAMA Network Open</em>, 2023 · Leroy, <em>Organizational Behavior and Human Decision Processes</em>, 2009 · Roediger &amp; Karpicke, <em>Psychological Science</em>, 2006 · Dresler et al., <em>Neuron</em>, 2017 · Park et al., <em>Psychological Science</em>, 2014 · Erickson et al., <em>PNAS</em>, 2011</p>
+  </div>
 </section>
 
 <footer>
-  <div>
-    <div class="f-logo">Federico Grianti</div>
-    <p class="f-sub">Mental Coach &middot; Lavoro &middot; Sport &middot; Longevità Mentale</p>
-  </div>
-  <ul class="f-links">
-    <li><a href="index.html">Sito</a></li>
-    <li><a href="index.html#chi-sono">Chi Sono</a></li>
-    <li><a href="index.html#contatti">Contatti</a></li>
-    <li><a href="https://www.instagram.com/federico_grianti_coach/" target="_blank" rel="noopener">Instagram</a></li>
-    <li><a href="https://www.youtube.com/@federico_grianti_coach" target="_blank" rel="noopener">YouTube</a></li>
-  </ul>
-  <p class="f-copy">&copy; 2025&ndash;2026 Federico Grianti &middot; Mental Coach &middot; federicogrianticoach.com</p>
+  &copy; 2025&ndash;2026 Federico Grianti · Mental Coach · federicogrianticoach.com
 </footer>
 
 <script>
-  // Invia il modulo a Brevo e porta l'utente alla pagina di conferma
-  // (senza questo, Brevo restituisce una risposta tecnica {"success":true})
   (function () {
     var form = document.getElementById("formEsercizi");
     var btn = document.getElementById("btnInvia");
@@ -244,15 +154,9 @@ Pagina
       e.preventDefault();
       btn.disabled = true;
       btn.textContent = "Invio in corso…";
-      fetch(form.action, {
-        method: "POST",
-        body: new FormData(form),
-        mode: "no-cors"
-      }).catch(function () {
-        /* la richiesta parte comunque: proseguiamo */
-      }).then(function () {
-        window.location.href = "conferma.html";
-      });
+      fetch(form.action, { method: "POST", body: new FormData(form), mode: "no-cors" })
+        .catch(function () {})
+        .then(function () { window.location.href = "conferma.html"; });
     });
   })();
 </script>
@@ -261,4 +165,4 @@ Pagina
 <!-- End Cloudflare Web Analytics -->
 </body>
 </html>
-Visualizzazione di esercizi.txt.
+Visualizzazione di esercizi_v2.txt.
