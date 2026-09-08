@@ -1,10 +1,7 @@
 
-index_v11.txt
 
-Pagina
-1
-/
-1
+index_v12.txt
+
 100%
 <!DOCTYPE html>
 <html lang="it">
@@ -151,7 +148,16 @@ Pagina
     .es-header{max-width:720px;margin-bottom:4rem}
     .es-header .lead strong{color:var(--verde);font-weight:700}
     .esercizi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
-    .es-card{padding:2rem 2rem 1.8rem;background:var(--bianco);border:1.5px solid rgba(74,103,65,0.12);border-radius:var(--radius);transition:var(--tr);display:flex;flex-direction:column}
+    .es-card{padding:2rem 2rem 1.8rem;background:var(--bianco);border:1.5px solid rgba(74,103,65,0.12);border-radius:var(--radius);transition:var(--tr);display:flex;flex-direction:column;text-decoration:none;color:inherit;cursor:pointer}
+    .es-richiedi{display:block;margin-top:1rem;font-size:.7rem;letter-spacing:.11em;text-transform:uppercase;color:var(--verde);font-weight:700;transition:letter-spacing .3s}
+    .es-card:hover .es-richiedi{letter-spacing:.15em}
+    .ig-band{background:var(--verde);padding:4.5rem 3rem;text-align:center}
+    .ig-inner{max-width:660px;margin:0 auto}
+    .ig-eyebrow{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:1rem}
+    .ig-titolo{font-family:var(--serif);font-size:clamp(1.7rem,3vw,2.3rem);font-weight:400;color:var(--bianco);margin-bottom:1.1rem}
+    .ig-testo{font-size:.95rem;color:rgba(255,255,255,0.8);line-height:1.8;margin-bottom:2.1rem}
+    .btn-ig{display:inline-block;background:var(--bianco);color:var(--verde);padding:.9rem 2.2rem;font-size:.8rem;font-weight:700;letter-spacing:.08em;border-radius:99px;border:1.5px solid var(--bianco);transition:var(--tr)}
+    .btn-ig:hover{background:transparent;color:var(--bianco);transform:translateY(-2px)}
     .es-card:hover{border-color:var(--verde);transform:translateY(-3px);box-shadow:0 8px 25px rgba(30,26,22,0.06)}
     .es-badge{display:inline-block;font-size:.65rem;letter-spacing:.13em;text-transform:uppercase;padding:.3rem .8rem;border-radius:99px;font-weight:700;margin-bottom:1rem;align-self:flex-start}
     .es-badge-sport{background:var(--ocra-dim);color:var(--ocra)}
@@ -253,6 +259,7 @@ Pagina
       .area-trasversale{padding:2rem 1.5rem}
       .testim-grid{grid-template-columns:1fr}
       .esercizi-grid{grid-template-columns:1fr}
+      .ig-band{padding:3rem 1.4rem}
       .es-cta-box{flex-direction:column;align-items:flex-start;padding:2rem 1.5rem;gap:1.5rem}
       .podcast-grid{grid-template-columns:1fr}
       .shorts-grid{grid-template-columns:repeat(2,1fr)}
@@ -271,10 +278,8 @@ Pagina
     <li><a href="#aree">Aree</a></li>
     <li><a href="#testimonianze">Testimonianze</a></li>
     <li><a href="#esercizi">Esercizi</a></li>
-    <li><a href="#shorts">Video</a></li>
-    <li><a href="#podcast">Podcast</a></li>
     <li><a href="#libro">Libro</a></li>
-    <li><a href="#contatti" class="nav-cta">Sessione Gratuita</a></li>
+    <li><a href="#contatti" class="nav-cta">Chiamata Gratuita</a></li>
   </ul>
   <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
@@ -285,7 +290,7 @@ Pagina
     <p class="hero-body">Non lavoro con slogan motivazionali. Lavoro sulla mente — con strumenti di neuroscienza applicata e sessioni individuali — per chi vuole gestire meglio pressione, focus e decisioni. Sul lavoro, nello sport, negli anni che avanzano.</p>
     <blockquote class="hero-motto">"Non ti serve una mente migliore.<br/>Ti serve capire quella che hai."</blockquote>
     <div>
-      <a href="#contatti" class="btn-primario">Prima sessione gratuita</a>
+      <a href="#contatti" class="btn-primario">Chiamata gratuita &middot; 30 min</a>
       <a href="#approccio" class="btn-secondario">Scopri il metodo</a>
     </div>
   </div>
@@ -412,8 +417,8 @@ Pagina
   </div>
   <div class="sessione-box fade-up">
     <div class="sess-testo">
-      <h3>Prima sessione gratuita &middot; 1 ora</h3>
-      <p>In 60 minuti: ascolto la tua situazione, ti do 2-3 strumenti pratici, e vediamo se ha senso andare avanti insieme. Senza impegno, senza aspettative.</p>
+      <h3>Chiamata di orientamento &middot; 30 minuti</h3>
+      <p>Non è una sessione: è mezz'ora per capire da dove nasce il problema e cosa ha senso allenare per primo. Gratuita, senza impegno e senza vendita.</p>
     </div>
     <a href="#contatti" class="btn-primario">Prenota ora &rarr;</a>
   </div>
@@ -474,115 +479,88 @@ Pagina
     <p class="label-sezione">Esercizi</p>
     <h2>Strumenti pratici, <em>gratuiti.</em></h2>
     <div class="separatore"></div>
-    <p class="lead">Ogni PDF è un protocollo completo — nato da un mio Reel, ampliato con le neuroscienze dietro ogni esercizio. Li ricevi <strong>tutti insieme, gratis, in un'unica email</strong>.</p>
+    <p class="lead">Ogni PDF è un protocollo completo — nato da un mio Reel, ampliato con la ricerca dietro ogni esercizio. <strong>Scegli quello che ti serve adesso</strong>: lasci l'indirizzo e lo ricevi subito. Uno alla volta, non tutti insieme.</p>
   </div>
   <div class="esercizi-grid">
-    <div class="es-card fade-up" id="ex-checklist-pre-gara">
+    <a class="es-card fade-up" id="ex-attenzione" href="esercizi.html?doc=attenzione">
+      <span class="es-badge es-badge-longevity">Longevità</span>
+      <h3>Non stai peggiorando. Sei disallenato.</h3>
+      <p class="es-teaser">Cinque esercizi per riallenare attenzione e memoria dopo i 50: dieci minuti al giorno, per due settimane. Dalle convinzioni sull'età al richiamo attivo, ognuno con la ricerca da cui nasce.</p>
+      <div class="es-meta">5 esercizi &middot; 10 pagine</div>
+      <span class="es-richiedi">Richiedi questo PDF &rarr;</span>
+    </a>
+    <a class="es-card fade-up" id="ex-checklist-pre-gara" href="esercizi.html?doc=checklist">
       <span class="es-badge es-badge-sport">Sport</span>
       <h3>Checklist Pre-Gara Mentale</h3>
       <p class="es-teaser">Il protocollo in 10 punti che uso con i miei atleti prima di ogni competizione. Nessuna motivazione preconfezionata — solo azioni concrete da mettere in pratica nelle ore che precedono la gara.</p>
       <div class="es-meta">10 esercizi &middot; 8 pagine</div>
-    </div>
-    <div class="es-card fade-up d1" id="ex-dialogo-interiore">
+      <span class="es-richiedi">Richiedi questo PDF &rarr;</span>
+    </a>
+    <a class="es-card fade-up d1" id="ex-dialogo-interiore" href="esercizi.html?doc=dialogo">
       <span class="es-badge es-badge-sport">Sport</span>
       <h3>Dialogo Interiore</h3>
       <p class="es-teaser">Sette esercizi per allenare la voce nella testa nei momenti che contano — la gara, la presentazione, il colpo decisivo. Basati su ricerche di self-talk (Ethan Kross, self-distancing) e pre-performance routine testate sugli atleti d'élite.</p>
       <div class="es-meta">7 esercizi &middot; 6 pagine</div>
-    </div>
-    <div class="es-card fade-up d2" id="ex-sistema-di-recovery">
+      <span class="es-richiedi">Richiedi questo PDF &rarr;</span>
+    </a>
+    <a class="es-card fade-up d2" id="ex-sistema-di-recovery" href="esercizi.html?doc=recovery">
       <span class="es-badge es-badge-sport">Sport</span>
       <h3>Sistema di Recovery</h3>
       <p class="es-teaser">Cinque step per accelerare il ritorno da un infortunio — dal reset dell'amigdala nelle prime 72 ore al test di prontezza prima del rientro. Non sostituisce la fisioterapia: la sostiene rendendo la mente un alleato del corpo. Utile ad atleti e a chiunque affronti un lungo stop fisico.</p>
       <div class="es-meta">5 step &middot; 5 pagine</div>
-    </div>
-    <div class="es-card fade-up" id="ex-sguardo-sotto-pressione">
+      <span class="es-richiedi">Richiedi questo PDF &rarr;</span>
+    </a>
+    <a class="es-card fade-up" id="ex-sguardo-sotto-pressione" href="esercizi.html?doc=sguardo">
       <span class="es-badge es-badge-work">Business</span>
       <h3>Sguardo Sotto Pressione</h3>
       <p class="es-teaser">Cinque esercizi per restare lucido nei momenti che contano — quel tiro, quella riunione, quella decisione in trenta secondi. La tecnica del "quiet eye" dallo sport agonistico applicata alla vita sotto pressione.</p>
       <div class="es-meta">5 esercizi &middot; 4 pagine</div>
-    </div>
-    <div class="es-card fade-up d1" id="ex-memoria-over-60">
+      <span class="es-richiedi">Richiedi questo PDF &rarr;</span>
+    </a>
+    <a class="es-card fade-up d1" id="ex-memoria-over-60" href="esercizi.html?doc=memoria">
       <span class="es-badge es-badge-longevity">Longevità</span>
       <h3>Memoria Over 60</h3>
       <p class="es-teaser">Dieci esercizi per allenare la memoria dopo i sessant'anni. Non è declino — è disallenamento. Il metodo si basa su studi cognitivi documentati e su routine ripetibili nella vita di ogni giorno.</p>
       <div class="es-meta">10 esercizi &middot; 6 pagine</div>
-    </div>
-    <div class="es-card fade-up d2" id="ex-la-motivazione-arriva-dopo">
+      <span class="es-richiedi">Richiedi questo PDF &rarr;</span>
+    </a>
+    <a class="es-card fade-up d2" id="ex-la-motivazione-arriva-dopo" href="esercizi.html?doc=motivazione">
       <span class="es-badge es-badge-trasv">Trasversale</span>
       <h3>La Motivazione Arriva Dopo</h3>
       <p class="es-teaser">Cinque esercizi per restare in movimento quando la carica non c'è. Uno studio del 2026 pubblicato su PNAS mostra che i neuroni della motivazione si attivano <em>mentre</em> agisci, non prima: aspettare di sentirsi motivati significa aspettare un segnale che non arriverà.</p>
       <div class="es-meta">5 esercizi &middot; 5 pagine</div>
-    </div>
-    <div class="es-card fade-up" id="ex-gratitudine">
+      <span class="es-richiedi">Richiedi questo PDF &rarr;</span>
+    </a>
+    <a class="es-card fade-up" id="ex-gratitudine" href="esercizi.html?doc=gratitudine">
       <span class="es-badge es-badge-trasv">Trasversale</span>
       <h3>Esercizi di Gratitudine</h3>
       <p class="es-teaser">Cinque esercizi quotidiani per allenare il cervello alla gratitudine. Con il perché neuroscientifico dietro ognuno — corteccia prefrontale, dopamina, serotonina — e istruzioni pratiche per costruire l'abitudine.</p>
       <div class="es-meta">5 esercizi &middot; 4 pagine</div>
-    </div>
-    <div class="es-card fade-up d1" id="ex-turista-del-tempo">
+      <span class="es-richiedi">Richiedi questo PDF &rarr;</span>
+    </a>
+    <a class="es-card fade-up d1" id="ex-turista-del-tempo" href="esercizi.html?doc=tempo">
       <span class="es-badge es-badge-trasv">Trasversale</span>
       <h3>Turista del Tempo</h3>
       <p class="es-teaser">Sette esercizi per tornare al presente. La mente passa quasi metà del tempo altrove — nel passato o nel futuro. Questi esercizi lavorano su respiro, attenzione e piccoli gesti per interrompere il pattern.</p>
       <div class="es-meta">7 esercizi &middot; 5 pagine</div>
-    </div>
+      <span class="es-richiedi">Richiedi questo PDF &rarr;</span>
+    </a>
   </div>
   <div class="es-cta-box fade-up">
     <div class="es-cta-testo">
-      <h3>Ricevili tutti e otto</h3>
-      <p>Lascia il tuo indirizzo e ti arrivano subito, in un'unica email. Sono gratuiti e restano tuoi — ti scrivo solo quando ho qualcosa di utile.</p>
+      <h3>Non sai da quale cominciare?</h3>
+      <p>Parti da questo: cinque esercizi per riallenare attenzione e memoria dopo i 50, dieci minuti al giorno per due settimane. È quello che consiglio a chi mi scrive per la prima volta.</p>
     </div>
-    <a href="esercizi.html" class="btn-chiaro">Ricevi gli esercizi &rarr;</a>
+    <a href="esercizi.html?doc=attenzione" class="btn-chiaro">Comincia da qui &rarr;</a>
   </div>
 </section>
-<section id="shorts">
-  <div class="shorts-header">
-    <div class="fade-up">
-      <p class="label-sezione">Video Brevi</p>
-      <h2>Neuroscienze, mente e vita quotidiana<br/><em>in meno di tre minuti.</em></h2>
-    </div>
-    <a href="https://www.youtube.com/@federico_grianti_coach" target="_blank" rel="noopener" class="link-canale">Vedi tutti i video &rarr;</a>
+<section id="instagram" class="ig-band">
+  <div class="ig-inner fade-up">
+    <p class="ig-eyebrow">Dove pubblico</p>
+    <h2 class="ig-titolo">Ogni settimana su Instagram.</h2>
+    <p class="ig-testo">Video brevi su mente, sport e longevità — con la ricerca dietro, quando c'è. È lì che rispondo ai messaggi, ed è lì che nascono quasi tutte le conversazioni.</p>
+    <a href="https://www.instagram.com/federico_grianti_coach/" target="_blank" rel="noopener" class="btn-ig">@federico_grianti_coach &rarr;</a>
   </div>
-  <div class="shorts-grid">
-    <a href="https://youtube.com/shorts/TJ_F1VmSqzQ?feature=share" target="_blank" rel="noopener" class="short-card">
-      <div class="short-placeholder"><span class="ph-icon">&#9654;</span><span>Come liberarsi dalle preoccupazioni. Ecco come smettere in tre mosse.</span></div>
-    </a>
-    <a href="https://www.youtube.com/shorts/AIKyKrcGP0c" target="_blank" rel="noopener" class="short-card">
-      <div class="short-placeholder"><span class="ph-icon">&#9654;</span><span>I tuoi pensieri non sono la tua vita. Ma possono diventarlo. Scopri perché.</span></div>
-    </a>
-    <a href="https://youtube.com/shorts/n_u2pFAL9SQ?feature=share" target="_blank" rel="noopener" class="short-card">
-      <div class="short-placeholder"><span class="ph-icon">&#9654;</span><span>Nebbia mentale? Ecco 3 modi per approfittarne...</span></div>
-    </a>
-    <a href="https://youtube.com/shorts/ucpCF8s242o" target="_blank" rel="noopener" class="short-card">
-      <div class="short-placeholder"><span class="ph-icon">&#9654;</span><span>RICONNETTERSI CON LA NATURA: Ecco perché è importante</span></div>
-    </a>
-    <a href="https://youtube.com/shorts/CD53wUbdhKo" target="_blank" rel="noopener" class="short-card">
-      <div class="short-placeholder"><span class="ph-icon">&#9654;</span><span>LA MENTE E LA FELICITÀ: ecco perché non vanno mai d'accordo</span></div>
-    </a>
-  </div>
-  <div class="shorts-cta fade-up">
-    <a href="https://www.youtube.com/@federico_grianti_coach" target="_blank" rel="noopener">
-      <svg width="20" height="14" viewBox="0 0 20 14" fill="currentColor"><path d="M19.6 2.2C19.4 1.4 18.8.8 18 .6 16.4.2 10 .2 10 .2S3.6.2 2 .6C1.2.8.6 1.4.4 2.2 0 3.8 0 7 0 7s0 3.2.4 4.8C.6 12.6 1.2 13.2 2 13.4c1.6.4 8 .4 8 .4s6.4 0 8-.4c.8-.2 1.4-.8 1.6-1.6.4-1.6.4-4.8.4-4.8s0-3.2-.4-4.8zM8 10V4l5.3 3L8 10z"/></svg>
-      Iscriviti al canale YouTube &middot; 40+ video già disponibili
-    </a>
-  </div>
-</section>
-<section id="podcast">
-  <div class="podcast-header fade-up">
-    <p class="label-sezione">Podcast</p>
-    <h2>Ascoltami quando hai<br/><em>dieci minuti per te.</em></h2>
-    <p class="lead">Conversazioni brevi sulla mente e sui suoi meccanismi quotidiani. Ogni episodio è un punto di partenza — non di arrivo.</p>
-  </div>
-  <div class="podcast-grid">
-    <div class="podcast-card fade-up">
-      <div class="pod-num">02</div>
-      <div class="pod-info"><p class="pod-ep">Episodio 2</p><h3>Felicità: perché la cerchi nel posto sbagliato</h3><p>Il 47% del tempo la mente è altrove. Non dove sei, non nel momento che vivi. Cos'è il Default Mode Network, perché la mente è un ostacolo, e tre cose concrete per rimuoverlo.</p><iframe width="100%" height="185" src="https://www.youtube.com/embed/l7KbiSoO70o" title="L'Arte di Essere – Ep.2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;margin-top:14px;display:block;"></iframe><a href="https://youtu.be/l7KbiSoO70o" target="_blank" rel="noopener" style="display:inline-block;margin-top:8px;font-size:.82rem;color:#C47F35;font-weight:700;text-decoration:none;">&#9654; Ascolta su YouTube</a><p class="pod-min">~ 16 min</p></div>
-    </div>
-    <div class="podcast-card fade-up d1">
-      <div class="pod-num">04</div>
-      <div class="pod-info"><p class="pod-ep">Episodio 4</p><h3>Vivi la tua vocazione, ancorché imperfetta</h3><p>La differenza tra la vita che stai vivendo e quella che senti di dover vivere. E perché quella piccola voce ha sempre ragione.</p><iframe width="100%" height="185" src="https://www.youtube.com/embed/J6EoTwBulYI?list=PL0cIpWb-3VpHaKdZAgKBPl96BrOlMODFN" title="L'Arte di Essere – Ep.4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;margin-top:14px;display:block;"></iframe><a href="https://youtu.be/J6EoTwBulYI" target="_blank" rel="noopener" style="display:inline-block;margin-top:8px;font-size:.82rem;color:#C47F35;font-weight:700;text-decoration:none;">&#9654; Ascolta su YouTube</a><p class="pod-min">~ 15 min</p></div>
-    </div>
-  </div>
-  <p class="podcast-nota fade-up">Podcast <strong>L&apos;Arte di Essere</strong> &middot; Ep.2 e Ep.4 disponibili ora su <a href="https://www.youtube.com/playlist?list=PL0cIpWb-3VpHaKdZAgKBPl96BrOlMODFN" target="_blank" rel="noopener">YouTube</a> &middot; Prossimamente su Spotify e Apple Podcasts.<br/><a href="https://youtu.be/l7KbiSoO70o" target="_blank" rel="noopener">Ascolta l&apos;Ep.2 &rarr;</a> &nbsp;&middot;&nbsp; <a href="https://youtu.be/J6EoTwBulYI" target="_blank" rel="noopener">Ascolta l&apos;Ep.4 &rarr;</a></p>
 </section>
 <section id="libro">
   <div class="libro-cover fade-up">
@@ -609,9 +587,9 @@ Pagina
     <p class="label-sezione">Parliamoci</p>
     <h2>Una conversazione.<br/><em>Senza impegno.</em></h2>
     <div class="separatore"></div>
-    <p class="lead">La prima ora è gratuita. In 60 minuti: ascolto la tua situazione, ti do 2-3 strumenti pratici, e vediamo se ha senso andare avanti insieme. Non è una vendita — è un incontro.</p>
+    <p class="lead">Mezz'ora, gratuita, senza impegno. Ascolto la tua situazione, ti dico da dove partirei e cosa ha senso allenare per primo. Se poi abbia senso lavorare insieme lo decidiamo dopo: la chiamata serve prima di tutto a capire.</p>
     <div class="contact-items" style="margin-top:2rem;">
-      <a href="https://wa.me/393482330700?text=Ciao%20Federico,%20vorrei%20una%20prima%20sessione%20gratuita" target="_blank" rel="noopener" class="contact-item">
+      <a href="https://wa.me/393482330700?text=Ciao%20Federico,%20vorrei%20una%20chiamata%20di%20orientamento" target="_blank" rel="noopener" class="contact-item">
         <span class="ci-icon">💬</span><div><strong>WhatsApp</strong><span>+39 348 233 0700</span></div>
       </a>
       <a href="mailto:coaching@federicogrianticoach.com" class="contact-item">
@@ -637,7 +615,7 @@ Pagina
       </div>
       <div class="form-group"><label for="messaggio">Cosa ti ha portato qui? (opzionale)</label><textarea id="messaggio" name="messaggio" placeholder="Scrivimi pure in modo libero. Non ci sono risposte giuste o sbagliate."></textarea></div>
       <div class="form-submit"><button type="submit" class="btn-primario">Scrivimi &rarr;</button></div>
-      <p class="form-note">Prima sessione gratuita &middot; Risposta entro 24h &middot; Zero spam</p>
+      <p class="form-note">Chiamata gratuita di 30 minuti &middot; Risposta entro 24h &middot; Zero spam</p>
     </form>
     <div id="form-success">&#10003; Messaggio ricevuto.<br/><span style="font-size:.88rem;font-family:var(--sans);color:var(--grigio);">Ti rispondo entro 24 ore.</span></div>
   </div>
@@ -651,7 +629,6 @@ Pagina
     <li><a href="#approccio">Metodo</a></li><li><a href="#chi-sono">Chi Sono</a></li>
     <li><a href="#come-lavoro">Come Lavoro</a></li><li><a href="#aree">Aree</a></li>
     <li><a href="#testimonianze">Testimonianze</a></li><li><a href="#esercizi">Esercizi</a></li>
-    <li><a href="#shorts">Video</a></li><li><a href="#podcast">Podcast</a></li>
     <li><a href="#contatti">Contatti</a></li>
   </ul>
   <div class="social-row">
@@ -661,7 +638,7 @@ Pagina
   </div>
   <p class="footer-copy">&copy; 2025&ndash;2026 Federico Grianti &middot; Mental Coach &middot; federicogrianticoach.com</p>
 </footer>
-<a href="https://wa.me/393482330700?text=Ciao%20Federico,%20vorrei%20una%20prima%20sessione%20gratuita" target="_blank" rel="noopener" class="wa-float" aria-label="Scrivimi su WhatsApp">💬</a>
+<a href="https://wa.me/393482330700?text=Ciao%20Federico,%20vorrei%20una%20chiamata%20di%20orientamento" target="_blank" rel="noopener" class="wa-float" aria-label="Scrivimi su WhatsApp">💬</a>
 <script>
   const navbar=document.getElementById("navbar");
   window.addEventListener("scroll",()=>navbar.classList.toggle("scrolled",window.scrollY>60));
@@ -691,4 +668,4 @@ Pagina
 <!-- End Cloudflare Web Analytics -->
 </body>
 </html>
-Visualizzazione di index_v11.txt.
+Visualizzazione di index_v12.txt.
