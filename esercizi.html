@@ -1,25 +1,21 @@
 
 
-esercizi_v3.txt
+esercizi_v4.txt
 
-Pagina
-1
-/
-1
 100%
 <!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Non stai peggiorando. Sei disallenato. | Federico Grianti</title>
-  <meta name="description" content="5 esercizi per riallenare attenzione e memoria dopo i 50. Dieci minuti al giorno, due settimane. Basati su ricerche pubblicate. Gratis." />
+  <title>Esercizi pratici gratuiti | Federico Grianti — Mental Coach</title>
+  <meta name="description" content="Protocolli pratici di mental coaching su sport, lavoro e longevità mentale. Neuroscienze applicate, esercizi concreti. Scegli quello che ti serve e lo ricevi via email." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://federicogrianticoach.com/esercizi.html" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://federicogrianticoach.com/esercizi.html" />
-  <meta property="og:title" content="Non stai peggiorando. Sei disallenato." />
-  <meta property="og:description" content="5 esercizi per riallenare attenzione e memoria dopo i 50. Dieci minuti al giorno, due settimane." />
+  <meta property="og:title" content="Esercizi pratici di mental coaching — gratis" />
+  <meta property="og:description" content="Protocolli concreti basati sulle neuroscienze. Scegli quello che ti serve, lascia l'indirizzo e lo ricevi subito." />
   <meta property="og:image" content="https://federicogrianticoach.com/fedeg1.png" />
   <meta property="og:locale" content="it_IT" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -40,17 +36,18 @@ Pagina
     .hero{background:var(--bianco);padding:4rem 3rem 4.5rem;display:grid;grid-template-columns:1.05fr .95fr;gap:4.5rem;align-items:center}
     .occhiello{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--verde);margin-bottom:1.4rem;display:flex;align-items:center;gap:1rem}
     .occhiello::before{content:"";display:block;width:30px;height:1px;background:var(--verde)}
-    h1{font-family:var(--serif);font-size:clamp(2.2rem,4.2vw,3.5rem);line-height:1.14;font-weight:500;color:var(--marrone);margin-bottom:1.2rem}
-    h1 em{font-style:normal;color:var(--verde)}
-    .sottotitolo{font-family:var(--serif);font-style:italic;font-size:1.18rem;color:var(--ocra);line-height:1.6;margin-bottom:1.8rem}
-    .ponte{font-size:.95rem;color:var(--grigio);line-height:1.8;padding-left:1.1rem;border-left:2px solid rgba(74,103,65,0.25);margin-bottom:1.8rem}
+    h1{font-family:var(--serif);font-size:clamp(2.1rem,4vw,3.3rem);line-height:1.15;font-weight:500;color:var(--marrone);margin-bottom:1.2rem}
+    h1 span{display:block;color:var(--verde)}
+    .sottotitolo{font-family:var(--serif);font-style:italic;font-size:1.15rem;color:var(--ocra);line-height:1.6;margin-bottom:1.8rem}
+    .ponte{font-size:.93rem;color:var(--grigio);line-height:1.8;padding-left:1.1rem;border-left:2px solid rgba(74,103,65,0.25);margin-bottom:1.8rem}
     .dentro{list-style:none}
     .dentro li{font-size:.93rem;color:var(--grigio);padding:.35rem 0;display:flex;align-items:flex-start;gap:.75rem;line-height:1.7}
     .dentro li::before{content:"◆";color:var(--ocra);font-size:.38rem;flex-shrink:0;margin-top:.72rem}
 
     .card{background:var(--crema);border:1.5px solid rgba(74,103,65,0.2);border-radius:var(--radius);padding:2.6rem 2.4rem;box-shadow:0 10px 40px rgba(30,26,22,0.07)}
-    .card h2{font-family:var(--serif);font-size:1.5rem;font-weight:500;color:var(--marrone);margin-bottom:.5rem;line-height:1.3}
+    .card h2{font-family:var(--serif);font-size:1.45rem;font-weight:500;color:var(--marrone);margin-bottom:.5rem;line-height:1.3}
     .card .sub{font-size:.87rem;color:var(--grigio);line-height:1.7;margin-bottom:1.7rem}
+    .card .sub b{color:var(--marrone);font-weight:700}
     .campo label{display:block;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--grigio);margin-bottom:.5rem}
     .campo input[type=email]{width:100%;background:var(--bianco);border:1.5px solid rgba(74,103,65,0.2);color:var(--carbone);padding:.95rem 1.2rem;font-family:var(--sans);font-size:.95rem;border-radius:var(--radius);outline:none;transition:border-color .3s;-webkit-appearance:none}
     .campo input[type=email]:focus{border-color:var(--verde)}
@@ -68,10 +65,9 @@ Pagina
     .prova p{font-size:.93rem;color:var(--grigio);line-height:1.85}
     .prova strong{color:var(--marrone);font-weight:700}
 
-    .studi{background:var(--bianco);padding:3rem;border-top:1px solid rgba(74,103,65,0.12)}
-    .studi-inner{max-width:900px;margin:0 auto}
-    .studi h3{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--verde);margin-bottom:1.2rem}
-    .studi p{font-size:.8rem;color:var(--grigio-chiaro);line-height:1.9}
+    .coda{background:var(--bianco);padding:3rem;border-top:1px solid rgba(74,103,65,0.12);text-align:center}
+    .coda p{font-size:.88rem;color:var(--grigio-chiaro);line-height:1.9;max-width:720px;margin:0 auto}
+    .coda b{color:var(--grigio);font-weight:400}
 
     footer{background:var(--marrone);color:rgba(255,255,255,0.45);padding:2rem 3rem;text-align:center;font-size:.72rem;line-height:1.8}
 
@@ -79,7 +75,7 @@ Pagina
       .marchio{padding:1.1rem 1.4rem}
       .hero{grid-template-columns:1fr;gap:2.5rem;padding:2.5rem 1.4rem 3rem}
       .card{padding:1.9rem 1.5rem}
-      .prova,.studi{padding:2.5rem 1.4rem}
+      .prova,.coda{padding:2.5rem 1.4rem}
       .prova-inner{grid-template-columns:1fr;gap:1.3rem;text-align:center}
       .prova img{margin:0 auto}
       footer{padding:1.8rem 1.4rem}
@@ -93,20 +89,15 @@ Pagina
 <section class="hero">
   <div>
     <p class="occhiello">Documento gratuito</p>
-    <h1>Non stai peggiorando.<br/><em>Sei disallenato.</em></h1>
-    <p class="sottotitolo">5 esercizi per riallenare attenzione e memoria dopo i 50.<br/>Dieci minuti al giorno, per due settimane.</p>
-    <p class="ponte">Se sei arrivato dal video sul recupero cognitivo: è questo che ti avevo detto di preparare. Qui c'è la parte pratica.</p>
-    <ul class="dentro">
-      <li>Cinque esercizi, ognuno con la ricerca da cui nasce — citata per esteso</li>
-      <li>Un piano di quattordici giorni che sta in dieci minuti</li>
-      <li>Il moltiplicatore fisico che vale più di tutti e cinque messi insieme</li>
-      <li>E quando invece conviene smettere di allenarsi e parlare con un medico</li>
-    </ul>
+    <h1 id="titolo">Non stai peggiorando.<span>Sei disallenato.</span></h1>
+    <p class="sottotitolo" id="promessa">5 esercizi per riallenare attenzione e memoria dopo i 50. Dieci minuti al giorno, per due settimane.</p>
+    <p class="ponte">Se sei arrivato da un mio video: è questo il seguito pratico di cui parlavo.</p>
+    <ul class="dentro" id="dentro"></ul>
   </div>
 
   <div class="card">
     <h2>Dove te lo mando?</h2>
-    <p class="sub">Lascia il tuo indirizzo: ricevi il PDF completo in un minuto.</p>
+    <p class="sub">Lascia il tuo indirizzo: ricevi <b id="nomeDoc">il documento</b> in un minuto.</p>
 
     <form id="formEsercizi" action="https://49660902.sibforms.com/serve/MUIFAC496F1Aknxv7L6qW52HYjTC139ltv3jubDHfLExEu3v6LiX---WZ7PirJAX8rgP6y5A89cCcfhmy5iOcdUUqYEWF-EF5eXdsmIeP90jDQPgWWIKnmu_4aKgCHd0LkDzzJjOgBhUuMreP8Ucwa_UWlgAnLW9t3CKpJ257hTHYlvCnHg1LGd_Q9CE4_ySxhZp1dw8iEYyaGF6vw==" method="POST" autocomplete="off">
       <div class="campo">
@@ -116,6 +107,10 @@ Pagina
 
       <input type="text" name="email_address_check" value="" class="input--hidden" tabindex="-1" aria-hidden="true" />
       <input type="hidden" name="locale" value="it" />
+      <!-- Registra su Brevo quale documento è stato richiesto.
+           Richiede l'attributo di contatto DOCUMENTO (testo) creato in Brevo.
+           Se il modulo dovesse smettere di funzionare, elimina la riga qui sotto. -->
+      <input type="hidden" name="DOCUMENTO" id="DOCUMENTO" value="attenzione" />
 
       <div class="consenso">
         <input type="checkbox" id="consenso" required />
@@ -131,15 +126,13 @@ Pagina
 <section class="prova">
   <div class="prova-inner">
     <img src="fedeg1.png" alt="Federico Grianti" />
-    <p>Sono <strong>Federico Grianti</strong>, mental coach dal 2007. Ho lavorato con atleti di Coppa del Mondo, imprenditori e professionisti, e ho scritto «Sciare con la Mente». <strong>Ho 69 anni</strong>: quello che trovi in questo documento non è una teoria che ho letto da qualche parte — è il lavoro che faccio ogni giorno anche su me stesso.</p>
+    <p>Sono <strong>Federico Grianti</strong>, mental coach dal 2007. Ho lavorato con atleti di Coppa del Mondo, imprenditori e professionisti, e ho scritto «Sciare con la Mente». <strong>Ho 69 anni</strong>: quello che trovi in questi documenti non è una teoria che ho letto da qualche parte — è il lavoro che faccio ogni giorno anche su me stesso.</p>
   </div>
 </section>
 
-<section class="studi">
-  <div class="studi-inner">
-    <h3>Le ricerche citate nel documento</h3>
-    <p>Levy &amp; Slade, <em>JAMA Network Open</em>, 2023 · Leroy, <em>Organizational Behavior and Human Decision Processes</em>, 2009 · Roediger &amp; Karpicke, <em>Psychological Science</em>, 2006 · Dresler et al., <em>Neuron</em>, 2017 · Park et al., <em>Psychological Science</em>, 2014 · Erickson et al., <em>PNAS</em>, 2011</p>
-  </div>
+<section class="coda">
+  <p>Ogni esercizio riporta <b>la ricerca da cui nasce</b>, citata per esteso — non frasi motivazionali.<br/>
+  Ne ho scritti altri otto, su sport, lavoro e longevità mentale: te li mando <b>uno alla volta</b> nelle settimane successive, non tutti insieme.</p>
 </section>
 
 <footer>
@@ -147,17 +140,118 @@ Pagina
 </footer>
 
 <script>
+  // ---- Catalogo documenti: una landing sola, una promessa per volta ----
+  var DOCS = {
+    attenzione: {
+      h1a: "Non stai peggiorando.", h1b: "Sei disallenato.",
+      nome: "il documento",
+      promessa: "5 esercizi per riallenare attenzione e memoria dopo i 50. Dieci minuti al giorno, per due settimane.",
+      dentro: ["Cinque esercizi, ognuno con la ricerca da cui nasce",
+               "Un piano di quattordici giorni che sta in dieci minuti",
+               "Il moltiplicatore fisico che vale più di tutti e cinque messi insieme",
+               "E quando invece conviene parlarne con un medico"]
+    },
+    checklist: {
+      h1a: "La gara si decide", h1b: "prima della partenza.",
+      nome: "la checklist",
+      promessa: "Il protocollo mentale in 10 punti che uso con i miei atleti nelle ore che precedono una competizione.",
+      dentro: ["Dieci punti operativi, nessuna motivazione preconfezionata",
+               "Cosa fare la sera prima e cosa la mattina della gara",
+               "Come gestire l'attesa nei minuti che precedono la partenza",
+               "Costruito in diciotto anni con atleti di Coppa del Mondo"]
+    },
+    dialogo: {
+      h1a: "Sotto pressione non vince", h1b: "chi pensa di più.",
+      nome: "il documento",
+      promessa: "7 esercizi per allenare la voce nella testa nei momenti in cui il risultato si decide in pochi secondi.",
+      dentro: ["Il cambio di persona: parlarti con il tuo nome invece che con «io»",
+               "La parola-chiave d'innesco e l'ancora verbale-motoria",
+               "Basati sulle ricerche sul self-talk di Ethan Kross",
+               "Valgono al cancelletto come in una riunione difficile"]
+    },
+    recovery: {
+      h1a: "Il corpo guarisce coi suoi tempi.", h1b: "La testa decide se torni.",
+      nome: "il documento",
+      promessa: "5 step per accelerare il rientro da un infortunio: dalle prime 72 ore al ritorno in gara.",
+      dentro: ["Il reset della paura nei primi giorni, prima ancora della fisioterapia",
+               "Il self-talk che tiene alta l'aderenza alla riabilitazione",
+               "Il test di prontezza psicologica prima di rientrare",
+               "Non sostituisce la fisioterapia: la sostiene"]
+    },
+    sguardo: {
+      h1a: "Sotto pressione vinci", h1b: "con lo sguardo.",
+      nome: "il documento",
+      promessa: "5 esercizi per restare lucido nei momenti che contano: il tiro, la riunione, la decisione in trenta secondi.",
+      dentro: ["La tecnica del «quiet eye», misurata sugli atleti d'élite",
+               "Come si allena la fissazione visiva prima del gesto",
+               "Portata dallo sport agonistico alla vita professionale",
+               "Cinque esercizi brevi, applicabili da domani mattina"]
+    },
+    memoria: {
+      h1a: "La tua memoria non è in declino.", h1b: "È solo disallenata.",
+      nome: "il documento",
+      promessa: "10 esercizi quotidiani per allenare la memoria dopo i sessant'anni.",
+      dentro: ["Dieci esercizi con routine e frequenza indicate per ognuno",
+               "Perché camminare conta quanto esercitare la memoria",
+               "Basato su studi cognitivi documentati, non su luoghi comuni",
+               "Ripetibile dentro la vita di tutti i giorni"]
+    },
+    motivazione: {
+      h1a: "La motivazione", h1b: "arriva dopo.",
+      nome: "il documento",
+      promessa: "5 esercizi per restare in movimento quando la carica non c'è.",
+      dentro: ["Perché i neuroni della motivazione si accendono mentre agisci, non prima",
+               "Come togliere i freni invece di cercare stimoli esterni",
+               "Cosa fare nel vuoto che arriva subito dopo un traguardo",
+               "Basato su uno studio pubblicato su PNAS"]
+    },
+    gratitudine: {
+      h1a: "Buddha aveva ragione.", h1b: "La neuroscienza lo dimostra.",
+      nome: "il documento",
+      promessa: "5 esercizi quotidiani per allenare il cervello alla gratitudine.",
+      dentro: ["Il diario che modifica sonno, umore e soglia del dolore",
+               "Il perché neurologico dietro ogni esercizio",
+               "Cinque pratiche brevi, una per ogni momento della giornata",
+               "Con le ricerche citate per esteso"]
+    },
+    tempo: {
+      h1a: "Smetti di essere", h1b: "un turista del tempo.",
+      nome: "il documento",
+      promessa: "7 esercizi quotidiani per tornare al presente.",
+      dentro: ["La mente passa quasi metà del tempo altrove: nel passato o nel futuro",
+               "Il respiro come interruttore fra reazione e risposta",
+               "Sette pratiche da cinque minuti l'una",
+               "Da fare mentre vivi, non chiuso in una stanza silenziosa"]
+    }
+  };
+
   (function () {
+    var slug = (new URLSearchParams(window.location.search).get("doc") || "attenzione").toLowerCase();
+    if (!DOCS[slug]) slug = "attenzione";
+    var d = DOCS[slug];
+
+    document.getElementById("titolo").innerHTML = d.h1a + "<span>" + d.h1b + "</span>";
+    document.getElementById("promessa").textContent = d.promessa;
+    document.getElementById("nomeDoc").textContent = d.nome;
+    document.getElementById("DOCUMENTO").value = slug;
+    document.title = d.h1a + " " + d.h1b + " | Federico Grianti";
+
+    var ul = document.getElementById("dentro");
+    d.dentro.forEach(function (t) {
+      var li = document.createElement("li");
+      li.textContent = t;
+      ul.appendChild(li);
+    });
+
     var form = document.getElementById("formEsercizi");
     var btn = document.getElementById("btnInvia");
-    if (!form) return;
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       btn.disabled = true;
       btn.textContent = "Invio in corso…";
       fetch(form.action, { method: "POST", body: new FormData(form), mode: "no-cors" })
         .catch(function () {})
-        .then(function () { window.location.href = "grazie.html"; });
+        .then(function () { window.location.href = "grazie.html?doc=" + slug; });
     });
   })();
 </script>
@@ -166,4 +260,6 @@ Pagina
 <!-- End Cloudflare Web Analytics -->
 </body>
 </html>
-Visualizzazione di esercizi_v3.txt.
+Visualizzazione di esercizi_v4.txt.
+
+
