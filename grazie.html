@@ -1,18 +1,15 @@
 
 
-grazie_v2.txt
 
-Pagina
-1
-/
-1
+grazie_v3.txt
+
 100%
 <!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Grazie — controlla la tua email | Federico Grianti</title>
+  <title>Grazie — il tuo documento è qui | Federico Grianti</title>
   <meta name="robots" content="noindex, follow" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -27,17 +24,18 @@ Pagina
     .topbar{padding:1.5rem 3rem;border-bottom:1px solid rgba(74,103,65,0.12);background:var(--bianco)}
     .topbar-logo{font-family:var(--serif);font-size:1.1rem;color:var(--verde);font-weight:500}
     main{flex:1;display:flex;align-items:center;justify-content:center;padding:4rem 1.5rem}
-    .box{max-width:620px;text-align:center}
+    .box{max-width:640px;text-align:center}
     .segno{width:64px;height:64px;border-radius:50%;background:var(--verde);color:var(--bianco);display:flex;align-items:center;justify-content:center;font-size:1.8rem;margin:0 auto 2rem}
     h1{font-family:var(--serif);font-size:clamp(2rem,4vw,2.9rem);font-weight:500;line-height:1.2;color:var(--marrone);margin-bottom:1.3rem}
     h1 em{font-style:italic;color:var(--verde)}
     .intro{font-size:1.02rem;color:var(--grigio);line-height:1.85;margin-bottom:2rem}
-    .avviso{background:var(--ocra-dim);border:1px solid rgba(196,127,53,0.25);border-radius:var(--radius);padding:1.5rem 1.8rem;text-align:left;margin-bottom:2.5rem}
+    .btn{display:inline-block;background:var(--verde);color:var(--bianco);padding:1rem 2.4rem;font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border-radius:99px;border:1.5px solid var(--verde);transition:var(--tr)}
+    .btn:hover{background:transparent;color:var(--verde);transform:translateY(-2px)}
+    .sotto-btn{font-size:.78rem;color:var(--grigio-chiaro);margin-top:.9rem;letter-spacing:.02em}
+    .avviso{background:var(--ocra-dim);border:1px solid rgba(196,127,53,0.25);border-radius:var(--radius);padding:1.5rem 1.8rem;text-align:left;margin:2.5rem 0 0}
     .avviso strong{display:block;font-family:var(--serif);font-size:1.05rem;color:var(--marrone);margin-bottom:.5rem;font-weight:500}
     .avviso p{font-size:.88rem;color:var(--grigio);line-height:1.75}
-    .btn{display:inline-block;background:var(--verde);color:var(--bianco);padding:.95rem 2.2rem;font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border-radius:99px;border:1.5px solid var(--verde);transition:var(--tr)}
-    .btn:hover{background:transparent;color:var(--verde);transform:translateY(-2px)}
-    .secondario{display:block;margin-top:1.6rem;font-size:.8rem;color:var(--grigio-chiaro)}
+    .secondario{display:block;margin-top:2rem;font-size:.8rem;color:var(--grigio-chiaro);line-height:1.8}
     .secondario a{color:var(--verde);text-decoration:underline;text-underline-offset:3px}
     footer{background:var(--marrone);color:rgba(255,255,255,0.4);padding:1.8rem 3rem;text-align:center;font-size:.72rem}
     @media(max-width:900px){.topbar{padding:1.1rem 1.4rem}main{padding:3rem 1.4rem}footer{padding:1.5rem 1.4rem}}
@@ -53,25 +51,46 @@ Pagina
   <div class="box">
     <div class="segno">&#10003;</div>
     <h1>Eccolo.<br/><em>Il documento è qui sotto.</em></h1>
-    <p class="intro">Scaricalo adesso — te l'ho mandato anche per email, insieme agli altri otto documenti che ho scritto in questi mesi.</p>
+    <p class="intro">Scaricalo adesso — te l'ho mandato anche per email, così lo ritrovi quando ti serve.</p>
 
-    <a href="attenzione-dopo-i-50.pdf" class="btn" download>&darr; Scarica il PDF</a>
-    <p class="sotto-btn">Non stai peggiorando. Sei disallenato. · 5 esercizi · 10 pagine</p>
+    <a id="download" href="attenzione-dopo-i-50.pdf" class="btn" download>&darr; Scarica il PDF</a>
+    <p class="sotto-btn" id="etichetta">Non stai peggiorando. Sei disallenato. · 5 esercizi · 10 pagine</p>
 
     <div class="avviso">
-      <strong>Un consiglio, prima di leggerlo tutto</strong>
-      <p>Non farlo stasera. Parti dall'esercizio 1 — quello sulla parola «ormai» — e fai solo quello per tre giorni. Gli altri quattro restano lì, non scappano.</p>
+      <strong>Un consiglio prima di leggerlo tutto</strong>
+      <p>Non farlo stasera. Prendi il primo esercizio e fai solo quello per tre giorni: gli altri restano lì, non scappano. Un protocollo letto in un pomeriggio non cambia niente; uno praticato per una settimana sì.</p>
     </div>
 
-    <span class="secondario">Se l'email non arriva entro qualche minuto, guarda nello spam o fra le promozioni · <a href="index.html">torna al sito</a></span>
+    <span class="secondario">Se l'email non arriva entro qualche minuto, guarda nello spam o fra le promozioni.<br/>
+    Negli altri documenti che ho scritto ci sono sport, lavoro e longevità mentale: te li mando uno alla volta, nelle prossime settimane.<br/>
+    <a href="index.html">Torna al sito</a></span>
   </div>
 </main>
 
 <footer>&copy; 2025&ndash;2026 Federico Grianti · Mental Coach · federicogrianticoach.com</footer>
 
+<script>
+  var FILE = {
+    attenzione:  ["attenzione-dopo-i-50.pdf",        "Non stai peggiorando. Sei disallenato. · 5 esercizi · 10 pagine"],
+    checklist:   ["checklist-pre-gara-mentale.pdf",  "Checklist Pre-Gara Mentale · 10 esercizi · 8 pagine"],
+    dialogo:     ["dialogo-interiore.pdf",           "Dialogo Interiore · 7 esercizi · 6 pagine"],
+    recovery:    ["sistema-di-recovery.pdf",         "Sistema di Recovery · 5 step · 5 pagine"],
+    sguardo:     ["sguardo-sotto-pressione.pdf",     "Sguardo Sotto Pressione · 5 esercizi · 4 pagine"],
+    memoria:     ["memoria-over-60.pdf",             "Memoria Over 60 · 10 esercizi · 6 pagine"],
+    motivazione: ["la-motivazione-arriva-dopo.pdf",  "La Motivazione Arriva Dopo · 5 esercizi · 5 pagine"],
+    gratitudine: ["gratitudine.pdf",                 "Esercizi di Gratitudine · 5 esercizi · 4 pagine"],
+    tempo:       ["turista-del-tempo.pdf",           "Turista del Tempo · 7 esercizi · 5 pagine"]
+  };
+  (function () {
+    var slug = (new URLSearchParams(window.location.search).get("doc") || "attenzione").toLowerCase();
+    if (!FILE[slug]) slug = "attenzione";
+    document.getElementById("download").setAttribute("href", FILE[slug][0]);
+    document.getElementById("etichetta").textContent = FILE[slug][1];
+  })();
+</script>
 <!-- Cloudflare Web Analytics -->
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "a7d8d8e46abb44df91eb2146f98ba45f"}'></script>
 <!-- End Cloudflare Web Analytics -->
 </body>
 </html>
-Visualizzazione di grazie_v2.txt.
+Visualizzazione di grazie_v3.txt.
