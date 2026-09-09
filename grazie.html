@@ -1,7 +1,8 @@
 
 
 
-grazie_v3.txt
+
+grazie_v4.txt
 
 100%
 <!DOCTYPE html>
@@ -57,8 +58,8 @@ grazie_v3.txt
     <p class="sotto-btn" id="etichetta">Non stai peggiorando. Sei disallenato. · 5 esercizi · 10 pagine</p>
 
     <div class="avviso">
-      <strong>Un consiglio prima di leggerlo tutto</strong>
-      <p>Non farlo stasera. Prendi il primo esercizio e fai solo quello per tre giorni: gli altri restano lì, non scappano. Un protocollo letto in un pomeriggio non cambia niente; uno praticato per una settimana sì.</p>
+      <strong id="avvisoT">Un consiglio prima di leggerlo tutto</strong>
+      <p id="avvisoP">Non farlo stasera. Prendi il primo esercizio e fai solo quello per tre giorni: gli altri restano lì, non scappano. Un protocollo letto in un pomeriggio non cambia niente; uno praticato per una settimana sì.</p>
     </div>
 
     <span class="secondario">Se l'email non arriva entro qualche minuto, guarda nello spam o fra le promozioni.<br/>
@@ -71,6 +72,7 @@ grazie_v3.txt
 
 <script>
   var FILE = {
+    test:        ["carico-o-eta.pdf",              "Carico o età? · 12 domande · 6 pagine"],
     attenzione:  ["attenzione-dopo-i-50.pdf",        "Non stai peggiorando. Sei disallenato. · 5 esercizi · 10 pagine"],
     checklist:   ["checklist-pre-gara-mentale.pdf",  "Checklist Pre-Gara Mentale · 10 esercizi · 8 pagine"],
     dialogo:     ["dialogo-interiore.pdf",           "Dialogo Interiore · 7 esercizi · 6 pagine"],
@@ -86,6 +88,10 @@ grazie_v3.txt
     if (!FILE[slug]) slug = "attenzione";
     document.getElementById("download").setAttribute("href", FILE[slug][0]);
     document.getElementById("etichetta").textContent = FILE[slug][1];
+    if (slug === "test") {
+      document.getElementById("avvisoT").textContent = "Come si fa";
+      document.getElementById("avvisoP").textContent = "Rispondi di getto: la prima risposta che ti viene \u00e8 quasi sempre quella giusta. Segna ogni gruppo separatamente \u2014 non c'\u00e8 un punteggio totale. Quello che conta \u00e8 quale dei tre gruppi ha il numero pi\u00f9 alto.";
+    }
   })();
 </script>
 <!-- Cloudflare Web Analytics -->
@@ -93,4 +99,4 @@ grazie_v3.txt
 <!-- End Cloudflare Web Analytics -->
 </body>
 </html>
-Visualizzazione di grazie_v3.txt.
+Visualizzazione di grazie_v4.txt.
