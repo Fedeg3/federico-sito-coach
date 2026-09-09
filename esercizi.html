@@ -1,7 +1,8 @@
 
 
 
-esercizi_v5.txt
+
+esercizi_v6.txt
 
 100%
 <!DOCTYPE html>
@@ -111,7 +112,7 @@ esercizi_v5.txt
       <!-- Registra su Brevo quale documento è stato richiesto.
            Richiede l'attributo di contatto DOCUMENTO (testo) creato in Brevo.
            Se il modulo dovesse smettere di funzionare, elimina la riga qui sotto. -->
-      <input type="hidden" name="DOCUMENTO" id="DOCUMENTO" value="attenzione" />
+      <!-- riga DOCUMENTO rimossa in v6 per diagnosi -->
 
       <div class="consenso">
         <input type="checkbox" id="consenso" required />
@@ -243,7 +244,6 @@ esercizi_v5.txt
     document.getElementById("titolo").innerHTML = d.h1a + "<span>" + d.h1b + "</span>";
     document.getElementById("promessa").textContent = d.promessa;
     document.getElementById("nomeDoc").textContent = d.nome;
-    document.getElementById("DOCUMENTO").value = slug;
     document.title = d.h1a + " " + d.h1b + " | Federico Grianti";
 
     var ul = document.getElementById("dentro");
@@ -270,6 +270,6 @@ esercizi_v5.txt
 <!-- End Cloudflare Web Analytics -->
 </body>
 </html>
-Visualizzazione di esercizi_v5.txt.
+Visualizzazione di esercizi_v6.txt.
 
 
