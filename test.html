@@ -1,5 +1,7 @@
 
-test_v1.txt
+
+
+test_v2.txt
 
 100%
 <!DOCTYPE html>
@@ -51,9 +53,10 @@ test_v1.txt
     #risultato.on{display:block}
     #risultato h2{font-family:var(--serif);font-weight:500;font-size:1.9rem;line-height:1.2;color:var(--marrone);margin:.4rem 0 .9rem}
     .punteggi{background:var(--bianco);border-radius:var(--radius);border:1px solid rgba(74,103,65,0.12);padding:1rem 1.1rem;margin:1rem 0 1.4rem}
-    .riga{display:grid;grid-template-columns:9.2rem 1fr 2.4rem;align-items:center;gap:.5rem;margin:.45rem 0;font-size:.88rem}
+    .riga{display:grid;grid-template-columns:8.8rem 1fr 3.4rem;align-items:center;gap:.5rem;margin:.45rem 0;font-size:.88rem}
     .riga .b{height:10px;background:rgba(74,103,65,0.12);border-radius:99px;overflow:hidden}
     .riga .b i{display:block;height:100%;background:var(--verde);border-radius:99px}
+    .spiega{font-size:.8rem;color:var(--grigio);line-height:1.5;margin-top:.8rem;padding-top:.7rem;border-top:1px solid rgba(74,103,65,0.12)}
     .riga.top{font-weight:700}
     .riga.top .b i{background:var(--ocra)}
     .riga span:last-child{text-align:right;color:var(--grigio)}
@@ -250,8 +253,9 @@ test_v1.txt
     html += '<div class="punteggi">';
     ["A", "B", "C"].forEach(function (g) {
       var top = res.tipo !== "L" && res.p[g] === res.max;
-      html += '<div class="riga' + (top ? " top" : "") + '"><span>' + g + " · " + esc(NOMI[g]) + '</span><span class="b"><i style="width:' + (res.p[g] / 8 * 100) + '%"></i></span><span>' + res.p[g] + "/8</span></div>";
+      html += '<div class="riga' + (top ? " top" : "") + '"><span>' + g + " · " + esc(NOMI[g]) + '</span><span class="b"><i style="width:' + (res.p[g] / 8 * 100) + '%"></i></span><span>' + res.p[g] + " su 8</span></div>";
     });
+    html += '<p class="spiega">Le 12 domande sono divise in tre gruppi da 4. Ogni risposta vale 0 (mai), 1 (a volte) o 2 (spesso): per questo ogni gruppo va da 0 a 8 punti.</p>';
     html += "</div>";
 
     html += '<p class="citazione">' + esc(pr.citazione) + "</p>";
@@ -306,4 +310,4 @@ test_v1.txt
 <!-- End Cloudflare Web Analytics -->
 </body>
 </html>
-Visualizzazione di test_v1.txt.
+Visualizzazione di test_v2.txt.
