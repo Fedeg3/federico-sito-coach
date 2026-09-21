@@ -1,8 +1,6 @@
 
 
-
-
-grazie_v4.txt
+grazie_v5.txt
 
 100%
 <!DOCTYPE html>
@@ -89,8 +87,14 @@ grazie_v4.txt
     document.getElementById("download").setAttribute("href", FILE[slug][0]);
     document.getElementById("etichetta").textContent = FILE[slug][1];
     if (slug === "test") {
+      var dl = document.getElementById("download");
+      dl.setAttribute("href", "test.html");
+      dl.removeAttribute("download");
+      dl.innerHTML = "Fai il test &rarr;";
+      document.getElementById("etichetta").textContent = "12 domande · 4 minuti · il risultato lo vedi subito";
       document.getElementById("avvisoT").textContent = "Come si fa";
-      document.getElementById("avvisoP").textContent = "Rispondi di getto: la prima risposta che ti viene \u00e8 quasi sempre quella giusta. Segna ogni gruppo separatamente \u2014 non c'\u00e8 un punteggio totale. Quello che conta \u00e8 quale dei tre gruppi ha il numero pi\u00f9 alto.";
+      document.getElementById("avvisoP").textContent = "Rispondi di getto: la prima risposta che ti viene \u00e8 quasi sempre quella giusta. Alla fine il punteggio lo calcola la pagina e ti dice da dove partire.";
+      document.querySelector(".intro").textContent = "Il test si fa qui, dal telefono: niente da stampare. Il link te l'ho mandato anche per email.";
     }
   })();
 </script>
@@ -99,4 +103,6 @@ grazie_v4.txt
 <!-- End Cloudflare Web Analytics -->
 </body>
 </html>
-Visualizzazione di grazie_v4.txt.
+Visualizzazione di grazie_v5.txt.
+
+
