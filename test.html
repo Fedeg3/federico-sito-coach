@@ -1,0 +1,309 @@
+
+test_v1.txt
+
+100%
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>È il carico, o è l'età? — Il test | Federico Grianti</title>
+  <meta name="description" content="Dodici domande per capire da dove viene quello che hai cominciato a notare. Il risultato lo vedi subito." />
+  <meta name="robots" content="noindex, follow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <style>
+    :root{--crema:#F7F2EA;--bianco:#FEFCF8;--verde:#4A6741;--verde-dim:rgba(74,103,65,0.10);--ocra:#C47F35;--ocra-dim:rgba(196,127,53,0.12);--carbone:#1E1A16;--marrone:#3D2E1E;--grigio:#7A7268;--grigio-chiaro:#B0A99E;--wa:#1F8F4E;--serif:"Playfair Display",Georgia,serif;--sans:"Lato",system-ui,sans-serif;--radius:8px}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{font-size:16px;scroll-behavior:smooth}
+    body{background:var(--crema);color:var(--carbone);font-family:var(--sans);font-weight:400;line-height:1.7}
+    a{color:inherit}
+    .topbar{padding:1.1rem 1.4rem;border-bottom:1px solid rgba(74,103,65,0.12);background:var(--bianco)}
+    .topbar a{font-family:var(--serif);font-size:1.1rem;color:var(--verde);font-weight:500;text-decoration:none}
+    .wrap{max-width:640px;margin:0 auto;padding:0 1.25rem}
+    .hero{padding:2.6rem 0 1.2rem}
+    .occhiello{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--grigio);margin-bottom:.9rem}
+    h1{font-family:var(--serif);font-size:clamp(2rem,7vw,2.8rem);font-weight:500;line-height:1.15;color:var(--marrone)}
+    h1 span{display:block;font-style:italic;color:var(--verde)}
+    .sotto{margin-top:1rem;font-size:1.05rem;color:var(--grigio)}
+    .avviso{background:var(--ocra-dim);border:1px solid rgba(196,127,53,0.25);border-radius:var(--radius);padding:1rem 1.2rem;margin:1.4rem 0 .6rem;font-size:.9rem;color:var(--marrone)}
+    .avviso strong{display:block;margin-bottom:.2rem}
+    .come{font-size:.95rem;color:var(--grigio);margin:1rem 0 .4rem}
+    .progress{position:sticky;top:0;z-index:5;background:var(--crema);padding:.7rem 0;border-bottom:1px solid rgba(74,103,65,0.12)}
+    .bar{height:6px;background:rgba(74,103,65,0.15);border-radius:99px;overflow:hidden}
+    .bar i{display:block;height:100%;width:0;background:var(--verde);transition:width .25s}
+    .progress p{font-size:.8rem;color:var(--grigio);margin-top:.35rem}
+    .q{background:var(--bianco);border:1px solid rgba(74,103,65,0.12);border-radius:var(--radius);padding:1.1rem 1.1rem 1rem;margin:1rem 0}
+    .q.manca{border-color:var(--ocra);box-shadow:0 0 0 3px var(--ocra-dim)}
+    .q .num{font-size:.75rem;letter-spacing:.12em;color:var(--grigio);text-transform:uppercase}
+    .q p.testo{font-size:1.08rem;margin:.35rem 0 .85rem;color:var(--carbone)}
+    .scelte{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem}
+    .scelte input{position:absolute;opacity:0;pointer-events:none}
+    .scelte label{display:flex;align-items:center;justify-content:center;text-align:center;min-height:52px;padding:.45rem .3rem;border:1.5px solid rgba(74,103,65,0.35);border-radius:var(--radius);font-size:.92rem;line-height:1.25;cursor:pointer;background:var(--bianco);user-select:none;-webkit-tap-highlight-color:transparent}
+    .scelte input:checked + label{background:var(--verde);border-color:var(--verde);color:var(--bianco);font-weight:700}
+    .scelte input:focus-visible + label{outline:3px solid var(--ocra);outline-offset:2px}
+    .azione{padding:1.4rem 0 3rem;text-align:center}
+    .btn{display:inline-block;width:100%;max-width:420px;background:var(--verde);color:var(--bianco);border:0;padding:1.05rem 1.4rem;font-family:var(--sans);font-size:1rem;font-weight:700;letter-spacing:.04em;border-radius:99px;cursor:pointer;text-decoration:none}
+    .btn:disabled{opacity:.45;cursor:default}
+    .nota{font-size:.82rem;color:var(--grigio-chiaro);margin-top:.7rem}
+    #risultato{display:none;padding:2rem 0 3rem}
+    #risultato.on{display:block}
+    #risultato h2{font-family:var(--serif);font-weight:500;font-size:1.9rem;line-height:1.2;color:var(--marrone);margin:.4rem 0 .9rem}
+    .punteggi{background:var(--bianco);border-radius:var(--radius);border:1px solid rgba(74,103,65,0.12);padding:1rem 1.1rem;margin:1rem 0 1.4rem}
+    .riga{display:grid;grid-template-columns:9.2rem 1fr 2.4rem;align-items:center;gap:.5rem;margin:.45rem 0;font-size:.88rem}
+    .riga .b{height:10px;background:rgba(74,103,65,0.12);border-radius:99px;overflow:hidden}
+    .riga .b i{display:block;height:100%;background:var(--verde);border-radius:99px}
+    .riga.top{font-weight:700}
+    .riga.top .b i{background:var(--ocra)}
+    .riga span:last-child{text-align:right;color:var(--grigio)}
+    .citazione{font-family:var(--serif);font-style:italic;font-size:1.25rem;color:var(--verde);border-left:3px solid var(--verde);padding-left:1rem;margin:1.2rem 0}
+    .blocco{margin:1rem 0}
+    .blocco b{color:var(--marrone)}
+    .ricerca{font-size:.86rem;color:var(--grigio);background:var(--verde-dim);border-radius:var(--radius);padding:.9rem 1rem;margin:1.2rem 0}
+    .cta{background:var(--bianco);border:1px solid rgba(74,103,65,0.15);border-radius:var(--radius);padding:1.4rem 1.2rem;margin:2rem 0 1rem;text-align:center}
+    .cta h3{font-family:var(--serif);font-weight:500;font-size:1.35rem;color:var(--marrone);margin-bottom:.6rem}
+    .cta p{font-size:.97rem;color:var(--grigio);margin-bottom:1.1rem}
+    .btn.wa{background:var(--wa)}
+    .secondari{text-align:center;font-size:.85rem;color:var(--grigio);margin-top:1.2rem}
+    .secondari a{color:var(--verde)}
+    .secondari button{background:none;border:0;color:var(--verde);text-decoration:underline;font:inherit;cursor:pointer}
+    footer{background:var(--marrone);color:rgba(255,255,255,0.5);padding:1.5rem 1.4rem;text-align:center;font-size:.72rem}
+  </style>
+</head>
+<body>
+
+<div class="topbar"><a href="index.html">Federico Grianti</a></div>
+
+<main class="wrap">
+  <section class="hero">
+    <p class="occhiello">Il test · 4 minuti</p>
+    <h1>È il carico,<span>o è l'età?</span></h1>
+    <p class="sotto">Dodici domande per capire da dove viene quello che hai cominciato a notare. Il risultato lo vedi subito, qui.</p>
+
+    <div class="avviso">
+      <strong>Prima di cominciare</strong>
+      Non è un test clinico e non misura niente di medico. Serve a separare quello che ti costa il carico da quello che attribuisci agli anni. Se hai dubbi sulla tua salute, il posto giusto è il tuo medico.
+    </div>
+
+    <p class="come">Rispondi di getto: la prima risposta che ti viene è quasi sempre quella giusta. Le risposte restano sul tuo telefono, non le salvo da nessuna parte.</p>
+  </section>
+
+  <div class="progress" aria-hidden="true">
+    <div class="bar"><i id="barra"></i></div>
+    <p id="contatore">0 di 12</p>
+  </div>
+
+  <form id="test" novalidate></form>
+
+  <div class="azione" id="azione">
+    <button class="btn" id="vedi" type="button">Vedi il mio risultato</button>
+    <p class="nota" id="notaMancanti">Rispondi a tutte e dodici le domande.</p>
+  </div>
+
+  <section id="risultato" aria-live="polite"></section>
+</main>
+
+<footer>&copy; 2025&ndash;2026 Federico Grianti · Mental Coach · federicogrianticoach.com</footer>
+
+<script>
+(function () {
+  var WA_NUMERO = "393482330700";
+
+  var DOMANDE = [
+    ["A", "Arrivo a fine giornata senza energia mentale, anche quando non ho fatto niente di faticoso fisicamente."],
+    ["B", "Il nome o la parola che non mi viene, poi arriva da sola poco dopo."],
+    ["C", "Mi capita di dire, o di pensare, «a una certa età è normale»."],
+    ["A", "Le cose che mi riescono peggio capitano quasi sempre nella seconda metà della giornata."],
+    ["B", "Entro in una stanza e non ricordo perché ci sono entrato."],
+    ["C", "Quando sbaglio qualcosa davanti a persone più giovani, ci ripenso anche dopo."],
+    ["A", "Quando devo concentrarmi su qualcosa di importante, ci arrivo dopo ore di riunioni, telefonate o decisioni."],
+    ["B", "Se mi dicono una cosa mentre sto facendo altro non la ricordo, ma se sono presente la ricordo bene."],
+    ["C", "Prima di una situazione in cui devo essere lucido, mi dico che potrei non farcela come una volta."],
+    ["A", "In vacanza, dopo qualche giorno, le stesse cose mi riescono meglio."],
+    ["B", "Rileggo la stessa riga più volte, perché mentre leggevo stavo pensando ad altro."],
+    ["C", "Ho smesso di provare qualcosa perché ho pensato che alla mia età non avesse più senso."]
+  ];
+
+  var NOMI = { A: "Il carico", B: "L'attenzione", C: "La convinzione" };
+
+  var PROFILI = {
+    A: {
+      titolo: "Il carico",
+      citazione: "Il tuo problema non è quanta lucidità hai. È quanta te ne resta quando ti serve.",
+      significa: "Arrivi ai momenti che contano già consumato. Il calo che noti è reale, ma è la coda di una giornata, non di un decennio. Il segnale più chiaro è la domanda sulla vacanza: se in vacanza le stesse cose ti riescono meglio, la capacità c'è.",
+      non: "Non vuol dire che è «solo stress» e che passerà da solo. Un carico costante che non gestisci resta un carico costante.",
+      fare: "Dieci minuti senza schermi prima di un compito che richiede lucidità. Non è rilassarsi: è scaricare il compito cognitivo prima di chiedere prestazione. Provalo per una settimana e guarda la differenza.",
+      ricerca: "Marcora, Staiano e Manning (Journal of Applied Physiology, 2009): dopo 90 minuti di compito mentale impegnativo le persone cedono il 15% prima in una prova fisica — con cuore, ossigeno e ventilazione identici. Cambiava solo quanto costava."
+    },
+    B: {
+      titolo: "L'attenzione",
+      citazione: "Non stai perdendo ricordi. Non li stai registrando.",
+      significa: "Quello che chiami memoria, quasi sempre, è attenzione. Se la parola arriva da sola trenta secondi dopo, il ricordo non era perso: era solo più lento ad arrivare. E ciò che si ascolta mentre si fa altro non viene mai registrato: non c'è niente da recuperare.",
+      non: "Questo profilo non esclude nulla di medico e non è una rassicurazione clinica. Se il fenomeno è recente, in peggioramento rapido, o se ne accorgono gli altri prima di te, parlane con il tuo medico.",
+      fare: "Una cosa alla volta per quindici minuti, senza secondo schermo. E quando il nome non arriva: non cercarlo, dì il contorno («quello che seguiva il progetto di Torino») e continua a parlare. Il silenzio è ciò che ti mette sotto esame.",
+      ricerca: "Burke, MacKay, Worthley e Wade (Journal of Memory and Language, 1991): nella parola sulla punta della lingua il significato è accessibile, manca l'accesso al suono. Il collegamento trasmette più piano, non è rotto."
+    },
+    C: {
+      titolo: "La convinzione",
+      citazione: "La frase non descrive quello che ti succede. Ne fa parte.",
+      significa: "Prima della prestazione arriva una frase, e quella frase entra nel risultato. «A una certa età», detto abbastanza volte, smette di essere un commento e diventa un ingrediente.",
+      non: "Non è «pensa positivo». Nessuno guarisce niente con l'ottimismo, e chi te lo racconta ti sta vendendo qualcosa. Significa che una variabile che credevi neutra non lo è.",
+      fare: "Per una settimana, ogni volta che stai per dire «a una certa età», fermati e finisci la frase in un altro modo: «non lo so ancora». Non è ottimismo: è riaprire un'indagine che avevi chiuso.",
+      ricerca: "Silvestri e colleghi (European Heart Journal, 2003): stesso farmaco, stessa dose, 96 uomini di 52 anni. A chi era stato informato di un possibile effetto collaterale quell'effetto è comparso dieci volte più spesso (31,2% contro 3,1%). E due meta-analisi — Lamont, Swift e Abrams (Psychology and Aging, 2015) e Armstrong e colleghi (The Gerontologist, 2017) — mostrano che ricordare lo stereotipo sull'età peggiora in modo misurabile la memoria di lavoro. Effetti piccoli, ma sistematici."
+    },
+    M: {
+      titolo: "Zona mista",
+      citazione: "È il caso più comune, e non è una via di mezzo: è un circolo.",
+      significa: "Arrivi carico, quindi registri meno; registri meno, quindi ti accorgi di dimenticare; te ne accorgi, quindi ti dici che è l'età; e quella frase peggiora la prestazione successiva. Ogni pezzo alimenta il seguente.",
+      non: "",
+      fare: "Non attaccarli tutti insieme. Parti dal gruppo con il punteggio più alto, anche di un solo punto, e lavora solo su quello per due settimane. Un circolo si rompe in un punto, non in tre.",
+      ricerca: ""
+    },
+    L: {
+      titolo: "Nessun gruppo pesa davvero",
+      citazione: "Punteggi bassi in tutti e tre i gruppi.",
+      significa: "Da queste dodici domande non emerge un meccanismo che ti stia costando qualcosa di rilevante. È una buona notizia, e va presa per quello che è: una fotografia di oggi.",
+      non: "Non è una misura della tua salute e non esclude niente di medico. Se hai notato qualcosa che ti preoccupa e queste domande non l'hanno toccato, parlane con il tuo medico.",
+      fare: "Rifallo fra un mese, nel periodo più pieno della tua agenda. Il carico si vede quando c'è.",
+      ricerca: ""
+    }
+  };
+
+  var SCALA = [["0", "Mai o raramente"], ["1", "A volte"], ["2", "Spesso"]];
+  var form = document.getElementById("test");
+
+  DOMANDE.forEach(function (d, i) {
+    var n = i + 1;
+    var box = document.createElement("div");
+    box.className = "q";
+    box.id = "q" + n;
+    var html = '<p class="num">Domanda ' + n + ' di 12</p><p class="testo">' + d[1] + '</p><div class="scelte" role="radiogroup" aria-label="Domanda ' + n + '">';
+    SCALA.forEach(function (s) {
+      var id = "r" + n + "_" + s[0];
+      html += '<input type="radio" name="d' + n + '" id="' + id + '" value="' + s[0] + '"><label for="' + id + '">' + s[1] + '</label>';
+    });
+    html += "</div>";
+    box.innerHTML = html;
+    form.appendChild(box);
+  });
+
+  function risposte() {
+    var r = [];
+    for (var n = 1; n <= 12; n++) {
+      var sel = form.querySelector('input[name="d' + n + '"]:checked');
+      r.push(sel ? parseInt(sel.value, 10) : null);
+    }
+    return r;
+  }
+
+  function aggiorna() {
+    var r = risposte();
+    var fatte = r.filter(function (x) { return x !== null; }).length;
+    document.getElementById("barra").style.width = (fatte / 12 * 100) + "%";
+    document.getElementById("contatore").textContent = fatte + " di 12";
+    document.getElementById("notaMancanti").textContent = fatte === 12 ? "Pronto." : "Rispondi a tutte e dodici le domande.";
+  }
+
+  form.addEventListener("change", function (e) {
+    var box = e.target.closest(".q");
+    if (box) box.classList.remove("manca");
+    aggiorna();
+  });
+
+  function esc(t) { return String(t).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+
+  function calcola(r) {
+    var p = { A: 0, B: 0, C: 0 };
+    DOMANDE.forEach(function (d, i) { p[d[0]] += r[i]; });
+    var ordine = ["A", "B", "C"].sort(function (x, y) { return p[y] - p[x]; });
+    var max = p[ordine[0]], secondo = p[ordine[1]];
+    var tipo;
+    if (max <= 2) tipo = "L";
+    else if (max - secondo <= 1) tipo = "M";
+    else tipo = ordine[0];
+    var alti = ["A", "B", "C"].filter(function (g) { return p[g] === max; });
+    return { p: p, tipo: tipo, primo: ordine[0], secondo: ordine[1], max: max, alti: alti };
+  }
+
+  function messaggioWA(res) {
+    var dett = "A " + res.p.A + " · B " + res.p.B + " · C " + res.p.C;
+    var esito;
+    if (res.tipo === "L") esito = "punteggi bassi in tutti e tre i gruppi";
+    else if (res.tipo === "M") esito = "zona mista (" + res.primo + " e " + res.secondo + " vicini)";
+    else esito = res.tipo + " — " + NOMI[res.tipo].toLowerCase();
+    return "Ciao Federico, ho fatto il test «Carico o età?». Il mio risultato: " + esito + " (" + dett + ").";
+  }
+
+  function mostra(res) {
+    var pr = PROFILI[res.tipo];
+    var html = '<p class="occhiello">Il tuo risultato</p>';
+
+    if (res.tipo === "M") {
+      html += "<h2>Zona mista: " + esc(NOMI[res.primo].toLowerCase()) + " e " + esc(NOMI[res.secondo].toLowerCase()) + "</h2>";
+    } else if (res.tipo === "L") {
+      html += "<h2>" + esc(pr.titolo) + "</h2>";
+    } else {
+      html += "<h2>Il tuo gruppo più alto è " + res.tipo + ": " + esc(pr.titolo.toLowerCase()) + "</h2>";
+    }
+
+    html += '<div class="punteggi">';
+    ["A", "B", "C"].forEach(function (g) {
+      var top = res.tipo !== "L" && res.p[g] === res.max;
+      html += '<div class="riga' + (top ? " top" : "") + '"><span>' + g + " · " + esc(NOMI[g]) + '</span><span class="b"><i style="width:' + (res.p[g] / 8 * 100) + '%"></i></span><span>' + res.p[g] + "/8</span></div>";
+    });
+    html += "</div>";
+
+    html += '<p class="citazione">' + esc(pr.citazione) + "</p>";
+    html += '<p class="blocco"><b>Cosa significa.</b> ' + esc(pr.significa) + "</p>";
+    if (pr.non) html += '<p class="blocco"><b>Cosa NON significa.</b> ' + esc(pr.non) + "</p>";
+    html += '<p class="blocco"><b>La prima cosa da fare.</b> ' + esc(pr.fare) + "</p>";
+    if (pr.ricerca) html += '<p class="ricerca"><b>La ricerca dietro.</b> ' + esc(pr.ricerca) + "</p>";
+
+    if (res.tipo === "M") {
+      var parti = res.alti.length === 1 ? res.primo : res.alti.join(" o ");
+      html += '<p class="blocco">Nel tuo caso il punto da cui partire è il gruppo <b>' + parti + "</b>.</p>";
+    }
+
+    var wa = "https://wa.me/" + WA_NUMERO + "?text=" + encodeURIComponent(messaggioWA(res));
+    html += '<div class="cta"><h3>Vuoi sapere da dove partirei io?</h3>' +
+      "<p>Mandami il risultato su WhatsApp: il messaggio è già scritto, devi solo premere invio. Ti rispondo io, di persona, con la prima mossa per il tuo caso.</p>" +
+      '<a class="btn wa" id="btnWA" href="' + wa + '" target="_blank" rel="noopener">Mandami il risultato su WhatsApp</a></div>';
+
+    html += '<p class="secondari">Preferisci la carta? <a href="carico-o-eta.pdf">Scarica la versione da stampare</a><br/>' +
+      '<button type="button" id="rifai">Rifai il test</button></p>';
+
+    var box = document.getElementById("risultato");
+    box.innerHTML = html;
+    box.classList.add("on");
+    document.getElementById("rifai").addEventListener("click", function () {
+      form.reset();
+      box.classList.remove("on");
+      box.innerHTML = "";
+      aggiorna();
+      window.scrollTo(0, 0);
+    });
+    box.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  document.getElementById("vedi").addEventListener("click", function () {
+    var r = risposte();
+    var primaMancante = r.indexOf(null);
+    if (primaMancante !== -1) {
+      r.forEach(function (x, i) { if (x === null) document.getElementById("q" + (i + 1)).classList.add("manca"); });
+      document.getElementById("q" + (primaMancante + 1)).scrollIntoView({ behavior: "smooth", block: "center" });
+      return;
+    }
+    mostra(calcola(r));
+  });
+
+  aggiorna();
+  window.__testGrianti = { calcola: calcola, messaggioWA: messaggioWA };
+})();
+</script>
+<!-- Cloudflare Web Analytics -->
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "a7d8d8e46abb44df91eb2146f98ba45f"}'></script>
+<!-- End Cloudflare Web Analytics -->
+</body>
+</html>
+Visualizzazione di test_v1.txt.
