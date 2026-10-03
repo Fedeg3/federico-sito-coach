@@ -1,0 +1,27 @@
+{
+  "_note": "Stile reel di Federico. Aggiornato dopo il Reel #11: sottotitoli più bassi (erano sulla bocca) e zoom in/out frequenti.",
+  "font": "Montserrat Thin Black",
+  "whisper_model": "large-v3-turbo",
+  "whisper_prompt": "Federico, ciclismo, salita, cronometro, coach, DIALOGO.",
+  "pause_keep_s": 0.12,
+  "subs": {
+    "size": 82,
+    "margin_v": 290,
+    "_margin_v_note": "Reel #11 aveva 400 = sottotitoli sulla bocca nelle inquadrature strette. 290 li porta sul petto, ancora sopra la zona caption di Instagram (ultimi ~280 px).",
+    "max_words": 3,
+    "max_chars": 15,
+    "keywords_regex": "^(tu|federico|dialogo|secondi|nome)$",
+    "fixes": {"iscrivo": "scrivo"}
+  },
+  "titles": {
+    "size": 70,
+    "margin_v": 240
+  },
+  "zoom": {
+    "push": 1.10,
+    "punch": 1.12,
+    "face_y": 0.40,
+    "long_piece_s": 6.0,
+    "target_shot_s": 4.0
+  }
+}
