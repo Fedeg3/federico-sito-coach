@@ -123,26 +123,41 @@ def _vf_zoom(mode, d):
             f":d=1:s=1080x1920:fps=30")
 
 
-def _graph(plan, ass=None):
-    inputs, idx = [], {}
-    for p in plan:
-        if p[0] not in idx:
-            idx[p[0]] = len(idx); inputs += ['-i', W(f'raw/{p[0]}.mp4')]
-    fc, cat = [], ''
-    for i, (c, a, b, _, mode) in enumerate(plan):
-        k, d = idx[c], b - a
-        fc.append(f'[{k}:v]trim={a}:{b},setpts=PTS-STARTPTS,{_vf_zoom(mode, d)},fps=30,setsar=1[v{i}]')
-        fc.append(f'[{k}:a]atrim={a}:{b},asetpts=PTS-STARTPTS,afade=t=in:d=0.02,'
-                  f'afade=t=out:st={max(d - 0.03, 0):.3f}:d=0.03[a{i}]')
-        cat += f'[v{i}][a{i}]'
-    fc.append(f'{cat}concat=n={len(plan)}:v=1:a=1[vc][ac]')
+def _dur(a, b):
+    """Durata del pezzo arrotondata a fotogrammi interi (30 fps): niente deriva dei sottotitoli."""
+    return max(round((b - a) * 30), 1) / 30
+
+
+def _render(plan, out, ass=None, final=False):
+    """Un pezzo alla volta (poca RAM: un unico filtergraph con 25 trim va in OOM), poi concat."""
+    import concurrent.futures as cf
+    os.makedirs(W('parts'), exist_ok=True)
+    tag = 'f' if final else 'r'
+
+    def one(i):
+        c, a, b, _, mode = plan[i]
+        d = _dur(a, b)
+        p = W(f'parts/{tag}{i:03d}.mkv')
+        sh('ffmpeg', '-v', 'error', '-y', '-ss', f'{a:.3f}', '-i', W(f'raw/{c}.mp4'), '-t', f'{d:.4f}',
+           '-vf', f'{_vf_zoom(mode, d)},fps=30,setsar=1',
+           '-af', f'afade=t=in:d=0.02,afade=t=out:st={max(d - 0.03, 0):.3f}:d=0.03,aresample=48000',
+           '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '14', '-pix_fmt', 'yuv420p',
+           '-c:a', 'pcm_s16le', '-ac', '1', p)
+        return p
+    with cf.ThreadPoolExecutor(2) as ex:
+        parts = list(ex.map(one, range(len(plan))))
+    lst = W(f'parts/{tag}.txt')
+    open(lst, 'w').write(''.join(f"file '{p}'\n" for p in parts))
     vpost = 'eq=contrast=1.04:saturation=1.08'
     if ass:
         vpost += f",subtitles={ass}:fontsdir={W('fonts')}"
-    fc.append(f'[vc]{vpost}[v]')
-    fc.append('[ac]highpass=f=80,acompressor=threshold=-20dB:ratio=3:attack=5:release=120,'
-              'loudnorm=I=-14:TP=-1.5:LRA=9,aresample=48000[a]')
-    return inputs, ';'.join(fc)
+    apost = ('highpass=f=80,acompressor=threshold=-20dB:ratio=3:attack=5:release=120,'
+             'loudnorm=I=-14:TP=-1.5:LRA=9,aresample=48000')
+    venc = (['-preset', 'slow', '-crf', '20', '-maxrate', '12M', '-bufsize', '24M'] if final
+            else ['-preset', 'veryfast', '-crf', '22'])
+    sh('ffmpeg', '-v', 'error', '-y', '-f', 'concat', '-safe', '0', '-i', lst, '-vf', vpost, '-af', apost,
+       '-c:v', 'libx264', *venc, '-pix_fmt', 'yuv420p', '-movflags', '+faststart',
+       '-c:a', 'aac', '-b:a', '192k', '-ar', '48000', out)
 
 
 def cmd_cut(edl_path):
@@ -152,12 +167,10 @@ def cmd_cut(edl_path):
     json.dump(plan, open(W('pieces.json'), 'w'))
     for p in plan:
         p[4] = 'wide'          # la rough cut serve solo per la trascrizione: niente zoom
-    inputs, fc = _graph(plan)
-    sh('ffmpeg', '-v', 'error', '-y', *inputs, '-filter_complex', fc, '-map', '[v]', '-map', '[a]',
-       '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '20', '-c:a', 'aac', '-b:a', '192k', W('rough.mp4'))
+    _render(plan, W('rough.mp4'))
     t, marks = 0, []
     for c, a, b, blk, _ in json.load(open(W('pieces.json'))):
-        marks.append([round(t, 2), blk, c]); t += b - a
+        marks.append([round(t, 2), blk, c]); t += _dur(a, b)
     json.dump(marks, open(W('marks.json'), 'w'))
     print(f'{len(plan)} pezzi, durata {t:.1f}s'); print(marks)
 
@@ -167,10 +180,11 @@ def _ts(t):
     return f'{int(t // 3600)}:{int(t % 3600 // 60):02d}:{t % 60:05.2f}'
 
 
-def cmd_ass(ov_path):
+def cmd_ass(ov_path, keywords=None, fix=()):
     S = STYLE['subs']; T = STYLE['titles']
     raw = json.load(open(W('rough_words.json')))
-    fixes = S.get('fixes', {})
+    fixes = dict(S.get('fixes', {}))
+    fixes.update(dict(f.split('=', 1) for f in fix))
     ws = []
     for s, e, t in raw:
         t = t.strip()
@@ -178,7 +192,8 @@ def cmd_ass(ov_path):
             ws[-1][1] = e; ws[-1][2] += t
         else:
             ws.append([s, e, fixes.get(t, t)])
-    key = re.compile(S['keywords_regex'], re.I)
+    kw = S['keywords_regex'] if not keywords else S['keywords_regex'][:-2] + '|' + keywords + ')$'
+    key = re.compile(kw, re.I)
     chunks, cur = [], []
     for i, w in enumerate(ws):
         cur.append(w)
@@ -224,11 +239,8 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 # ---------------------------------------------------------------- render/export
 def cmd_render(name):
     plan = json.load(open(W('pieces.json')))
-    inputs, fc = _graph(plan, ass=W('reel.ass'))
     out = W(f'{name}.mp4')
-    sh('ffmpeg', '-v', 'error', '-y', *inputs, '-filter_complex', fc, '-map', '[v]', '-map', '[a]',
-       '-c:v', 'libx264', '-preset', 'slow', '-crf', '20', '-maxrate', '12M', '-bufsize', '24M',
-       '-pix_fmt', 'yuv420p', '-movflags', '+faststart', '-c:a', 'aac', '-b:a', '192k', '-ar', '48000', out)
+    _render(plan, out, ass=W('reel.ass'), final=True)
     print(out)
 
 
@@ -268,7 +280,9 @@ if __name__ == '__main__':
     for c in ('transcribe', 'words'):
         sp.add_parser(c).add_argument('--prompt', default=STYLE['whisper_prompt'])
     sp.add_parser('cut').add_argument('edl')
-    sp.add_parser('ass').add_argument('overlays')
+    p = sp.add_parser('ass'); p.add_argument('overlays')
+    p.add_argument('--keywords', help='parole chiave extra in giallo, es. "test|giudizio"')
+    p.add_argument('--fix', nargs='*', default=[], help='correzioni Whisper, es. domandi=domande')
     for c in ('render', 'export'):
         p = sp.add_parser(c); p.add_argument('--name', default='reel')
         if c == 'export':
@@ -280,7 +294,7 @@ if __name__ == '__main__':
      'transcribe': lambda: cmd_transcribe(ARGS.prompt),
      'words': lambda: cmd_words(ARGS.prompt),
      'cut': lambda: cmd_cut(ARGS.edl),
-     'ass': lambda: cmd_ass(ARGS.overlays),
+     'ass': lambda: cmd_ass(ARGS.overlays, ARGS.keywords, ARGS.fix),
      'render': lambda: cmd_render(ARGS.name),
      'export': lambda: cmd_export(ARGS.name, ARGS.outdir),
      'preview': lambda: cmd_preview(ARGS.times, ARGS.src)}[ARGS.cmd]()

@@ -25,9 +25,11 @@ Script: `scripts/reel.py` (stile in `style.json`, esempio completo in `examples/
    - Se il copione aggiornato accorcia un blocco (es. togliere esempi) e il clip ha la versione lunga, taglia le frasi in più invece di chiedere di rigirare.
    - Le frasi del copione che **non sono state registrate** non si possono inventare: segnalale a Federico a fine lavoro.
 4. `reel.py cut edl.json`: rough cut e `pieces.json` con il piano degli zoom. Poi `reel.py words` per ritrascrivere il montato: **rileggi il testo** e verifica che ogni giunta suoni naturale.
-5. Scrivi `overlays.json` = `[inizio, fine, "TESTO"]` sulla timeline del montato, usando i tempi di `rough_words.json`. Markup: `{Y}` giallo, `{W}` bianco, `\n` a capo, `{STRIKE}…{/STRIKE}` barrato. Poi `reel.py ass overlays.json`.
+5. Scrivi `overlays.json` = `[inizio, fine, "TESTO"]` sulla timeline del montato, usando i tempi di `rough_words.json`. Markup: `{Y}` giallo, `{W}` bianco, `\n` a capo, `{STRIKE}…{/STRIKE}` barrato. Poi `reel.py ass overlays.json --keywords "parola|altra" --fix sbagliata=giusta` (parole chiave gialle e correzioni Whisper specifiche del reel).
 6. `reel.py render --name ReelNN_Titolo` e `reel.py preview <secondi...> --src <work>/ReelNN_Titolo.mp4`: guarda il contact sheet (Read sull'immagine) e controlla posizione dei testi, zoom e volto.
 7. `reel.py export --name ReelNN_Titolo --outdir <scratchpad>`: versione da ~28 MB per SendUserFile (limite 30 MB). Instagram ricomprime comunque. Invia anche `ReelNN_caption.txt`.
+
+Nota tecnica: il render lavora un pezzo alla volta e poi concatena (un unico filtergraph con 20+ tagli va in OOM a 15 GB di RAM). Le durate sono arrotondate a fotogrammi interi, così i sottotitoli non slittano.
 
 ## Regole di stile (approvate da Federico)
 

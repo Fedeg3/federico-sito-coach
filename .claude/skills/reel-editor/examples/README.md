@@ -4,3 +4,9 @@
 - `reel11_overlays.json`: titoli sulla timeline del montato (109,5 s).
 - `reel11_caption.txt`: caption pubblicata.
 - Feedback di Federico: "risultato spettacolare". Da migliorare: più zoom in/out, sottotitoli più in basso (erano sulla bocca). Entrambi già applicati in `style.json`.
+
+# Esempio: Reel #12 «Lascio spazio ai giovani» (6 ottobre 2026)
+
+- 7 clip puliti, senza ripetizioni: un pezzo per blocco; domanda e CTA 2 nello stesso clip.
+- `ass` lanciato con `--keywords "test|giudizio|rispetto|colpa|guardato|saggezza|giovani" --fix domandi=domande test=TEST test,=TEST,`.
+- Inquadratura diversa (siepe, volto più in alto): titoli e sottotitoli con lo stile standard funzionano lo stesso.
