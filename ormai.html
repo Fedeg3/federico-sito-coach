@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>«Ormai sono così» — Quaderno n. 1 · Lavoro | Federico Grianti</title>
+  <meta name="description" content="10 domande e 10 esercizi per chi, dopo i 50 anni, sul lavoro ha smesso di credere di poter cambiare. Quaderno gratuito di Federico Grianti, mental coach. Esce a fine ottobre." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://federicogrianticoach.com/ormai.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://federicogrianticoach.com/ormai.html" />
+  <meta property="og:title" content="«Ormai sono così» — il quaderno gratuito sul lavoro dopo i 50" />
+  <meta property="og:description" content="10 domande e 10 esercizi per chi, sul lavoro, ha smesso di credere di poter cambiare. Lascia la tua email: te lo mando appena esce." />
+  <meta property="og:image" content="https://federicogrianticoach.com/copertina-ormai-sono-cosi.jpg" />
+  <meta property="og:locale" content="it_IT" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <style>
+    :root{--crema:#F7F2EA;--bianco:#FEFCF8;--verde:#4A6741;--verde-scuro:#1E3F2E;--ocra:#C47F35;--carbone:#1E1A16;--marrone:#3D2E1E;--grigio:#7A7268;--grigio-chiaro:#B0A99E;--serif:"Playfair Display",Georgia,serif;--sans:"Lato",system-ui,sans-serif;--radius:6px;--tr:0.38s cubic-bezier(0.25,0.46,0.45,0.94)}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;font-size:16px}
+    body{background:var(--crema);color:var(--carbone);font-family:var(--sans);font-weight:300;line-height:1.75;overflow-x:hidden}
+    ::selection{background:var(--verde);color:var(--bianco)}
+    img{max-width:100%;height:auto;display:block}
+    a{color:inherit}
+    body::after{content:"";position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:9998;opacity:.5}
+
+    .marchio{padding:1.4rem 3rem;font-family:var(--serif);font-size:1.05rem;color:var(--verde);border-bottom:1px solid rgba(74,103,65,0.12);background:var(--bianco)}
+
+    /* ---------- HERO: copertina + titolo + modulo ---------- */
+    .hero{background:var(--bianco);padding:2.5rem 3rem 3.5rem;display:grid;grid-template-columns:.75fr 1.25fr;gap:4rem;align-items:center;max-width:1200px;margin:0 auto}
+    .hero-wrap{background:var(--bianco)}
+    .copertina{position:relative}
+    .copertina img{width:100%;max-width:330px;margin:0 auto;border-radius:3px;box-shadow:0 2px 4px rgba(30,26,22,.08),0 22px 50px rgba(30,26,22,.22);transform:rotate(-1.5deg)}
+    .occhiello{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ocra);margin-bottom:1.2rem;display:flex;align-items:center;gap:1rem;font-weight:700}
+    .occhiello::before{content:"";display:block;width:30px;height:1px;background:var(--ocra)}
+    h1{font-family:var(--serif);font-size:clamp(2.4rem,4.5vw,3.4rem);line-height:1.1;font-weight:500;color:var(--verde-scuro);margin-bottom:.8rem}
+    .sottotitolo{font-family:var(--serif);font-style:italic;font-size:1.15rem;color:var(--marrone);line-height:1.6;margin-bottom:1.2rem;max-width:34em}
+    .uscita{font-size:.93rem;color:var(--grigio);line-height:1.8;padding-left:1.1rem;border-left:2px solid var(--ocra);margin-bottom:1.5rem}
+    .uscita b{color:var(--marrone);font-weight:700}
+
+    .card{background:var(--crema);border:1.5px solid rgba(74,103,65,0.2);border-radius:var(--radius);padding:1.8rem 2rem;box-shadow:0 10px 40px rgba(30,26,22,0.07)}
+    .card h2{font-family:var(--serif);font-size:1.35rem;font-weight:500;color:var(--marrone);margin-bottom:.35rem;line-height:1.3}
+    .card .sub{font-size:.87rem;color:var(--grigio);line-height:1.7;margin-bottom:1.4rem}
+    .campi{display:grid;grid-template-columns:1fr 1.4fr;gap:.9rem}
+    .campo label{display:block;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--grigio);margin-bottom:.45rem}
+    .campo input{width:100%;background:var(--bianco);border:1.5px solid rgba(74,103,65,0.2);color:var(--carbone);padding:.9rem 1.1rem;font-family:var(--sans);font-size:.95rem;border-radius:var(--radius);outline:none;transition:border-color .3s;-webkit-appearance:none}
+    .campo input:focus{border-color:var(--verde)}
+    .consenso{display:flex;align-items:flex-start;gap:.7rem;margin:1.1rem 0 1.3rem}
+    .consenso input[type=checkbox]{margin-top:.35rem;width:16px;height:16px;flex-shrink:0;accent-color:var(--verde);cursor:pointer}
+    .consenso label{font-size:.76rem;color:var(--grigio);line-height:1.6;cursor:pointer}
+    .btn{display:inline-block;width:100%;text-align:center;background:var(--verde);color:var(--bianco);padding:1.05rem 2rem;font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border-radius:99px;border:1.5px solid var(--verde);cursor:pointer;font-family:var(--sans);transition:var(--tr);text-decoration:none}
+    .btn:hover{background:transparent;color:var(--verde);transform:translateY(-2px)}
+    .btn:disabled{opacity:.6;cursor:wait;transform:none}
+    .rassicura{font-size:.74rem;color:var(--grigio-chiaro);text-align:center;margin-top:.9rem;line-height:1.6}
+    .input--hidden{position:absolute!important;left:-9999px!important;opacity:0!important;height:0!important;width:0!important}
+
+    /* ---------- Sezioni ---------- */
+    section{padding:5rem 3rem}
+    .inner{max-width:900px;margin:0 auto}
+    .etichetta{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--verde);margin-bottom:1rem;display:flex;align-items:center;gap:1rem;font-weight:700}
+    .etichetta::before{content:"";display:block;width:30px;height:1px;background:var(--verde)}
+    h3{font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.3rem);font-weight:500;color:var(--marrone);line-height:1.25;margin-bottom:1.4rem}
+    p.testo{font-size:1rem;color:var(--grigio);line-height:1.9;margin-bottom:1.1rem;max-width:42em}
+    p.testo b{color:var(--marrone);font-weight:700}
+
+    /* Storia */
+    .storia{background:var(--verde-scuro);color:rgba(255,255,255,.82)}
+    .storia .etichetta{color:var(--ocra)}
+    .storia .etichetta::before{background:var(--ocra)}
+    .storia p.testo{color:rgba(255,255,255,.78)}
+    .storia p.testo b{color:#fff}
+    .citazione{font-family:var(--serif);font-style:italic;font-size:clamp(1.4rem,2.8vw,2rem);line-height:1.4;color:#fff;margin:2rem 0;padding-left:1.4rem;border-left:3px solid var(--ocra);max-width:30em}
+
+    /* Come è fatto */
+    .formato{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin:2rem 0 3rem}
+    .numero{background:var(--bianco);border-radius:var(--radius);padding:1.4rem 1.2rem;text-align:center;border:1px solid rgba(74,103,65,0.12)}
+    .numero strong{display:block;font-family:var(--serif);font-size:2.2rem;font-weight:500;color:var(--verde-scuro);line-height:1.1}
+    .numero span{font-size:.8rem;color:var(--grigio);line-height:1.5;display:block;margin-top:.4rem}
+    .parti{list-style:none;counter-reset:p;display:grid;gap:.8rem}
+    .parti li{counter-increment:p;display:grid;grid-template-columns:2.6rem 1fr;gap:1rem;align-items:start;background:var(--bianco);padding:1.1rem 1.3rem;border-radius:var(--radius);border:1px solid rgba(74,103,65,0.12)}
+    .parti li::before{content:counter(p);font-family:var(--serif);font-size:1.5rem;color:var(--ocra);line-height:1.2}
+    .parti b{display:block;color:var(--marrone);font-weight:700;font-size:.95rem}
+    .parti span{font-size:.9rem;color:var(--grigio);line-height:1.7}
+
+    /* Contenuti */
+    .contenuti{background:var(--bianco)}
+    .domande{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin:2rem 0 3rem}
+    .domanda{background:var(--crema);border-top:3px solid var(--ocra);border-radius:var(--radius);padding:1.6rem 1.4rem}
+    .domanda q{font-family:var(--serif);font-style:italic;font-size:1.12rem;line-height:1.5;color:var(--marrone);quotes:"«" "»"}
+    .domanda small{display:block;margin-top:1rem;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--grigio-chiaro)}
+    .indice{display:grid;grid-template-columns:1fr 1fr;gap:0 2.5rem;list-style:none;border-top:1px solid rgba(74,103,65,0.15)}
+    .indice li{display:flex;gap:.9rem;padding:.75rem 0;border-bottom:1px solid rgba(74,103,65,0.15);font-size:.95rem;color:var(--marrone)}
+    .indice li em{font-style:normal;font-family:var(--serif);color:var(--ocra);min-width:1.6rem}
+    .indice-intro{font-size:.9rem;color:var(--grigio);margin-bottom:1rem}
+
+    /* Vantaggi */
+    .vantaggi{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem 2.5rem;list-style:none;margin-top:1.5rem}
+    .vantaggi li{display:flex;gap:.9rem;font-size:.97rem;color:var(--grigio);line-height:1.75}
+    .vantaggi li::before{content:"◆";color:var(--ocra);font-size:.45rem;flex-shrink:0;margin-top:.7rem}
+    .vantaggi b{color:var(--marrone);font-weight:700}
+    .ricerca{margin-top:3rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+    .ricerca div{border-left:2px solid var(--verde);padding:.2rem 0 .2rem 1.1rem}
+    .ricerca strong{display:block;font-family:var(--serif);font-size:1.8rem;font-weight:500;color:var(--verde-scuro);line-height:1.2}
+    .ricerca span{font-size:.85rem;color:var(--grigio);line-height:1.6}
+
+    /* Chi sono */
+    .chi{background:var(--bianco);border-top:1px solid rgba(74,103,65,0.12)}
+    .chi-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:180px 1fr;gap:2.5rem;align-items:center}
+    .chi img{width:180px;height:180px;object-fit:cover;object-position:top;border-radius:50%;background:#fff;border:1px solid rgba(74,103,65,0.15)}
+
+    /* Cosa succede dopo + modulo finale */
+    .dopo{background:var(--crema)}
+    .passi{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin:2rem 0 3rem}
+    .passi li{background:var(--bianco);border-radius:var(--radius);padding:1.5rem 1.3rem;border:1px solid rgba(74,103,65,0.12)}
+    .passi b{display:block;font-family:var(--serif);font-size:1.05rem;font-weight:500;color:var(--verde-scuro);margin-bottom:.4rem}
+    .passi span{font-size:.88rem;color:var(--grigio);line-height:1.7}
+    .finale{text-align:center}
+    .finale .btn{max-width:360px}
+    .avviso{font-size:.8rem;color:var(--grigio-chiaro);line-height:1.8;max-width:42em;margin:3rem auto 0;text-align:center}
+
+    footer{background:var(--marrone);color:rgba(255,255,255,0.45);padding:2rem 3rem;text-align:center;font-size:.72rem;line-height:1.8}
+
+    @media(max-width:900px){
+      .marchio{padding:1.1rem 1.4rem}
+      .hero{grid-template-columns:1fr;gap:2.2rem;padding:2.2rem 1.4rem 3rem}
+      .copertina img{max-width:240px}
+      section{padding:3.5rem 1.4rem}
+      .card{padding:1.7rem 1.3rem}
+      .campi{grid-template-columns:1fr}
+      .formato{grid-template-columns:1fr 1fr}
+      .domande,.passi,.ricerca{grid-template-columns:1fr}
+      .indice,.vantaggi{grid-template-columns:1fr}
+      .chi-inner{grid-template-columns:1fr;text-align:center;gap:1.4rem}
+      .chi img{margin:0 auto;width:150px;height:150px}
+      .chi p.testo{margin-left:auto;margin-right:auto}
+      footer{padding:1.8rem 1.4rem}
+    }
+  </style>
+</head>
+<body>
+
+<div class="marchio">Federico Grianti</div>
+
+<!-- ============ HERO ============ -->
+<div class="hero-wrap">
+<div class="hero">
+  <div class="copertina">
+    <img src="copertina-ormai-sono-cosi.jpg" alt="Copertina del quaderno «Ormai sono così» di Federico Grianti" width="800" height="1131" />
+  </div>
+
+  <div>
+    <p class="occhiello">Quaderno n. 1 · Lavoro · Gratuito</p>
+    <h1>«Ormai sono così»</h1>
+    <p class="sottotitolo">10 domande e 10 esercizi per chi, dopo i 50 anni, sul lavoro ha smesso di credere di poter cambiare.</p>
+    <p class="uscita">Esce a <b>fine ottobre</b>. Lascia il tuo nome e la tua email: <b>te lo mando appena è pronto</b>, senza che tu debba fare altro.</p>
+
+    <div class="card" id="modulo">
+      <h2>Tienimi una copia</h2>
+      <p class="sub">È gratis. Ti arriva via email il giorno dell'uscita.</p>
+
+      <!-- MODULO BREVO «Quaderno Lavoro» — lista PRENOTO, campi NOME + EMAIL.
+           L'indirizzo dopo action= è il "link condivisibile" del modulo creato in Brevo. -->
+      <form id="formOrmai" action="https://49660902.sibforms.com/serve/MUIFABMvm4LbsjP3GSL3nvcFEBbC55aEpZgpSObP80q9DjBTsn8VkVu0hsL6Q5k-HchoNaXhH5IiLhMa5yw1i11yuIXessc7aX5W2UGmzf1Dm_XkokSs0qkx2XDkvXp53UX76rdjDExm0CNip8c7GNq8DbtUgebEqmn8aGCXgo-DxfwIKTf5NO8ZvhMCuBOKvSEW9Tgcujwqxdo2AA==" method="POST" autocomplete="off">
+        <div class="campi">
+          <div class="campo">
+            <label for="NOME">Il tuo nome</label>
+            <input type="text" id="NOME" name="NOME" placeholder="Nome" autocomplete="given-name" required />
+          </div>
+          <div class="campo">
+            <label for="EMAIL">La tua email</label>
+            <input type="email" id="EMAIL" name="EMAIL" placeholder="la@tua.email" autocomplete="email" required />
+          </div>
+        </div>
+
+        <input type="text" name="email_address_check" value="" class="input--hidden" tabindex="-1" aria-hidden="true" autocomplete="off" readonly />
+        <input type="hidden" name="locale" value="it" />
+
+        <div class="consenso">
+          <input type="checkbox" id="consenso" required />
+          <label for="consenso">Acconsento a ricevere il quaderno e, una volta a settimana, il martedì, le email di Federico Grianti. Posso disiscrivermi con un clic, in qualsiasi momento.</label>
+        </div>
+
+        <button type="submit" class="btn" id="btnInvia">Tienimi una copia</button>
+        <p class="rassicura">Niente spam. Il tuo indirizzo resta a me.</p>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ============ LA STORIA ============ -->
+<section class="storia">
+  <div class="inner">
+    <p class="etichetta">Da dove nasce</p>
+    <p class="testo">Marco aveva <b>cinquantasei anni</b> quando l'ho conosciuto. In ufficio era diventato quello che tutti evitavano. Le Risorse Umane gli avevano dato un ultimatum: o il trasferimento, o un percorso di coaching come ultima possibilità.</p>
+    <p class="testo">Nel coaching non ci credeva per niente. Il suo pensiero era questo:</p>
+    <p class="citazione">«Ormai sono così. Alla mia età il carattere non si cambia.»</p>
+    <p class="testo">Tre mesi dopo, i rapporti con i colleghi erano cambiati e Marco aveva conservato il suo posto. <b>La gabbia non l'aveva costruita l'azienda: le sbarre erano tre parole.</b></p>
+    <p class="testo">Quel «ormai sono così» lo sento ancora oggi, quasi ogni settimana, da uomini e donne di cinquanta e sessant'anni. Questo quaderno serve a guardare quella frase da vicino, e a chiederti se è un fatto o solo un'abitudine.</p>
+  </div>
+</section>
+
+<!-- ============ COME È FATTO ============ -->
+<section>
+  <div class="inner">
+    <p class="etichetta">Come è fatto</p>
+    <h3>Non è un libro da leggere.<br/>È un quaderno da usare.</h3>
+
+    <div class="formato">
+      <div class="numero"><strong>1</strong><span>storia vera, quella di Marco</span></div>
+      <div class="numero"><strong>3</strong><span>cose che dice la ricerca sul cambiare dopo i 50</span></div>
+      <div class="numero"><strong>10</strong><span>domande, una per ogni esercizio</span></div>
+      <div class="numero"><strong>10</strong><span>esercizi, da 2 a 30 minuti</span></div>
+    </div>
+
+    <p class="testo">Ogni esercizio ha la stessa forma, in cinque parti:</p>
+    <ol class="parti">
+      <li><div><b>La domanda</b><span>Viene prima di tutto. Leggila e fermati: guarda quale risposta arriva per prima.</span></div></li>
+      <li><div><b>Perché conta</b><span>Poche righe su cosa sa la ricerca. Le fonti complete sono in fondo al quaderno.</span></div></li>
+      <li><div><b>L'esercizio</b><span>Cosa fare, passo per passo, e quanto tempo ci vuole.</span></div></li>
+      <li><div><b>Cosa notare</b><span>Non ti dico cosa devi ottenere. Ti dico dove guardare.</span></div></li>
+      <li><div><b>La domanda di ritorno</b><span>Chiude l'esercizio lasciandolo aperto. Tienila con te qualche giorno.</span></div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ CONTENUTI ============ -->
+<section class="contenuti">
+  <div class="inner">
+    <p class="etichetta">Cosa c'è dentro</p>
+    <h3>Dieci domande scomode.<br/>Ecco tre esempi.</h3>
+
+    <div class="domande">
+      <div class="domanda"><q>Quale incarico rifiuti prima ancora che te lo propongano?</q><small>Esercizio 1 · L'inventario delle prove</small></div>
+      <div class="domanda"><q>A che ora finisce davvero la tua giornata di lavoro?</q><small>Esercizio 6 · Il rituale di chiusura</small></div>
+      <div class="domanda"><q>Cosa pensi che pensino di te i colleghi più giovani?</q><small>Esercizio 9 · Tre persone, una domanda</small></div>
+    </div>
+
+    <p class="indice-intro">I dieci esercizi:</p>
+    <ol class="indice">
+      <li><em>1</em>L'inventario delle prove</li>
+      <li><em>6</em>Il rituale di chiusura</li>
+      <li><em>2</em>La frase sotto la lente</li>
+      <li><em>7</em>Il pilota automatico</li>
+      <li><em>3</em>L'esperimento di verifica</li>
+      <li><em>8</em>Se… allora…</li>
+      <li><em>4</em>Parlarsi per nome</li>
+      <li><em>9</em>Tre persone, una domanda</li>
+      <li><em>5</em>Lasciare andare</li>
+      <li><em>10</em>Il prossimo capitolo</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ VANTAGGI ============ -->
+<section>
+  <div class="inner">
+    <p class="etichetta">Cosa ti porti a casa</p>
+    <h3>Non ti chiedo di cambiare carattere.<br/>Ti chiedo di verificare.</h3>
+    <ul class="vantaggi">
+      <li><span><b>Distinguere un fatto da un'abitudine.</b> Capire se «non reggerei» è una previsione o una cosa vera.</span></li>
+      <li><span><b>Prove concrete del tuo valore,</b> scritte nero su bianco, da rileggere prima di dire di no.</span></li>
+      <li><span><b>Una giornata di lavoro che finisce davvero,</b> invece di continuare nella testa fino a mezzanotte.</span></li>
+      <li><span><b>Meno reazioni di cui pentirti</b> nelle situazioni che si ripetono sempre uguali.</span></li>
+      <li><span><b>Smettere di portarti dietro vecchi torti,</b> che pesano su di te più che su chi te li ha fatti.</span></li>
+      <li><span><b>Un'idea chiara dei prossimi anni di lavoro:</b> cosa vuoi che resti, prima che sia la pensione a decidere.</span></li>
+    </ul>
+
+    <div class="ricerca">
+      <div><strong>92 studi</strong><span>mostrano che la personalità continua a cambiare per tutta la vita adulta, anche dopo i 50.</span></div>
+      <div><strong>19.000 persone</strong><span>sottovalutano quanto cambieranno nei prossimi dieci anni. A ogni età.</span></div>
+      <div><strong>3 mesi</strong><span>di lavoro mirato bastano per un cambiamento che si vede, e che dura.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CHI SONO ============ -->
+<section class="chi">
+  <div class="chi-inner">
+    <img src="federico-grianti.jpg" alt="Federico Grianti" width="500" height="500" />
+    <div>
+      <p class="etichetta">Chi lo ha scritto</p>
+      <p class="testo">Sono <b>Federico Grianti</b>. Prima di fare il coach sono stato dirigente finanziario in aziende strutturate e competitive: le pressioni di cui parla questo quaderno le conosco da dentro.</p>
+      <p class="testo">Dal 2007 faccio il mental coach, per manager, professionisti e atleti. E la soglia dei 50 l'ho passata anch'io: gli esercizi che trovi qui li ho provati prima su di me.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COSA SUCCEDE DOPO ============ -->
+<section class="dopo">
+  <div class="inner">
+    <p class="etichetta">Cosa succede dopo</p>
+    <h3>Tre passaggi, nessuna sorpresa.</h3>
+    <ol class="passi">
+      <li><b>1 · Lasci nome ed email</b><span>Ti ci vogliono dieci secondi. Sei subito in lista.</span></li>
+      <li><b>2 · A fine ottobre</b><span>Ti arriva il quaderno in PDF, gratis, all'indirizzo che hai lasciato.</span></li>
+      <li><b>3 · Ogni martedì</b><span>Una mia email a settimana, breve. Ti cancelli quando vuoi, con un clic.</span></li>
+    </ol>
+    <div class="finale">
+      <a href="#modulo" class="btn">Tienimi una copia</a>
+    </div>
+    <p class="avviso">Questo quaderno non è una terapia e non sostituisce un medico o uno psicologo. Se da settimane dormi male, sei sempre in ansia o pensi di non farcela, parlane con il tuo medico.</p>
+  </div>
+</section>
+
+<footer>
+  &copy; 2025&ndash;2026 Federico Grianti · Mental Coach · federicogrianticoach.com
+</footer>
+
+<script>
+  (function () {
+    var form = document.getElementById("formOrmai");
+    var btn = document.getElementById("btnInvia");
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (form.action.indexOf("INCOLLA_QUI") !== -1) {
+        alert("Modulo non ancora collegato a Brevo.");
+        return;
+      }
+      btn.disabled = true;
+      btn.textContent = "Invio in corso…";
+      var nome = document.getElementById("NOME").value.trim();
+      // Il nome serve solo a salutare per nome nella pagina successiva:
+      // resta nel browser del visitatore, non finisce nell'indirizzo della pagina.
+      try { sessionStorage.setItem("nomeOrmai", nome); } catch (err) {}
+      // Costruiamo i dati a mano: garantisce che il campo anti-bot parta VUOTO.
+      var dati = new FormData();
+      dati.append("NOME", nome);
+      dati.append("EMAIL", document.getElementById("EMAIL").value.trim());
+      dati.append("email_address_check", "");
+      dati.append("locale", "it");
+      fetch(form.action, { method: "POST", body: dati, mode: "no-cors" })
+        .catch(function () {})
+        .then(function () { window.location.href = "ormai-grazie.html"; });
+    });
+  })();
+</script>
+<!-- Cloudflare Web Analytics -->
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "a7d8d8e46abb44df91eb2146f98ba45f"}'></script>
+<!-- End Cloudflare Web Analytics -->
+</body>
+</html>
