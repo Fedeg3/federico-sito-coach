@@ -137,7 +137,11 @@ def _render(plan, out, ass=None, final=False):
     def one(i):
         c, a, b, _, mode = plan[i]
         d = _dur(a, b)
-        p = W(f'parts/{tag}{i:03d}.mkv')
+        import hashlib  # pezzo già pronto con gli stessi parametri -> riuso (correzioni di testo veloci)
+        h = hashlib.md5(json.dumps([c, a, b, mode, STYLE['zoom']]).encode()).hexdigest()[:8]
+        p = W(f'parts/{tag}{i:03d}_{h}.mkv')
+        if os.path.exists(p):
+            return p
         sh('ffmpeg', '-v', 'error', '-y', '-ss', f'{a:.3f}', '-i', W(f'raw/{c}.mp4'), '-t', f'{d:.4f}',
            '-vf', f'{_vf_zoom(mode, d)},fps=30,setsar=1',
            '-af', f'afade=t=in:d=0.02,afade=t=out:st={max(d - 0.03, 0):.3f}:d=0.03,aresample=48000',

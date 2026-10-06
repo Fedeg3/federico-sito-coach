@@ -8,5 +8,5 @@
 # Esempio: Reel #12 «Lascio spazio ai giovani» (6 ottobre 2026)
 
 - 7 clip puliti, senza ripetizioni: un pezzo per blocco; domanda e CTA 2 nello stesso clip.
-- `ass` lanciato con `--keywords "test|giudizio|rispetto|colpa|guardato|saggezza|giovani" --fix domandi=domande test=TEST test,=TEST,`.
+- `ass` lanciato con `--keywords "test|giudizio|rispetto|colpa|guardato|saggezza|giovani" --fix domandi=domande test=TEST test,=TEST,`; poi "te lo mando" corretto a mano in "te le mando" in rough_words.json (su richiesta di Federico). Titolo d'apertura ingrandito con `{\fs92}` senza virgolette: Federico vuole il titolo del reel ben visibile all'inizio.
 - Inquadratura diversa (siepe, volto più in alto): titoli e sottotitoli con lo stile standard funzionano lo stesso.
