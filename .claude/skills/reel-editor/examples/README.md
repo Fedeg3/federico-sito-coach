@@ -10,3 +10,10 @@
 - 7 clip puliti, senza ripetizioni: un pezzo per blocco; domanda e CTA 2 nello stesso clip.
 - `ass` lanciato con `--keywords "test|giudizio|rispetto|colpa|guardato|saggezza|giovani" --fix domandi=domande test=TEST test,=TEST,`; poi "te lo mando" corretto a mano in "te le mando" in rough_words.json (su richiesta di Federico). Titolo d'apertura ingrandito con `{\fs92}` senza virgolette: Federico vuole il titolo del reel ben visibile all'inizio.
 - Inquadratura diversa (siepe, volto più in alto): titoli e sottotitoli con lo stile standard funzionano lo stesso.
+
+# Esempio: Reel #13 «Quanto veloce cammini» (11 ottobre 2026)
+
+- Gancio girato camminando, all'aperto (senza i segni di nastro suggeriti dal copione).
+- `092007`: falsa partenza ("…scrivimi qui sotto quanto e—"), tenuta la seconda ripresa da 6,05 s. Tolto "Allora," in `091755`.
+- Whisper sul montato aveva perso "Nel 1999 hanno": il pezzo audio era intatto, corretto a mano in `rough_words.json` dopo una ritrascrizione mirata. Sempre verificare i buchi della trascrizione prima di toccare i tagli.
+- Inquadratura più stretta: titoli coprivano la fronte con lo zoom → `margin_v` dei titoli portato a 170 (sed su `reel.ass`).
