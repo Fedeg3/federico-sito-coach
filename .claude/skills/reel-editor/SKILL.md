@@ -18,6 +18,7 @@ Federico (coach di mental training per sportivi over 40/50) gira i reel in selfi
 
 Script: `scripts/reel.py` (stile in `style.json`, esempio completo in `examples/`). Cartella di lavoro di default `/tmp/reel`.
 
+0. Se nella cartella ci sono Google Docs con copione/testi a schermo/caption, leggili e usali (la caption di Federico va consegnata così com'è). Se ci sono clip di più reel o "Storie", assegna ogni clip in base alla trascrizione e scarta quello che non è nel copione; elenca nel messaggio finale quali clip hai usato per cosa.
 1. `reel.py download ID:nome ...`: usa come nome l'orario del clip (es. `VID_20261003_101817.mp4` → `101817`).
 2. `reel.py transcribe`: stampa la trascrizione parola per parola con i tempi, più i silenzi di ogni clip.
 3. **Confronta con il copione** e scrivi `edl.json` = lista `[clip, inizio, fine, blocco]` in ordine di copione. Qui c'è il lavoro vero:

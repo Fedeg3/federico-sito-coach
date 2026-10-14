@@ -24,3 +24,10 @@
 - Sottotitoli corretti a mano: "fallici"→"fallisci", "i due ricercatrici"→"le due", "te lo mando" (esercizi)→"te li mando".
 - Titolo di copertina dato da Federico: "MALE CHE VADA… / È UNA TRAPPOLA" (`{\fs92}`, dal primo fotogramma).
 - Inquadratura molto stretta → titoli a `margin_v` 170.
+
+# Esempio: Reel #15 «I cruciverba non bastano» (14 ottobre 2026)
+
+- Cartella Drive "Viaggio Cina – Reel 15-18" con clip di più reel + Google Docs (copione, testi a schermo, caption, copertina): leggi i Docs con `read_file_content` e usa la caption di Federico così com'è.
+- Clip mescolati con "Storie" caricate per errore: escluse per contenuto (racconto del viaggio "Speriamo bene", "Grazie a tutti", file `_bsl` già verticali e duplicati) e un clip-segnaposto "prova di registrazione per il reel 16".
+- `170846` (90 s): partenza falsa a inizio clip e prima ripresa di "Alla fine la memoria…" balbettata → tenuta la seconda (68,6 s).
+- "scrivi in memoria" (Whisper) → "SCRIVI MEMORIA".
