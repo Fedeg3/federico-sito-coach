@@ -17,3 +17,10 @@
 - `092007`: falsa partenza ("…scrivimi qui sotto quanto e—"), tenuta la seconda ripresa da 6,05 s. Tolto "Allora," in `091755`.
 - Whisper sul montato aveva perso "Nel 1999 hanno": il pezzo audio era intatto, corretto a mano in `rough_words.json` dopo una ritrascrizione mirata. Sempre verificare i buchi della trascrizione prima di toccare i tagli.
 - Inquadratura più stretta: titoli coprivano la fronte con lo zoom → `margin_v` dei titoli portato a 170 (sed su `reel.ass`).
+
+# Esempio: Reel #14 «Male che vada…» (14 ottobre 2026)
+
+- 7 clip puliti. Tolto "Allora," iniziale in `120030` (gli capita spesso a inizio clip: toglilo).
+- Sottotitoli corretti a mano: "fallici"→"fallisci", "i due ricercatrici"→"le due", "te lo mando" (esercizi)→"te li mando".
+- Titolo di copertina dato da Federico: "MALE CHE VADA… / È UNA TRAPPOLA" (`{\fs92}`, dal primo fotogramma).
+- Inquadratura molto stretta → titoli a `margin_v` 170.
