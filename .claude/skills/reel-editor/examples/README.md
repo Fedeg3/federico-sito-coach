@@ -31,3 +31,10 @@
 - Clip mescolati con "Storie" caricate per errore: escluse per contenuto (racconto del viaggio "Speriamo bene", "Grazie a tutti", file `_bsl` già verticali e duplicati) e un clip-segnaposto "prova di registrazione per il reel 16".
 - `170846` (90 s): partenza falsa a inizio clip e prima ripresa di "Alla fine la memoria…" balbettata → tenuta la seconda (68,6 s).
 - "scrivi in memoria" (Whisper) → "SCRIVI MEMORIA".
+
+# Esempi: Reel #16, #17, #18 (15 ottobre 2026)
+
+- #16: blocco ACHIEVE rigirato il giorno dopo con un'altra maglia → raggruppati i clip nuovi in un unico tratto (usata anche la nuova ripresa di "Come me lo spiego io"). La frase "Uno di questi è l'udito" non è stata registrata: coperta dal titolo «LANCET 2024 · 14 FATTORI / UNO È L'UDITO».
+- #17: `112040` con due riprese interne (Holt-Lunstad e "perché non la chiami?", "Chi si faceva vivo"): tenute le seconde.
+- #18: "e li mando" → "TE LI MANDO".
+- Nuovo stile copertina `{COVER}` (Anton nero su bianco, al posto del font "Strong" di Edits).

@@ -220,7 +220,10 @@ def cmd_ass(ov_path, keywords=None, fix=()):
     for a, b, t in json.load(open(ov_path)):
         t = t.replace('{Y}', Y).replace('{W}', Wh).replace('{STRIKE}', r'{\s1\alpha&H60&}') \
              .replace('{/STRIKE}', r'{\s0\alpha&H00&}').replace('\n', '\\N')
-        ev.append(f'Dialogue: 1,{_ts(a)},{_ts(b)},Title,,0,0,0,,{{\\fad(120,80)}}{t}')
+        style = 'Title'
+        if t.startswith('{COVER}'):      # titolo di copertina: Anton nero su riquadro bianco (stile "Strong" di Edits)
+            style, t = 'Cover', t[len('{COVER}'):].replace(Y, r'{\c&H0000C8&}').replace(Wh, r'{\c&H000000&}')
+        ev.append(f'Dialogue: 1,{_ts(a)},{_ts(b)},{style},,0,0,0,,{{\\fad(120,80)}}{t}')
     hdr = f"""[Script Info]
 ScriptType: v4.00+
 PlayResX: 1080
@@ -232,6 +235,7 @@ ScaledBorderAndShadow: yes
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
 Style: Sub,{STYLE['font']},{S['size']},&H00FFFFFF,&H00FFFFFF,&H00000000,&H80000000,0,0,0,0,100,100,1,0,1,7,3,2,80,80,{S['margin_v']},1
 Style: Title,{STYLE['font']},{T['size']},&H00FFFFFF,&H00FFFFFF,&H28000000,&H28000000,0,0,0,0,100,100,1,0,3,22,0,8,60,60,{T['margin_v']},1
+Style: Cover,{STYLE['cover']['font']},{STYLE['cover']['size']},&H00000000,&H00000000,&H00FFFFFF,&H00FFFFFF,0,0,0,0,100,100,2,0,3,24,0,8,60,60,{STYLE['cover']['margin_v']},1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text

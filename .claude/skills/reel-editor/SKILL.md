@@ -45,7 +45,7 @@ Nota tecnica: il render lavora un pezzo alla volta e poi concatena (un unico fil
 
 **Titoli del copione** (le righe in MAIUSCOLO o tra `backtick` nel copione)
 - Riquadro scuro in alto (`margin_v` 240), sopra la tettoia/il cielo, Montserrat Black 70, chiave in giallo. Se l'inquadratura è stretta e con gli zoom il titolo copre la fronte, scendi fino a 170 (non meno: sopra c'è la barra di Instagram).
-- **Titolo del reel in apertura** (se Federico dà un "titolo di copertina", usa quello): grande (`{\fs92}`), senza virgolette, ultima parola in giallo, per tutto il gancio (richiesta di Federico dal Reel #12).
+- **Titolo del reel in apertura** (se Federico dà un "titolo di copertina", usa quello). Dal Reel #16 usa lo stile copertina: in `overlays.json` il testo inizia con `{COVER}` → Anton nero su riquadro bianco (Federico usava il font "Strong" di Edits; serve `anton.ttf` in `<work>/fonts`). Vecchia descrizione: grande (`{\fs92}`), senza virgolette, ultima parola in giallo, per tutto il gancio (richiesta di Federico dal Reel #12).
 - Il gancio ha sempre un titolo dal primo fotogramma (es. «DATTI DEL TU»), così il reel ferma lo scroll.
 - I numeri dello studio compaiono quando lui li dice. CTA: `SCRIVI {Y}«PAROLA»` quando lo dice.
 - Se una frase del copione non è stata detta, adatta il titolo a ciò che dice davvero e segnalalo.

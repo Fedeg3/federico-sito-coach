@@ -11,17 +11,25 @@
     "max_words": 3,
     "max_chars": 15,
     "keywords_regex": "^(tu|federico|dialogo|secondi|nome)$",
-    "fixes": {"iscrivo": "scrivo"}
+    "fixes": {
+      "iscrivo": "scrivo"
+    }
   },
   "titles": {
     "size": 70,
     "margin_v": 240
   },
   "zoom": {
-    "push": 1.10,
+    "push": 1.1,
     "punch": 1.12,
-    "face_y": 0.40,
+    "face_y": 0.4,
     "long_piece_s": 6.0,
     "target_shot_s": 4.0
+  },
+  "cover": {
+    "font": "Anton",
+    "size": 140,
+    "margin_v": 165,
+    "_note": "Copertina: Federico usava il font 'Strong' di Edits, nero su bianco. Strong non è disponibile: Anton (Google Fonts) è il più simile. Scarica anton.ttf in <work>/fonts."
   }
 }
