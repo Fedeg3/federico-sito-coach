@@ -38,3 +38,4 @@
 - #17: `112040` con due riprese interne (Holt-Lunstad e "perché non la chiami?", "Chi si faceva vivo"): tenute le seconde.
 - #18: "e li mando" → "TE LI MANDO".
 - Nuovo stile copertina `{COVER}` (Anton nero su bianco, al posto del font "Strong" di Edits).
+- #16 rivisto su segnalazione di Federico: "Nel campione… nel campione complessivo" (tolto `111544` 11,0–12,5) e "e per… e per decidere" (`171855` diviso in 0–5,95 + 7,80–). #17: tolti 0,7 s di rumore prima del gancio. Da qui nasce `scripts/check_repeats.py`.
