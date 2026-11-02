@@ -184,7 +184,7 @@ def _ts(t):
     return f'{int(t // 3600)}:{int(t % 3600 // 60):02d}:{t % 60:05.2f}'
 
 
-def cmd_ass(ov_path, keywords=None, fix=()):
+def cmd_ass(ov_path, keywords=None, fix=(), karaoke=False):
     S = STYLE['subs']; T = STYLE['titles']
     raw = json.load(open(W('rough_words.json')))
     fixes = dict(S.get('fixes', {}))
@@ -192,7 +192,7 @@ def cmd_ass(ov_path, keywords=None, fix=()):
     ws = []
     for s, e, t in raw:
         t = t.strip()
-        if t.startswith("'") and ws:
+        if (t.startswith("'") or t.startswith('%')) and ws:
             ws[-1][1] = e; ws[-1][2] += t
         else:
             ws.append([s, e, fixes.get(t, t)])
@@ -212,11 +212,19 @@ def cmd_ass(ov_path, keywords=None, fix=()):
         st = c[0][0]
         en = min(c[-1][1] + 0.15, chunks[k + 1][0][0] if k + 1 < len(chunks) else c[-1][1] + 0.6)
         parts = []
-        for w in c:
+        for j, w in enumerate(c):
             t = w[2].upper().rstrip(',.')
             core = re.sub(r'[^\wÀ-ÿ]', '', t)
-            parts.append(Y + t + Wh if key.match(core) else t)
-        ev.append(f"Dialogue: 0,{_ts(st)},{_ts(en)},Sub,,0,0,0,,{{\\fad(40,0)}}{' '.join(parts)}")
+            if karaoke:   # la parola diventa gialla quando inizia a pronunciarla (\\k: bianco -> giallo)
+                nxt_t = c[j + 1][0] if j + 1 < len(c) else en
+                parts.append(f'{{\\k{max(int(round((nxt_t - w[0]) * 100)), 1)}}}' + t)
+            else:
+                parts.append(Y + t + Wh if key.match(core) else t)
+        if karaoke:
+            body = ' '.join(parts)
+            ev.append(f"Dialogue: 0,{_ts(st)},{_ts(en)},SubK,,0,0,0,,{body}")
+        else:
+            ev.append(f"Dialogue: 0,{_ts(st)},{_ts(en)},Sub,,0,0,0,,{{\\fad(40,0)}}{' '.join(parts)}")
     for a, b, t in json.load(open(ov_path)):
         t = t.replace('{Y}', Y).replace('{W}', Wh).replace('{STRIKE}', r'{\s1\alpha&H60&}') \
              .replace('{/STRIKE}', r'{\s0\alpha&H00&}').replace('\n', '\\N')
@@ -233,7 +241,8 @@ ScaledBorderAndShadow: yes
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: Sub,{STYLE['font']},{S['size']},&H00FFFFFF,&H00FFFFFF,&H00000000,&H80000000,0,0,0,0,100,100,1,0,1,7,3,2,80,80,{S['margin_v']},1
+Style: Sub,{STYLE['font']},{S['size']},&H00FFFFFF,&H00FFFFFF,&H00000000,&H80000000,0,0,0,0,100,100,1,0,1,7,3,{S.get('align', 2)},80,80,{S['margin_v']},1
+Style: SubK,{STYLE['font']},{S['size']},&H0000D7FF,&H00FFFFFF,&H00000000,&H80000000,0,0,0,0,100,100,1,0,1,7,3,{S.get('align', 2)},80,80,{S['margin_v']},1
 Style: Title,{STYLE['font']},{T['size']},&H00FFFFFF,&H00FFFFFF,&H28000000,&H28000000,0,0,0,0,100,100,1,0,3,22,0,8,60,60,{T['margin_v']},1
 Style: Cover,{STYLE['cover']['font']},{STYLE['cover']['size']},&H00000000,&H00000000,&H00FFFFFF,&H00FFFFFF,0,0,0,0,100,100,2,0,3,24,0,8,60,60,{STYLE['cover']['margin_v']},1
 
@@ -291,6 +300,7 @@ if __name__ == '__main__':
     p = sp.add_parser('ass'); p.add_argument('overlays')
     p.add_argument('--keywords', help='parole chiave extra in giallo, es. "test|giudizio"')
     p.add_argument('--fix', nargs='*', default=[], help='correzioni Whisper, es. domandi=domande')
+    p.add_argument('--karaoke', action='store_true', help='sottotitoli che diventano gialli parola per parola')
     for c in ('render', 'export'):
         p = sp.add_parser(c); p.add_argument('--name', default='reel')
         if c == 'export':
@@ -298,11 +308,18 @@ if __name__ == '__main__':
     p = sp.add_parser('preview'); p.add_argument('times', nargs='+', type=float); p.add_argument('--src')
     ARGS = ap.parse_args()
     os.makedirs(ARGS.work, exist_ok=True)
+    ov = os.path.join(ARGS.work, 'style_override.json')   # stile specifico del reel (es. inquadratura diversa)
+    if os.path.exists(ov):
+        for k, v in json.load(open(ov)).items():
+            if isinstance(v, dict):
+                STYLE.setdefault(k, {}).update(v)
+            else:
+                STYLE[k] = v
     {'download': lambda: cmd_download(ARGS.ids),
      'transcribe': lambda: cmd_transcribe(ARGS.prompt),
      'words': lambda: cmd_words(ARGS.prompt),
      'cut': lambda: cmd_cut(ARGS.edl),
-     'ass': lambda: cmd_ass(ARGS.overlays, ARGS.keywords, ARGS.fix),
+     'ass': lambda: cmd_ass(ARGS.overlays, ARGS.keywords, ARGS.fix, ARGS.karaoke),
      'render': lambda: cmd_render(ARGS.name),
      'export': lambda: cmd_export(ARGS.name, ARGS.outdir),
      'preview': lambda: cmd_preview(ARGS.times, ARGS.src)}[ARGS.cmd]()

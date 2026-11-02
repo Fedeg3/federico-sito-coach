@@ -39,3 +39,10 @@
 - #18: "e li mando" → "TE LI MANDO".
 - Nuovo stile copertina `{COVER}` (Anton nero su bianco, al posto del font "Strong" di Edits).
 - #16 rivisto su segnalazione di Federico: "Nel campione… nel campione complessivo" (tolto `111544` 11,0–12,5) e "e per… e per decidere" (`171855` diviso in 0–5,95 + 7,80–). #17: tolti 0,7 s di rumore prima del gancio. Da qui nasce `scripts/check_repeats.py`.
+
+# Esempio: Reel #19 «La sera prima di partire volevo rinunciare» (2 novembre 2026)
+
+- Nuovo modo di girare: treppiede, volto in basso, parete bianca sopra → `style_override.json` nella cartella di lavoro: sottotitoli in alto (`align` 8, `margin_v` 560) e zoom puntati più in basso (`face_y` 0.62).
+- Federico NON vuole il titolo di copertina (lo aggiunge lui): niente `{COVER}`, primi 3 s senza titoli in alto.
+- Sottotitoli karaoke (`ass --karaoke`): ogni parola diventa gialla quando la pronuncia.
+- "non devi guidare" era un errore di Whisper: la trascrizione letterale dà "deve". Tolto "Allora," iniziale.

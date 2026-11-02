@@ -40,12 +40,15 @@ Nota tecnica: il render lavora un pezzo alla volta e poi concatena (un unico fil
 - **Zoom in/out frequenti mentre parla** (richiesta dopo il Reel #11): ogni blocco riparte con un push-in lento; poi il ciclo è punch fisso → pull-out lento → largo statico. I pezzi più lunghi di 6 s vengono spezzati per avere un movimento circa ogni 4 s. Valori in `style.json` → `zoom` (push 1.10, punch 1.12, volto al 40% dell'altezza). Zoom delicati: è un coach over 50, non un gamer.
 
 **Sottotitoli**
+- **Karaoke (preferenza dal Reel #19)**: `reel.py ass … --karaoke` → bianco che diventa giallo parola per parola mentre parla. Usalo come default se Federico non dice altro.
+- Se l'inquadratura è diversa (es. treppiede con volto in basso e parete sopra), crea `<work>/style_override.json` (vedi `examples/reel19_style_override.json`) per spostare sottotitoli e punto di zoom.
 - Maiuscolo, Montserrat Black 82, bianco con bordo nero, 2–3 parole per blocco, parole chiave in giallo (`&H00D7FF&`).
 - **Posizione: sul petto, sotto la bocca** (`margin_v` 290). Nel Reel #11 erano a 400 e coprivano la bocca: non risalire sopra 300. Controlla sempre nei fotogrammi con zoom punch.
 - Correggi a mano le parole sbagliate da Whisper (`subs.fixes`), ma non cambiare quello che Federico ha detto davvero. Eccezione approvata: "te **lo** mando" riferito a un plurale → scrivi "TE LE MANDO" (domande) o "TE LI MANDO" (esercizi): gli scappa quasi sempre nella CTA 2. Togli anche gli "Allora," a inizio clip.
 
 **Titoli del copione** (le righe in MAIUSCOLO o tra `backtick` nel copione)
 - Riquadro scuro in alto (`margin_v` 240), sopra la tettoia/il cielo, Montserrat Black 70, chiave in giallo. Se l'inquadratura è stretta e con gli zoom il titolo copre la fronte, scendi fino a 170 (non meno: sopra c'è la barra di Instagram).
+- Se Federico dice che il titolo lo mette lui: nessun `{COVER}` e niente titoli in alto nei primi 3 s.
 - **Titolo del reel in apertura** (se Federico dà un "titolo di copertina", usa quello). Dal Reel #16 usa lo stile copertina: in `overlays.json` il testo inizia con `{COVER}` → Anton nero su riquadro bianco (Federico usava il font "Strong" di Edits; serve `anton.ttf` in `<work>/fonts`). Vecchia descrizione: grande (`{\fs92}`), senza virgolette, ultima parola in giallo, per tutto il gancio (richiesta di Federico dal Reel #12).
 - Il gancio ha sempre un titolo dal primo fotogramma (es. «DATTI DEL TU»), così il reel ferma lo scroll.
 - I numeri dello studio compaiono quando lui li dice. CTA: `SCRIVI {Y}«PAROLA»` quando lo dice.
