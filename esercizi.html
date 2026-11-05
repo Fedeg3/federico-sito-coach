@@ -1,7 +1,9 @@
 
 
 
-esercizi_v7.txt
+
+
+grazie_v5.txt
 
 100%
 <!DOCTYPE html>
@@ -9,265 +11,101 @@ esercizi_v7.txt
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Esercizi pratici gratuiti | Federico Grianti — Mental Coach</title>
-  <meta name="description" content="Protocolli pratici di mental coaching su sport, lavoro e longevità mentale. Neuroscienze applicate, esercizi concreti. Scegli quello che ti serve e lo ricevi via email." />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://federicogrianticoach.com/esercizi.html" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://federicogrianticoach.com/esercizi.html" />
-  <meta property="og:title" content="Esercizi pratici di mental coaching — gratis" />
-  <meta property="og:description" content="Protocolli concreti basati sulle neuroscienze. Scegli quello che ti serve, lascia l'indirizzo e lo ricevi subito." />
-  <meta property="og:image" content="https://federicogrianticoach.com/fedeg1.png" />
-  <meta property="og:locale" content="it_IT" />
+  <title>Grazie — il tuo documento è qui | Federico Grianti</title>
+  <meta name="robots" content="noindex, follow" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
   <style>
-    :root{--crema:#F7F2EA;--bianco:#FEFCF8;--verde:#4A6741;--verde-dim:rgba(74,103,65,0.10);--ocra:#C47F35;--ocra-dim:rgba(196,127,53,0.12);--carbone:#1E1A16;--marrone:#3D2E1E;--grigio:#7A7268;--grigio-chiaro:#B0A99E;--serif:"Playfair Display",Georgia,serif;--sans:"Lato",system-ui,sans-serif;--radius:6px;--tr:0.38s cubic-bezier(0.25,0.46,0.45,0.94)}
+    :root{--crema:#F7F2EA;--bianco:#FEFCF8;--verde:#4A6741;--ocra:#C47F35;--ocra-dim:rgba(196,127,53,0.12);--carbone:#1E1A16;--marrone:#3D2E1E;--grigio:#7A7268;--grigio-chiaro:#B0A99E;--serif:"Playfair Display",Georgia,serif;--sans:"Lato",system-ui,sans-serif;--radius:6px;--tr:0.38s cubic-bezier(0.25,0.46,0.45,0.94)}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth;font-size:16px}
-    body{background:var(--crema);color:var(--carbone);font-family:var(--sans);font-weight:300;line-height:1.75;overflow-x:hidden}
-    ::selection{background:var(--verde);color:var(--bianco)}
-    img{max-width:100%;display:block}
+    html{font-size:16px}
+    body{background:var(--crema);color:var(--carbone);font-family:var(--sans);font-weight:300;line-height:1.75;min-height:100vh;display:flex;flex-direction:column}
     a{color:inherit;text-decoration:none}
     body::after{content:"";position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:9998;opacity:.5}
-
-    .marchio{padding:1.4rem 3rem;font-family:var(--serif);font-size:1.05rem;color:var(--verde);border-bottom:1px solid rgba(74,103,65,0.12);background:var(--bianco)}
-
-    .hero{background:var(--bianco);padding:4rem 3rem 4.5rem;display:grid;grid-template-columns:1.05fr .95fr;gap:4.5rem;align-items:center}
-    .occhiello{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--verde);margin-bottom:1.4rem;display:flex;align-items:center;gap:1rem}
-    .occhiello::before{content:"";display:block;width:30px;height:1px;background:var(--verde)}
-    h1{font-family:var(--serif);font-size:clamp(2.1rem,4vw,3.3rem);line-height:1.15;font-weight:500;color:var(--marrone);margin-bottom:1.2rem}
-    h1 span{display:block;color:var(--verde)}
-    .sottotitolo{font-family:var(--serif);font-style:italic;font-size:1.15rem;color:var(--ocra);line-height:1.6;margin-bottom:1.8rem}
-    .ponte{font-size:.93rem;color:var(--grigio);line-height:1.8;padding-left:1.1rem;border-left:2px solid rgba(74,103,65,0.25);margin-bottom:1.8rem}
-    .dentro{list-style:none}
-    .dentro li{font-size:.93rem;color:var(--grigio);padding:.35rem 0;display:flex;align-items:flex-start;gap:.75rem;line-height:1.7}
-    .dentro li::before{content:"◆";color:var(--ocra);font-size:.38rem;flex-shrink:0;margin-top:.72rem}
-
-    .card{background:var(--crema);border:1.5px solid rgba(74,103,65,0.2);border-radius:var(--radius);padding:2.6rem 2.4rem;box-shadow:0 10px 40px rgba(30,26,22,0.07)}
-    .card h2{font-family:var(--serif);font-size:1.45rem;font-weight:500;color:var(--marrone);margin-bottom:.5rem;line-height:1.3}
-    .card .sub{font-size:.87rem;color:var(--grigio);line-height:1.7;margin-bottom:1.7rem}
-    .card .sub b{color:var(--marrone);font-weight:700}
-    .campo label{display:block;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--grigio);margin-bottom:.5rem}
-    .campo input[type=email]{width:100%;background:var(--bianco);border:1.5px solid rgba(74,103,65,0.2);color:var(--carbone);padding:.95rem 1.2rem;font-family:var(--sans);font-size:.95rem;border-radius:var(--radius);outline:none;transition:border-color .3s;-webkit-appearance:none}
-    .campo input[type=email]:focus{border-color:var(--verde)}
-    .consenso{display:flex;align-items:flex-start;gap:.7rem;margin:1.2rem 0 1.5rem}
-    .consenso input[type=checkbox]{margin-top:.35rem;width:16px;height:16px;flex-shrink:0;accent-color:var(--verde);cursor:pointer}
-    .consenso label{font-size:.76rem;color:var(--grigio);line-height:1.6;cursor:pointer}
-    .btn{width:100%;background:var(--verde);color:var(--bianco);padding:1.05rem 2rem;font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border-radius:99px;border:1.5px solid var(--verde);cursor:pointer;font-family:var(--sans);transition:var(--tr)}
+    .topbar{padding:1.5rem 3rem;border-bottom:1px solid rgba(74,103,65,0.12);background:var(--bianco)}
+    .topbar-logo{font-family:var(--serif);font-size:1.1rem;color:var(--verde);font-weight:500}
+    main{flex:1;display:flex;align-items:center;justify-content:center;padding:4rem 1.5rem}
+    .box{max-width:640px;text-align:center}
+    .segno{width:64px;height:64px;border-radius:50%;background:var(--verde);color:var(--bianco);display:flex;align-items:center;justify-content:center;font-size:1.8rem;margin:0 auto 2rem}
+    h1{font-family:var(--serif);font-size:clamp(2rem,4vw,2.9rem);font-weight:500;line-height:1.2;color:var(--marrone);margin-bottom:1.3rem}
+    h1 em{font-style:italic;color:var(--verde)}
+    .intro{font-size:1.02rem;color:var(--grigio);line-height:1.85;margin-bottom:2rem}
+    .btn{display:inline-block;background:var(--verde);color:var(--bianco);padding:1rem 2.4rem;font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border-radius:99px;border:1.5px solid var(--verde);transition:var(--tr)}
     .btn:hover{background:transparent;color:var(--verde);transform:translateY(-2px)}
-    .rassicura{font-size:.74rem;color:var(--grigio-chiaro);text-align:center;margin-top:1rem;line-height:1.6}
-    .input--hidden{position:absolute!important;left:-9999px!important;opacity:0!important;height:0!important;width:0!important}
-
-    .prova{background:var(--crema);padding:3.5rem 3rem;border-top:1px solid rgba(74,103,65,0.12)}
-    .prova-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:120px 1fr;gap:2.2rem;align-items:center}
-    .prova img{width:120px;height:120px;object-fit:cover;object-position:top;border-radius:50%;filter:sepia(8%)}
-    .prova p{font-size:.93rem;color:var(--grigio);line-height:1.85}
-    .prova strong{color:var(--marrone);font-weight:700}
-
-    .coda{background:var(--bianco);padding:3rem;border-top:1px solid rgba(74,103,65,0.12);text-align:center}
-    .coda p{font-size:.88rem;color:var(--grigio-chiaro);line-height:1.9;max-width:720px;margin:0 auto}
-    .coda b{color:var(--grigio);font-weight:400}
-
-    footer{background:var(--marrone);color:rgba(255,255,255,0.45);padding:2rem 3rem;text-align:center;font-size:.72rem;line-height:1.8}
-
-    @media(max-width:900px){
-      .marchio{padding:1.1rem 1.4rem}
-      .hero{grid-template-columns:1fr;gap:2.5rem;padding:2.5rem 1.4rem 3rem}
-      .card{padding:1.9rem 1.5rem}
-      .prova,.coda{padding:2.5rem 1.4rem}
-      .prova-inner{grid-template-columns:1fr;gap:1.3rem;text-align:center}
-      .prova img{margin:0 auto}
-      footer{padding:1.8rem 1.4rem}
-    }
+    .sotto-btn{font-size:.78rem;color:var(--grigio-chiaro);margin-top:.9rem;letter-spacing:.02em}
+    .avviso{background:var(--ocra-dim);border:1px solid rgba(196,127,53,0.25);border-radius:var(--radius);padding:1.5rem 1.8rem;text-align:left;margin:2.5rem 0 0}
+    .avviso strong{display:block;font-family:var(--serif);font-size:1.05rem;color:var(--marrone);margin-bottom:.5rem;font-weight:500}
+    .avviso p{font-size:.88rem;color:var(--grigio);line-height:1.75}
+    .secondario{display:block;margin-top:2rem;font-size:.8rem;color:var(--grigio-chiaro);line-height:1.8}
+    .secondario a{color:var(--verde);text-decoration:underline;text-underline-offset:3px}
+    footer{background:var(--marrone);color:rgba(255,255,255,0.4);padding:1.8rem 3rem;text-align:center;font-size:.72rem}
+    @media(max-width:900px){.topbar{padding:1.1rem 1.4rem}main{padding:3rem 1.4rem}footer{padding:1.5rem 1.4rem}}
   </style>
 </head>
 <body>
 
-<div class="marchio">Federico Grianti</div>
+<div class="topbar">
+  <a class='topbar-logo' href='/'>Federico Grianti</a>
+</div>
 
-<section class="hero">
-  <div>
-    <p class="occhiello">Documento gratuito</p>
-    <h1 id="titolo">Non stai peggiorando.<span>Sei disallenato.</span></h1>
-    <p class="sottotitolo" id="promessa">5 esercizi per riallenare attenzione e memoria dopo i 50. Dieci minuti al giorno, per due settimane.</p>
-    <p class="ponte">Se sei arrivato da un mio video: è questo il seguito pratico di cui parlavo.</p>
-    <ul class="dentro" id="dentro"></ul>
+<main>
+  <div class="box">
+    <div class="segno">&#10003;</div>
+    <h1>Eccolo.<br/><em>Il documento è qui sotto.</em></h1>
+    <p class="intro">Scaricalo adesso — te l'ho mandato anche per email, così lo ritrovi quando ti serve.</p>
+
+    <a id="download" href="attenzione-dopo-i-50.pdf" class="btn" download>&darr; Scarica il PDF</a>
+    <p class="sotto-btn" id="etichetta">Non stai peggiorando. Sei disallenato. · 5 esercizi · 10 pagine</p>
+
+    <div class="avviso">
+      <strong id="avvisoT">Un consiglio prima di leggerlo tutto</strong>
+      <p id="avvisoP">Non farlo stasera. Prendi il primo esercizio e fai solo quello per tre giorni: gli altri restano lì, non scappano. Un protocollo letto in un pomeriggio non cambia niente; uno praticato per una settimana sì.</p>
+    </div>
+
+    <span class="secondario">Se l'email non arriva entro qualche minuto, guarda nello spam o fra le promozioni.<br/>
+    Negli altri documenti che ho scritto ci sono sport, lavoro e longevità mentale: te li mando uno alla volta, nelle prossime settimane.<br/>
+    <a href='/'>Torna al sito</a></span>
   </div>
+</main>
 
-  <div class="card">
-    <h2>Dove te lo mando?</h2>
-    <p class="sub">Lascia il tuo indirizzo: ricevi <b id="nomeDoc">il documento</b> in un minuto.</p>
-
-    <form id="formEsercizi" action="https://49660902.sibforms.com/serve/MUIFAC496F1Aknxv7L6qW52HYjTC139ltv3jubDHfLExEu3v6LiX---WZ7PirJAX8rgP6y5A89cCcfhmy5iOcdUUqYEWF-EF5eXdsmIeP90jDQPgWWIKnmu_4aKgCHd0LkDzzJjOgBhUuMreP8Ucwa_UWlgAnLW9t3CKpJ257hTHYlvCnHg1LGd_Q9CE4_ySxhZp1dw8iEYyaGF6vw==" method="POST" autocomplete="off">
-      <div class="campo">
-        <label for="EMAIL">La tua email</label>
-        <input type="email" id="EMAIL" name="EMAIL" placeholder="la@tua.email" required />
-      </div>
-
-      <input type="text" name="email_address_check" value="" class="input--hidden" tabindex="-1" aria-hidden="true" autocomplete="off" readonly />
-      <input type="hidden" name="locale" value="it" />
-      <!-- Registra su Brevo quale documento è stato richiesto.
-           Richiede l'attributo di contatto DOCUMENTO (testo) creato in Brevo.
-           Se il modulo dovesse smettere di funzionare, elimina la riga qui sotto. -->
-      <!-- riga DOCUMENTO rimossa in v6 per diagnosi -->
-
-      <div class="consenso">
-        <input type="checkbox" id="consenso" required />
-        <label for="consenso">Acconsento a ricevere il documento e le comunicazioni di Federico Grianti. Posso disiscrivermi con un clic, in qualsiasi momento.</label>
-      </div>
-
-      <button type="submit" class="btn" id="btnInvia">Ricevi il documento</button>
-      <p class="rassicura">Gratis. Niente spam. Ti scrivo solo quando ho qualcosa di utile.</p>
-    </form>
-  </div>
-</section>
-
-<section class="prova">
-  <div class="prova-inner">
-    <img src="fedeg1.png" alt="Federico Grianti" />
-    <p>Sono <strong>Federico Grianti</strong>, mental coach dal 2007. Ho lavorato con atleti di Coppa del Mondo, imprenditori e professionisti, e ho scritto «Sciare con la Mente». <strong>Ho 69 anni</strong>: quello che trovi in questi documenti non è una teoria che ho letto da qualche parte — è il lavoro che faccio ogni giorno anche su me stesso.</p>
-  </div>
-</section>
-
-<section class="coda">
-  <p>Ogni esercizio riporta <b>la ricerca da cui nasce</b>, citata per esteso — non frasi motivazionali.<br/>
-  Ne ho scritti altri otto, su sport, lavoro e longevità mentale: te li mando <b>uno alla volta</b> nelle settimane successive, non tutti insieme.</p>
-</section>
-
-<footer>
-  &copy; 2025&ndash;2026 Federico Grianti · Mental Coach · federicogrianticoach.com
-</footer>
+<footer>&copy; 2025&ndash;2026 Federico Grianti · Mental Coach · federicogrianticoach.com</footer>
 
 <script>
-  // ---- Catalogo documenti: una landing sola, una promessa per volta ----
-  var DOCS = {
-    test: {
-      h1a: "È il carico,", h1b: "o è l'età?",
-      nome: "il test",
-      promessa: "Dodici domande per capire da dove viene quello che hai cominciato a notare. Quattro minuti.",
-      dentro: ["Dodici domande divise in tre gruppi: il carico, l'attenzione, la convinzione",
-               "Un punteggio che ti dice quale dei tre pesa di più, non quanto stai messo male",
-               "Quattro profili, ognuno con la prima cosa da fare e la ricerca da cui nasce",
-               "Non è un test clinico e non misura niente di medico"]
-    },
-    attenzione: {
-      h1a: "Non stai peggiorando.", h1b: "Sei disallenato.",
-      nome: "il documento",
-      promessa: "5 esercizi per riallenare attenzione e memoria dopo i 50. Dieci minuti al giorno, per due settimane.",
-      dentro: ["Cinque esercizi, ognuno con la ricerca da cui nasce",
-               "Un piano di quattordici giorni che sta in dieci minuti",
-               "Il moltiplicatore fisico che vale più di tutti e cinque messi insieme",
-               "E quando invece conviene parlarne con un medico"]
-    },
-    checklist: {
-      h1a: "La gara si decide", h1b: "prima della partenza.",
-      nome: "la checklist",
-      promessa: "Il protocollo mentale in 10 punti che uso con i miei atleti nelle ore che precedono una competizione.",
-      dentro: ["Dieci punti operativi, nessuna motivazione preconfezionata",
-               "Cosa fare la sera prima e cosa la mattina della gara",
-               "Come gestire l'attesa nei minuti che precedono la partenza",
-               "Costruito in diciotto anni con atleti di Coppa del Mondo"]
-    },
-    dialogo: {
-      h1a: "Sotto pressione non vince", h1b: "chi pensa di più.",
-      nome: "il documento",
-      promessa: "7 esercizi per allenare la voce nella testa nei momenti in cui il risultato si decide in pochi secondi.",
-      dentro: ["Il cambio di persona: parlarti con il tuo nome invece che con «io»",
-               "La parola-chiave d'innesco e l'ancora verbale-motoria",
-               "Basati sulle ricerche sul self-talk di Ethan Kross",
-               "Valgono al cancelletto come in una riunione difficile"]
-    },
-    recovery: {
-      h1a: "Il corpo guarisce coi suoi tempi.", h1b: "La testa decide se torni.",
-      nome: "il documento",
-      promessa: "5 step per accelerare il rientro da un infortunio: dalle prime 72 ore al ritorno in gara.",
-      dentro: ["Il reset della paura nei primi giorni, prima ancora della fisioterapia",
-               "Il self-talk che tiene alta l'aderenza alla riabilitazione",
-               "Il test di prontezza psicologica prima di rientrare",
-               "Non sostituisce la fisioterapia: la sostiene"]
-    },
-    sguardo: {
-      h1a: "Sotto pressione vinci", h1b: "con lo sguardo.",
-      nome: "il documento",
-      promessa: "5 esercizi per restare lucido nei momenti che contano: il tiro, la riunione, la decisione in trenta secondi.",
-      dentro: ["La tecnica del «quiet eye», misurata sugli atleti d'élite",
-               "Come si allena la fissazione visiva prima del gesto",
-               "Portata dallo sport agonistico alla vita professionale",
-               "Cinque esercizi brevi, applicabili da domani mattina"]
-    },
-    memoria: {
-      h1a: "La tua memoria non è in declino.", h1b: "È solo disallenata.",
-      nome: "il documento",
-      promessa: "10 esercizi quotidiani per allenare la memoria dopo i sessant'anni.",
-      dentro: ["Dieci esercizi con routine e frequenza indicate per ognuno",
-               "Perché camminare conta quanto esercitare la memoria",
-               "Basato su studi cognitivi documentati, non su luoghi comuni",
-               "Ripetibile dentro la vita di tutti i giorni"]
-    },
-    motivazione: {
-      h1a: "La motivazione", h1b: "arriva dopo.",
-      nome: "il documento",
-      promessa: "5 esercizi per restare in movimento quando la carica non c'è.",
-      dentro: ["Perché i neuroni della motivazione si accendono mentre agisci, non prima",
-               "Come togliere i freni invece di cercare stimoli esterni",
-               "Cosa fare nel vuoto che arriva subito dopo un traguardo",
-               "Basato su uno studio pubblicato su PNAS"]
-    },
-    gratitudine: {
-      h1a: "Buddha aveva ragione.", h1b: "La neuroscienza lo dimostra.",
-      nome: "il documento",
-      promessa: "5 esercizi quotidiani per allenare il cervello alla gratitudine.",
-      dentro: ["Il diario che modifica sonno, umore e soglia del dolore",
-               "Il perché neurologico dietro ogni esercizio",
-               "Cinque pratiche brevi, una per ogni momento della giornata",
-               "Con le ricerche citate per esteso"]
-    },
-    tempo: {
-      h1a: "Smetti di essere", h1b: "un turista del tempo.",
-      nome: "il documento",
-      promessa: "7 esercizi quotidiani per tornare al presente.",
-      dentro: ["La mente passa quasi metà del tempo altrove: nel passato o nel futuro",
-               "Il respiro come interruttore fra reazione e risposta",
-               "Sette pratiche da cinque minuti l'una",
-               "Da fare mentre vivi, non chiuso in una stanza silenziosa"]
-    }
+  var FILE = {
+    test:        ["carico-o-eta.pdf",              "Carico o età? · 12 domande · 6 pagine"],
+    attenzione:  ["attenzione-dopo-i-50.pdf",        "Non stai peggiorando. Sei disallenato. · 5 esercizi · 10 pagine"],
+    checklist:   ["checklist-pre-gara-mentale.pdf",  "Checklist Pre-Gara Mentale · 10 esercizi · 8 pagine"],
+    dialogo:     ["dialogo-interiore.pdf",           "Dialogo Interiore · 7 esercizi · 6 pagine"],
+    recovery:    ["sistema-di-recovery.pdf",         "Sistema di Recovery · 5 step · 5 pagine"],
+    sguardo:     ["sguardo-sotto-pressione.pdf",     "Sguardo Sotto Pressione · 5 esercizi · 4 pagine"],
+    memoria:     ["memoria-over-60.pdf",             "Memoria Over 60 · 10 esercizi · 6 pagine"],
+    motivazione: ["la-motivazione-arriva-dopo.pdf",  "La Motivazione Arriva Dopo · 5 esercizi · 5 pagine"],
+    gratitudine: ["gratitudine.pdf",                 "Esercizi di Gratitudine · 5 esercizi · 4 pagine"],
+    tempo:       ["turista-del-tempo.pdf",           "Turista del Tempo · 7 esercizi · 5 pagine"],
+    ormai:       ["ormai-sono-cosi.pdf",             "«Ormai sono così» · Quaderno n. 1 · Salute · 10 esercizi · 20 pagine"]
   };
-
   (function () {
     var slug = (new URLSearchParams(window.location.search).get("doc") || "attenzione").toLowerCase();
-    if (!DOCS[slug]) slug = "attenzione";
-    var d = DOCS[slug];
-
-    document.getElementById("titolo").innerHTML = d.h1a + "<span>" + d.h1b + "</span>";
-    document.getElementById("promessa").textContent = d.promessa;
-    document.getElementById("nomeDoc").textContent = d.nome;
-    document.title = d.h1a + " " + d.h1b + " | Federico Grianti";
-
-    var ul = document.getElementById("dentro");
-    d.dentro.forEach(function (t) {
-      var li = document.createElement("li");
-      li.textContent = t;
-      ul.appendChild(li);
-    });
-
-    var form = document.getElementById("formEsercizi");
-    var btn = document.getElementById("btnInvia");
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      btn.disabled = true;
-      btn.textContent = "Invio in corso…";
-      // Costruiamo i dati a mano: garantisce che il campo anti-bot parta VUOTO
-      // anche se il browser lo ha riempito con la compilazione automatica.
-      var dati = new FormData();
-      dati.append("EMAIL", document.getElementById("EMAIL").value.trim());
-      dati.append("email_address_check", "");
-      dati.append("locale", "it");
-      fetch(form.action, { method: "POST", body: dati, mode: "no-cors" })
-        .catch(function () {})
-        .then(function () { window.location.href = "grazie.html?doc=" + slug; });
-    });
+    if (!FILE[slug]) slug = "attenzione";
+    document.getElementById("download").setAttribute("href", FILE[slug][0]);
+    document.getElementById("etichetta").textContent = FILE[slug][1];
+    if (slug === "ormai") {
+      document.querySelector("h1").innerHTML = "Eccolo.<br/><em>Il quaderno è qui sotto.</em>";
+      document.querySelector(".intro").textContent = "Scaricalo adesso e salvalo dove lo ritrovi: venti pagine da usare con calma.";
+      document.getElementById("download").innerHTML = "&darr; Scarica il quaderno";
+      document.getElementById("avvisoP").textContent = "Non farlo stasera. Scegli la domanda che ti ha dato più fastidio e stai su quella per tre giorni: gli altri esercizi restano lì, non scappano.";
+    }
+    if (slug === "test") {
+      var dl = document.getElementById("download");
+      dl.setAttribute("href", "test.html");
+      dl.removeAttribute("download");
+      dl.innerHTML = "Fai il test &rarr;";
+      document.getElementById("etichetta").textContent = "12 domande · 4 minuti · il risultato lo vedi subito";
+      document.getElementById("avvisoT").textContent = "Come si fa";
+      document.getElementById("avvisoP").textContent = "Rispondi di getto: la prima risposta che ti viene \u00e8 quasi sempre quella giusta. Alla fine il punteggio lo calcola la pagina e ti dice da dove partire.";
+      document.querySelector(".intro").textContent = "Il test si fa qui, dal telefono: niente da stampare. Il link te l'ho mandato anche per email.";
+    }
   })();
 </script>
 <!-- Cloudflare Web Analytics -->
@@ -275,7 +113,8 @@ esercizi_v7.txt
 <!-- End Cloudflare Web Analytics -->
 </body>
 </html>
-Visualizzazione di esercizi_v7.txt.
+Visualizzazione di grazie_v5.txt.
+
 
 
 
