@@ -1,5 +1,7 @@
 
 
+
+
 grazie_v5.txt
 
 100%
@@ -43,7 +45,7 @@ grazie_v5.txt
 <body>
 
 <div class="topbar">
-  <a href="index.html" class="topbar-logo">Federico Grianti</a>
+  <a class='topbar-logo' href='/'>Federico Grianti</a>
 </div>
 
 <main>
@@ -62,7 +64,7 @@ grazie_v5.txt
 
     <span class="secondario">Se l'email non arriva entro qualche minuto, guarda nello spam o fra le promozioni.<br/>
     Negli altri documenti che ho scritto ci sono sport, lavoro e longevità mentale: te li mando uno alla volta, nelle prossime settimane.<br/>
-    <a href="index.html">Torna al sito</a></span>
+    <a href='/'>Torna al sito</a></span>
   </div>
 </main>
 
@@ -79,13 +81,20 @@ grazie_v5.txt
     memoria:     ["memoria-over-60.pdf",             "Memoria Over 60 · 10 esercizi · 6 pagine"],
     motivazione: ["la-motivazione-arriva-dopo.pdf",  "La Motivazione Arriva Dopo · 5 esercizi · 5 pagine"],
     gratitudine: ["gratitudine.pdf",                 "Esercizi di Gratitudine · 5 esercizi · 4 pagine"],
-    tempo:       ["turista-del-tempo.pdf",           "Turista del Tempo · 7 esercizi · 5 pagine"]
+    tempo:       ["turista-del-tempo.pdf",           "Turista del Tempo · 7 esercizi · 5 pagine"],
+    ormai:       ["ormai-sono-cosi.pdf",             "«Ormai sono così» · Quaderno n. 1 · Salute · 10 esercizi · 20 pagine"]
   };
   (function () {
     var slug = (new URLSearchParams(window.location.search).get("doc") || "attenzione").toLowerCase();
     if (!FILE[slug]) slug = "attenzione";
     document.getElementById("download").setAttribute("href", FILE[slug][0]);
     document.getElementById("etichetta").textContent = FILE[slug][1];
+    if (slug === "ormai") {
+      document.querySelector("h1").innerHTML = "Eccolo.<br/><em>Il quaderno è qui sotto.</em>";
+      document.querySelector(".intro").textContent = "Scaricalo adesso e salvalo dove lo ritrovi: venti pagine da usare con calma.";
+      document.getElementById("download").innerHTML = "&darr; Scarica il quaderno";
+      document.getElementById("avvisoP").textContent = "Non farlo stasera. Scegli la domanda che ti ha dato più fastidio e stai su quella per tre giorni: gli altri esercizi restano lì, non scappano.";
+    }
     if (slug === "test") {
       var dl = document.getElementById("download");
       dl.setAttribute("href", "test.html");
@@ -104,5 +113,6 @@ grazie_v5.txt
 </body>
 </html>
 Visualizzazione di grazie_v5.txt.
+
 
 
