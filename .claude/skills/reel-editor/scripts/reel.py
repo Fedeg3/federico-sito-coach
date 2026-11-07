@@ -257,7 +257,8 @@ def cmd_ass(ov_path, keywords=None, fix=(), karaoke=False):
         style = 'Title'
         if t.startswith('{COVER}'):      # titolo di copertina: Anton nero su riquadro bianco (stile "Strong" di Edits)
             style, t = 'Cover', t[len('{COVER}'):].replace(Y, r'{\c&H0000C8&}').replace(Wh, r'{\c&H000000&}')
-        ev.append(f'Dialogue: 1,{_ts(a)},{_ts(b)},{style},,0,0,0,,{{\\fad(120,80)}}{t}')
+        fad = r'{\fad(0,120)}' if style == 'Cover' else r'{\fad(120,80)}'   # copertina piena dal fotogramma 0
+        ev.append(f'Dialogue: 1,{_ts(a)},{_ts(b)},{style},,0,0,0,,{fad}{t}')
     hdr = f"""[Script Info]
 ScriptType: v4.00+
 PlayResX: 1080

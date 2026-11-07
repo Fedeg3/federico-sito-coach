@@ -1,1 +1,18 @@
-[{"img": "/tmp/r20/img/cover_final.png", "start": 90.45, "end": 96.45, "w": 380, "y": 300, "fade": 0.22}]
+[
+ {
+  "img": "/tmp/r20/img/cover_final.png",
+  "start": 90.45,
+  "end": 98.6,
+  "w": 380,
+  "y": 300,
+  "fade": 0.22
+ },
+ {
+  "img": "/tmp/r20/img/cover_final.png",
+  "start": 123.4,
+  "end": 127.65,
+  "w": 380,
+  "y": 440,
+  "fade": 0.22
+ }
+]

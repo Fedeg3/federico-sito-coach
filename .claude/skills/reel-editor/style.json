@@ -17,7 +17,7 @@
   },
   "titles": {
     "size": 70,
-    "margin_v": 300
+    "margin_v": 330
   },
   "zoom": {
     "push": 1.1,
@@ -27,10 +27,10 @@
     "target_shot_s": 4.0
   },
   "cover": {
-    "font": "Anton",
-    "size": 110,
-    "margin_v": 300,
-    "_note": "Copertina: Federico usava il font 'Strong' di Edits, nero su bianco. Strong non è disponibile: Anton (Google Fonts) è il più simile. Scarica anton.ttf in <work>/fonts."
+    "font": "Poppins Black",
+    "size": 74,
+    "margin_v": 345,
+    "_note": "Scelta di Federico (Reel #20) come sostituto di 'Strong' di Edits: Poppins Black (Google Fonts), nero su bianco. Anton era troppo stretto. Alternativa scartata: Archivo Black. Visibile dal fotogramma 0 (niente dissolvenza in entrata). Riquadro dentro la zona sicura: 321-664 px."
   },
   "_safe_zone": "Zona sicura Reels IG: niente testo nei primi 270 px in alto (barra Instagram). Titoli e copertina partono da 300 px (Reel #20: prima uscivano in alto)."
 }
