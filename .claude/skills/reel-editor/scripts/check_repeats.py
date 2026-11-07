@@ -9,7 +9,7 @@ che durano troppo nel montato (spesso nascondono una ripetizione).
 Uso: python3 -I check_repeats.py <work>   (dopo `reel.py cut` e `reel.py words`)
 Leggi l'output: se le prime parole di DOPO ripetono le ultime di PRIMA, sposta il taglio.
 """
-import json, subprocess, sys
+import json, os, subprocess, sys
 from faster_whisper import WhisperModel
 
 W = sys.argv[1]
@@ -18,9 +18,9 @@ P = "Esitazioni e ripetizioni trascritte parola per parola: e e, per per, il il.
 
 
 def tr(f, a, b):
-    subprocess.run(['ffmpeg', '-v', 'error', '-y', '-ss', f'{max(a, 0):.2f}', '-to', f'{b:.2f}', '-i', f,
-                    '-ac', '1', '-ar', '16000', f'{W}/_chk.wav'])
-    s, _ = m.transcribe(f'{W}/_chk.wav', language='it', vad_filter=False,
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from reel_audio import load_audio
+    s, _ = m.transcribe(load_audio(f, a, b), language='it', vad_filter=False,
                         condition_on_previous_text=False, initial_prompt=P)
     return ' '.join(x.text.strip() for x in s)
 

@@ -46,3 +46,9 @@
 - Federico NON vuole il titolo di copertina (lo aggiunge lui): niente `{COVER}`, primi 3 s senza titoli in alto.
 - Sottotitoli karaoke (`ass --karaoke`): ogni parola diventa gialla quando la pronuncia.
 - "non devi guidare" era un errore di Whisper: la trascrizione letterale dà "deve". Tolto "Allora," iniziale.
+
+# Esempio: Reel #20 «Entri in una stanza e non sai più perché» (7 novembre 2026)
+
+- Più dinamico (49 pezzi in 2:08), viso schiarito con `grade`, copertina a 3 frasi dentro la zona sicura, popup della copertina del quaderno da "Martedì esce il mio quaderno" a "te lo mando appena esce".
+- Tagli fini: "Poi ~~parte~~ la parte onesta" (il primo taglio lasciava la coda di "parte", sentita come "dalla": controlla sempre la trascrizione del montato), "più ~~di~~ una porta", "~~Ovvio,~~ parlane". Whisper aveva inventato un "Grazie." finale: rimosso da `rough_words.json`.
+- Controllo zona sicura: `ffmpeg -ss 1 -i REEL.mp4 -frames:v 1 -vf "drawbox=y=0:w=iw:h=270:color=red@0.25:t=fill,drawbox=y=ih-480:w=iw:h=480:color=red@0.25:t=fill" safe.png`.

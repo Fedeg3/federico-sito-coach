@@ -36,6 +36,19 @@ def cmd_download(ids):
 
 
 # ---------------------------------------------------------------- whisper
+
+def load_audio(path, a=None, b=None):
+    """Audio 16 kHz mono float32 via ffmpeg (evita incompatibilità faster-whisper/PyAV)."""
+    import subprocess, numpy as np
+    cmd = ['ffmpeg', '-v', 'error']
+    if a is not None:
+        cmd += ['-ss', f'{max(a, 0):.3f}']
+    if b is not None:
+        cmd += ['-to', f'{b:.3f}']
+    cmd += ['-i', path, '-f', 's16le', '-ac', '1', '-ar', '16000', '-']
+    raw = subprocess.run(cmd, capture_output=True, check=True).stdout
+    return np.frombuffer(raw, np.int16).astype(np.float32) / 32768.0
+
 def _model():
     from faster_whisper import WhisperModel
     return WhisperModel(STYLE['whisper_model'], device='cpu', compute_type='int8',
@@ -43,7 +56,7 @@ def _model():
 
 
 def _transcribe(m, path, prompt):
-    segs, _ = m.transcribe(path, language='it', word_timestamps=True, beam_size=5, initial_prompt=prompt)
+    segs, _ = m.transcribe(load_audio(path), language='it', word_timestamps=True, beam_size=5, initial_prompt=prompt)
     return [[round(w.start, 2), round(w.end, 2), w.word] for s in segs for w in s.words]
 
 
@@ -152,15 +165,28 @@ def _render(plan, out, ass=None, final=False):
         parts = list(ex.map(one, range(len(plan))))
     lst = W(f'parts/{tag}.txt')
     open(lst, 'w').write(''.join(f"file '{p}'\n" for p in parts))
-    vpost = 'eq=contrast=1.04:saturation=1.08'
-    if ass:
-        vpost += f",subtitles={ass}:fontsdir={W('fonts')}"
+    # correzione colore/luce: style "grade" (es. curves per schiarire il viso), default leggero
+    grade = STYLE.get('grade', 'eq=contrast=1.04:saturation=1.08')
     apost = ('highpass=f=80,acompressor=threshold=-20dB:ratio=3:attack=5:release=120,'
              'loudnorm=I=-14:TP=-1.5:LRA=9,aresample=48000')
     venc = (['-preset', 'slow', '-crf', '20', '-maxrate', '12M', '-bufsize', '24M'] if final
             else ['-preset', 'veryfast', '-crf', '22'])
-    sh('ffmpeg', '-v', 'error', '-y', '-f', 'concat', '-safe', '0', '-i', lst, '-vf', vpost, '-af', apost,
-       '-c:v', 'libx264', *venc, '-pix_fmt', 'yuv420p', '-movflags', '+faststart',
+    # popup immagini (es. copertina del quaderno): <work>/popups.json = [{img,start,end,w,y}]
+    pops = json.load(open(W('popups.json'))) if final and os.path.exists(W('popups.json')) else []
+    ins, fc, last = ['-f', 'concat', '-safe', '0', '-i', lst], [f'[0:v]{grade}[v0]'], 'v0'
+    for i, p in enumerate(pops, 1):
+        s, e, fd = p['start'], p['end'], p.get('fade', 0.25)
+        ins += ['-loop', '1', '-t', f'{e + 1:.2f}', '-i', p['img']]
+        fc.append(f"[{i}:v]scale={p.get('w', 620)}:-1,format=rgba,"
+                  f"fade=t=in:st={s:.2f}:d={fd}:alpha=1,fade=t=out:st={e - fd:.2f}:d={fd}:alpha=1[p{i}]")
+        fc.append(f"[{last}][p{i}]overlay=x=(W-w)/2:y={p.get('y', 320)}:enable='between(t,{s:.2f},{e:.2f})'"
+                  f":eof_action=pass[v{i}]")
+        last = f'v{i}'
+    if ass:
+        fc.append(f"[{last}]subtitles={ass}:fontsdir={W('fonts')}[vout]")
+        last = 'vout'
+    sh('ffmpeg', '-v', 'error', '-y', *ins, '-filter_complex', ';'.join(fc), '-map', f'[{last}]', '-map', '0:a',
+       '-af', apost, '-c:v', 'libx264', *venc, '-pix_fmt', 'yuv420p', '-movflags', '+faststart',
        '-c:a', 'aac', '-b:a', '192k', '-ar', '48000', out)
 
 

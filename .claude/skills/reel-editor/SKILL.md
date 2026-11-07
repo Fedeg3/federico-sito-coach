@@ -33,6 +33,13 @@ Script: `scripts/reel.py` (stile in `style.json`, esempio completo in `examples/
 
 Nota tecnica: il render lavora un pezzo alla volta e poi concatena (un unico filtergraph con 20+ tagli va in OOM a 15 GB di RAM). Le durate sono arrotondate a fotogrammi interi, così i sottotitoli non slittano.
 
+## Novità dal Reel #20
+- **Zona sicura IG**: nessun testo nei primi 270 px in alto. Titoli e copertina partono da `margin_v` 300 (default in `style.json`); copertina lunga (3 frasi) → `size` ~84 in `style_override.json`. Controlla sempre un fotogramma con le bande rosse (vedi `examples/README.md`).
+- **Luce del viso**: misura la luminanza media viso/parete (YCrCb su un fotogramma). Se il viso è < ~130 con parete chiara, metti in `style_override.json` una chiave `grade` con `curves` che alzano i medi (esempio in `examples/reel20_style_override.json`): viso 121 → 140 senza bruciare la parete.
+- **Popup immagine** (es. copertina del quaderno): `<work>/popups.json` = `[{"img":..., "start":..., "end":..., "w":520, "y":470}]`, appare e sparisce in dissolvenza. Pulisci prima l'immagine: raddrizzala e ritaglia via bordi/sfondo grigi (OpenCV: maschera del colore della copertina → `minAreaRect` per l'angolo → rotazione → ritaglio interno di 3 px).
+- **Reel più dinamico** su richiesta: `pause_keep_s` 0.08, `zoom` push 1.14 / punch 1.18, `target_shot_s` 2.4, `long_piece_s` 3.2.
+- Ambiente nuovo con Python 3.13: faster-whisper non apre i file con PyAV → l'audio si decodifica con ffmpeg (`load_audio` in `scripts/reel_audio.py`), già fatto negli script.
+
 ## Regole di stile (approvate da Federico)
 
 **Montaggio**

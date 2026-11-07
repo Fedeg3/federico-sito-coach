@@ -17,7 +17,7 @@
   },
   "titles": {
     "size": 70,
-    "margin_v": 240
+    "margin_v": 300
   },
   "zoom": {
     "push": 1.1,
@@ -28,8 +28,9 @@
   },
   "cover": {
     "font": "Anton",
-    "size": 140,
-    "margin_v": 165,
+    "size": 110,
+    "margin_v": 300,
     "_note": "Copertina: Federico usava il font 'Strong' di Edits, nero su bianco. Strong non è disponibile: Anton (Google Fonts) è il più simile. Scarica anton.ttf in <work>/fonts."
-  }
+  },
+  "_safe_zone": "Zona sicura Reels IG: niente testo nei primi 270 px in alto (barra Instagram). Titoli e copertina partono da 300 px (Reel #20: prima uscivano in alto)."
 }
