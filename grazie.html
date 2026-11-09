@@ -3,88 +3,100 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Il tuo quaderno — «Ormai sono così» | Federico Grianti</title>
-  <meta name="robots" content="noindex, nofollow" />
+  <title>Grazie — il tuo documento è qui | Federico Grianti</title>
+  <meta name="robots" content="noindex, follow" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
   <style>
-    :root{--crema:#F7F2EA;--bianco:#FEFCF8;--verde:#4A6741;--verde-scuro:#1E3F2E;--ocra:#C47F35;--carbone:#1E1A16;--marrone:#3D2E1E;--grigio:#7A7268;--grigio-chiaro:#B0A99E;--serif:"Playfair Display",Georgia,serif;--sans:"Lato",system-ui,sans-serif;--radius:6px;--tr:0.38s cubic-bezier(0.25,0.46,0.45,0.94)}
+    :root{--crema:#F7F2EA;--bianco:#FEFCF8;--verde:#4A6741;--ocra:#C47F35;--ocra-dim:rgba(196,127,53,0.12);--carbone:#1E1A16;--marrone:#3D2E1E;--grigio:#7A7268;--grigio-chiaro:#B0A99E;--serif:"Playfair Display",Georgia,serif;--sans:"Lato",system-ui,sans-serif;--radius:6px;--tr:0.38s cubic-bezier(0.25,0.46,0.45,0.94)}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    body{background:var(--crema);color:var(--carbone);font-family:var(--sans);font-weight:300;line-height:1.75}
-    img{max-width:100%;height:auto;display:block}
-    a{color:inherit}
-    .marchio{padding:1.4rem 3rem;font-family:var(--serif);font-size:1.05rem;color:var(--verde);border-bottom:1px solid rgba(74,103,65,0.12);background:var(--bianco)}
-    main{max-width:860px;margin:0 auto;padding:4rem 3rem 5rem}
-    .testa{display:grid;grid-template-columns:170px 1fr;gap:2.8rem;align-items:center;margin-bottom:3.5rem}
-    .testa img{width:170px;border-radius:3px;box-shadow:0 18px 40px rgba(30,26,22,.2);transform:rotate(-1.5deg)}
-    .occhiello{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ocra);margin-bottom:1rem;font-weight:700}
-    h1{font-family:var(--serif);font-size:clamp(2rem,4vw,2.8rem);line-height:1.15;font-weight:500;color:var(--verde-scuro);margin-bottom:1rem}
-    p{font-size:1rem;color:var(--grigio);line-height:1.85;margin-bottom:1rem}
-    p b{color:var(--marrone);font-weight:700}
-    .box{background:var(--bianco);border:1.5px solid rgba(74,103,65,0.18);border-radius:var(--radius);padding:2rem 2rem;margin-bottom:1.4rem}
-    .box h2{font-family:var(--serif);font-size:1.3rem;font-weight:500;color:var(--marrone);margin-bottom:.6rem;line-height:1.35}
-    .btn{display:inline-block;background:var(--verde);color:var(--bianco);padding:.95rem 2rem;font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border-radius:99px;border:1.5px solid var(--verde);text-decoration:none;transition:var(--tr);margin-top:.4rem}
-    .btn:hover{background:transparent;color:var(--verde)}
-    .domanda{font-family:var(--serif);font-style:italic;font-size:1.25rem;color:var(--marrone);line-height:1.5;margin:.4rem 0 1rem}
-    .mail{color:var(--verde);font-weight:700;text-decoration:none;border-bottom:1px solid rgba(74,103,65,.35)}
-    .formato{font-size:.8rem;color:var(--grigio-chiaro);margin-top:.7rem}
-    .consiglio{background:var(--bianco);border-left:3px solid var(--ocra);border-radius:var(--radius);padding:1.4rem 1.6rem;margin-bottom:1.4rem}
-    .consiglio b{display:block;color:var(--marrone);margin-bottom:.3rem}
-    .nota{font-size:.82rem;color:var(--grigio-chiaro);line-height:1.8;margin-top:2rem}
-    footer{background:var(--marrone);color:rgba(255,255,255,0.45);padding:2rem 3rem;text-align:center;font-size:.72rem;line-height:1.8}
-    @media(max-width:760px){
-      .marchio{padding:1.1rem 1.4rem}
-      main{padding:2.5rem 1.4rem 3.5rem}
-      .testa{grid-template-columns:1fr;gap:1.8rem;text-align:center}
-      .testa img{width:150px;margin:0 auto}
-      .box{padding:1.6rem 1.3rem}
-      footer{padding:1.8rem 1.4rem}
-    }
+    html{font-size:16px}
+    body{background:var(--crema);color:var(--carbone);font-family:var(--sans);font-weight:300;line-height:1.75;min-height:100vh;display:flex;flex-direction:column}
+    a{color:inherit;text-decoration:none}
+    body::after{content:"";position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:9998;opacity:.5}
+    .topbar{padding:1.5rem 3rem;border-bottom:1px solid rgba(74,103,65,0.12);background:var(--bianco)}
+    .topbar-logo{font-family:var(--serif);font-size:1.1rem;color:var(--verde);font-weight:500}
+    main{flex:1;display:flex;align-items:center;justify-content:center;padding:4rem 1.5rem}
+    .box{max-width:640px;text-align:center}
+    .segno{width:64px;height:64px;border-radius:50%;background:var(--verde);color:var(--bianco);display:flex;align-items:center;justify-content:center;font-size:1.8rem;margin:0 auto 2rem}
+    h1{font-family:var(--serif);font-size:clamp(2rem,4vw,2.9rem);font-weight:500;line-height:1.2;color:var(--marrone);margin-bottom:1.3rem}
+    h1 em{font-style:italic;color:var(--verde)}
+    .intro{font-size:1.02rem;color:var(--grigio);line-height:1.85;margin-bottom:2rem}
+    .btn{display:inline-block;background:var(--verde);color:var(--bianco);padding:1rem 2.4rem;font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border-radius:99px;border:1.5px solid var(--verde);transition:var(--tr)}
+    .btn:hover{background:transparent;color:var(--verde);transform:translateY(-2px)}
+    .sotto-btn{font-size:.78rem;color:var(--grigio-chiaro);margin-top:.9rem;letter-spacing:.02em}
+    .avviso{background:var(--ocra-dim);border:1px solid rgba(196,127,53,0.25);border-radius:var(--radius);padding:1.5rem 1.8rem;text-align:left;margin:2.5rem 0 0}
+    .avviso strong{display:block;font-family:var(--serif);font-size:1.05rem;color:var(--marrone);margin-bottom:.5rem;font-weight:500}
+    .avviso p{font-size:.88rem;color:var(--grigio);line-height:1.75}
+    .secondario{display:block;margin-top:2rem;font-size:.8rem;color:var(--grigio-chiaro);line-height:1.8}
+    .secondario a{color:var(--verde);text-decoration:underline;text-underline-offset:3px}
+    footer{background:var(--marrone);color:rgba(255,255,255,0.4);padding:1.8rem 3rem;text-align:center;font-size:.72rem}
+    @media(max-width:900px){.topbar{padding:1.1rem 1.4rem}main{padding:3rem 1.4rem}footer{padding:1.5rem 1.4rem}}
   </style>
 </head>
 <body>
 
-<div class="marchio">Federico Grianti</div>
+<div class="topbar">
+  <a class='topbar-logo' href='/'>Federico Grianti</a>
+</div>
 
 <main>
-  <div class="testa">
-    <img src="copertina-ormai-salute.jpg" alt="Copertina del quaderno «Ormai sono così»" width="800" height="1131" />
-    <div>
-      <p class="occhiello">Quaderno n. 1 · Salute</p>
-      <h1 id="saluto">Ecco il tuo quaderno.</h1>
-      <p>Scaricalo adesso e salvalo dove lo ritrovi: venti pagine da usare con calma.</p>
-      <a href="ormai-sono-cosi.pdf" class="btn" download>&darr; Scarica il quaderno</a>
-      <p class="formato">PDF · 20 pagine · 10 domande e 10 esercizi</p>
-    </div>
-  </div>
-
-
-  <div class="consiglio">
-    <b>Un consiglio prima di leggerlo tutto</b>
-    Non farlo stasera. Scegli la domanda che ti ha dato più fastidio e stai su quella per tre giorni: gli altri esercizi restano lì, non scappano.
-  </div>
-
   <div class="box">
-    <h2>E una domanda per te</h2>
-    <p class="domanda">Qual è la frase «alla mia età» che ti dici più spesso?</p>
-    <p>Se ti va, scrivimela a <a class="mail" href="mailto:coaching@federicogrianticoach.com?subject=La%20mia%20frase%20%C2%ABalla%20mia%20et%C3%A0%C2%BB">coaching@federicogrianticoach.com</a>. Le risposte le leggo io, una per una.</p>
-  </div>
+    <div class="segno">&#10003;</div>
+    <h1>Eccolo.<br/><em>Il documento è qui sotto.</em></h1>
+    <p class="intro">Scaricalo adesso — te l'ho mandato anche per email, così lo ritrovi quando ti serve.</p>
 
-  <p class="nota">Il martedì ti scrivo una email breve. Perché non finisca nello spam, aggiungi <b>coaching@federicogrianticoach.com</b> ai tuoi contatti. Se usi Gmail, controlla anche la scheda «Promozioni».</p>
+    <a id="download" href="attenzione-dopo-i-50.pdf" class="btn" download>&darr; Scarica il PDF</a>
+    <p class="sotto-btn" id="etichetta">Non stai peggiorando. Sei disallenato. · 5 esercizi · 10 pagine</p>
+
+    <div class="avviso">
+      <strong id="avvisoT">Un consiglio prima di leggerlo tutto</strong>
+      <p id="avvisoP">Non farlo stasera. Prendi il primo esercizio e fai solo quello per tre giorni: gli altri restano lì, non scappano. Un protocollo letto in un pomeriggio non cambia niente; uno praticato per una settimana sì.</p>
+    </div>
+
+    <span class="secondario">Se l'email non arriva entro qualche minuto, guarda nello spam o fra le promozioni.<br/>
+    Negli altri documenti che ho scritto ci sono sport, lavoro e longevità mentale: te li mando uno alla volta, nelle prossime settimane.<br/>
+    <a href='/'>Torna al sito</a></span>
+  </div>
 </main>
 
-<footer>
-  &copy; 2025&ndash;2026 Federico Grianti · Mental Coach · federicogrianticoach.com
-</footer>
+<footer>&copy; 2025&ndash;2026 Federico Grianti · Mental Coach · federicogrianticoach.com</footer>
 
 <script>
+  var FILE = {
+    test:        ["carico-o-eta.pdf",              "Carico o età? · 12 domande · 6 pagine"],
+    attenzione:  ["attenzione-dopo-i-50.pdf",        "Non stai peggiorando. Sei disallenato. · 5 esercizi · 10 pagine"],
+    checklist:   ["checklist-pre-gara-mentale.pdf",  "Checklist Pre-Gara Mentale · 10 esercizi · 8 pagine"],
+    dialogo:     ["dialogo-interiore.pdf",           "Dialogo Interiore · 7 esercizi · 6 pagine"],
+    recovery:    ["sistema-di-recovery.pdf",         "Sistema di Recovery · 5 step · 5 pagine"],
+    sguardo:     ["sguardo-sotto-pressione.pdf",     "Sguardo Sotto Pressione · 5 esercizi · 4 pagine"],
+    memoria:     ["memoria-over-60.pdf",             "Memoria Over 60 · 10 esercizi · 6 pagine"],
+    motivazione: ["la-motivazione-arriva-dopo.pdf",  "La Motivazione Arriva Dopo · 5 esercizi · 5 pagine"],
+    gratitudine: ["gratitudine.pdf",                 "Esercizi di Gratitudine · 5 esercizi · 4 pagine"],
+    tempo:       ["turista-del-tempo.pdf",           "Turista del Tempo · 7 esercizi · 5 pagine"],
+    ormai:       ["ormai-sono-cosi.pdf",             "«Ormai sono così» · Quaderno n. 1 · Salute · 10 esercizi · 20 pagine"]
+  };
   (function () {
-    var nome = "";
-    try { nome = sessionStorage.getItem("nomeOrmai") || ""; } catch (err) {}
-    if (nome) {
-      var n = nome.charAt(0).toUpperCase() + nome.slice(1);
-      document.getElementById("saluto").textContent = n + ", ecco il tuo quaderno.";
+    var slug = (new URLSearchParams(window.location.search).get("doc") || "attenzione").toLowerCase();
+    if (!FILE[slug]) slug = "attenzione";
+    document.getElementById("download").setAttribute("href", FILE[slug][0]);
+    document.getElementById("etichetta").textContent = FILE[slug][1];
+    if (slug === "ormai") {
+      document.querySelector("h1").innerHTML = "Eccolo.<br/><em>Il quaderno è qui sotto.</em>";
+      document.querySelector(".intro").textContent = "Scaricalo adesso e salvalo dove lo ritrovi: venti pagine da usare con calma.";
+      document.getElementById("download").innerHTML = "&darr; Scarica il quaderno";
+      document.getElementById("avvisoP").textContent = "Non farlo stasera. Scegli la domanda che ti ha dato più fastidio e stai su quella per tre giorni: gli altri esercizi restano lì, non scappano.";
+    }
+    if (slug === "test") {
+      var dl = document.getElementById("download");
+      dl.setAttribute("href", "test.html");
+      dl.removeAttribute("download");
+      dl.innerHTML = "Fai il test &rarr;";
+      document.getElementById("etichetta").textContent = "12 domande · 4 minuti · il risultato lo vedi subito";
+      document.getElementById("avvisoT").textContent = "Come si fa";
+      document.getElementById("avvisoP").textContent = "Rispondi di getto: la prima risposta che ti viene \u00e8 quasi sempre quella giusta. Alla fine il punteggio lo calcola la pagina e ti dice da dove partire.";
+      document.querySelector(".intro").textContent = "Il test si fa qui, dal telefono: niente da stampare. Il link te l'ho mandato anche per email.";
     }
   })();
 </script>
