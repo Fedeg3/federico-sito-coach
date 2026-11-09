@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sei in lista — «Ormai sono così» | Federico Grianti</title>
+  <title>Il tuo quaderno — «Ormai sono così» | Federico Grianti</title>
   <meta name="robots" content="noindex, nofollow" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -28,6 +28,9 @@
     .btn:hover{background:transparent;color:var(--verde)}
     .domanda{font-family:var(--serif);font-style:italic;font-size:1.25rem;color:var(--marrone);line-height:1.5;margin:.4rem 0 1rem}
     .mail{color:var(--verde);font-weight:700;text-decoration:none;border-bottom:1px solid rgba(74,103,65,.35)}
+    .formato{font-size:.8rem;color:var(--grigio-chiaro);margin-top:.7rem}
+    .consiglio{background:var(--bianco);border-left:3px solid var(--ocra);border-radius:var(--radius);padding:1.4rem 1.6rem;margin-bottom:1.4rem}
+    .consiglio b{display:block;color:var(--marrone);margin-bottom:.3rem}
     .nota{font-size:.82rem;color:var(--grigio-chiaro);line-height:1.8;margin-top:2rem}
     footer{background:var(--marrone);color:rgba(255,255,255,0.45);padding:2rem 3rem;text-align:center;font-size:.72rem;line-height:1.8}
     @media(max-width:760px){
@@ -49,11 +52,18 @@
     <img src="copertina-ormai-salute.jpg" alt="Copertina del quaderno «Ormai sono così»" width="800" height="1131" />
     <div>
       <p class="occhiello">Quaderno n. 1 · Salute</p>
-      <h1 id="saluto">Fatto, sei in lista.</h1>
-      <p>Il quaderno esce a <b>inizio novembre</b>. Ti arriva via email, all'indirizzo che hai appena lasciato, senza che tu debba fare altro.</p>
+      <h1 id="saluto">Ecco il tuo quaderno.</h1>
+      <p>Scaricalo adesso e salvalo dove lo ritrovi: venti pagine da usare con calma.</p>
+      <a href="ormai-sono-cosi.pdf" class="btn" download>&darr; Scarica il quaderno</a>
+      <p class="formato">PDF · 20 pagine · 10 domande e 10 esercizi</p>
     </div>
   </div>
 
+
+  <div class="consiglio">
+    <b>Un consiglio prima di leggerlo tutto</b>
+    Non farlo stasera. Scegli la domanda che ti ha dato più fastidio e stai su quella per tre giorni: gli altri esercizi restano lì, non scappano.
+  </div>
 
   <div class="box">
     <h2>E una domanda per te</h2>
@@ -61,7 +71,7 @@
     <p>Se ti va, scrivimela a <a class="mail" href="mailto:coaching@federicogrianticoach.com?subject=La%20mia%20frase%20%C2%ABalla%20mia%20et%C3%A0%C2%BB">coaching@federicogrianticoach.com</a>. Le risposte le leggo io, una per una.</p>
   </div>
 
-  <p class="nota">Perché il quaderno non finisca nello spam, aggiungi <b>coaching@federicogrianticoach.com</b> ai tuoi contatti. Se usi Gmail, controlla anche la scheda «Promozioni».</p>
+  <p class="nota">Il martedì ti scrivo una email breve. Perché non finisca nello spam, aggiungi <b>coaching@federicogrianticoach.com</b> ai tuoi contatti. Se usi Gmail, controlla anche la scheda «Promozioni».</p>
 </main>
 
 <footer>
@@ -74,7 +84,7 @@
     try { nome = sessionStorage.getItem("nomeOrmai") || ""; } catch (err) {}
     if (nome) {
       var n = nome.charAt(0).toUpperCase() + nome.slice(1);
-      document.getElementById("saluto").textContent = "Fatto, " + n + ": sei in lista.";
+      document.getElementById("saluto").textContent = n + ", ecco il tuo quaderno.";
     }
   })();
 </script>
