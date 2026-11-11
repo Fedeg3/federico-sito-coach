@@ -182,6 +182,36 @@ def _render(plan, out, ass=None, final=False):
         fc.append(f"[{last}][p{i}]overlay=x=(W-w)/2:y={p.get('y', 320)}:enable='between(t,{s:.2f},{e:.2f})'"
                   f":eof_action=pass[v{i}]")
         last = f'v{i}'
+    # b-roll: <work>/brolls.json = [{clip, out_start, out_end, src_start, zoom?, blur?: [[x,y,w,h],...], grade?}]
+    #   la voce resta quella del montato; il video passa al clip di copertura (tempi sulla timeline finale).
+    brolls = json.load(open(W('brolls.json'))) if final and os.path.exists(W('brolls.json')) else []
+    for j, br in enumerate(brolls):
+        k = len(ins) // 2 if False else None
+        d = br['out_end'] - br['out_start']
+        ins += ['-ss', f"{br['src_start']:.3f}", '-t', f'{d + 0.2:.3f}', '-i', W(f"raw/{br['clip']}.mp4")]
+        idx = sum(1 for x in ins if x == '-i') - 1
+        z = br.get('zoom', 1.08); n = max(int(d * 30), 1)
+        chain = (f"[{idx}:v]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,fps=30,"
+                 f"scale=2160:3840,zoompan=z='1+({z}-1)*on/{n}':x='(iw-iw/zoom)/2':y='(ih-ih/zoom)/2':d=1:s=1080x1920:fps=30,"
+                 f"{br.get('grade', 'eq=contrast=1.04:saturation=1.05')}")
+        if br.get('blur'):
+            chain += f"[bb{j}];[bb{j}]split=2[bm{j}][bc{j}]"
+            cur = f'bm{j}'
+            for q, (x, y, w, h) in enumerate(br['blur']):
+                src = f'bc{j}' if q == 0 else f'bc{j}_{q}'
+                if q + 1 < len(br['blur']):
+                    fc_split = True
+                chain += f";[{src}]crop={w}:{h}:{x}:{y},boxblur=24:3[bl{j}_{q}];[{cur}][bl{j}_{q}]overlay={x}:{y}[bo{j}_{q}]"
+                cur = f'bo{j}_{q}'
+                if q + 1 < len(br['blur']):
+                    chain += f";[{cur}]split=2[bs{j}_{q}][bc{j}_{q+1}]"
+                    cur = f'bs{j}_{q}'
+            chain += f";[{cur}]setpts=PTS-STARTPTS+{br['out_start']:.3f}/TB[b{j}]"
+        else:
+            chain += f",setpts=PTS-STARTPTS+{br['out_start']:.3f}/TB[b{j}]"
+        fc.append(chain)
+        fc.append(f"[{last}][b{j}]overlay=0:0:enable='between(t,{br['out_start']:.3f},{br['out_end']:.3f})':eof_action=pass[vb{j}]")
+        last = f'vb{j}'
     if ass:
         fc.append(f"[{last}]subtitles={ass}:fontsdir={W('fonts')}[vout]")
         last = 'vout'

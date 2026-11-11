@@ -41,6 +41,11 @@ Nota tecnica: il render lavora un pezzo alla volta e poi concatena (un unico fil
 - **Reel più dinamico** su richiesta: `pause_keep_s` 0.08, `zoom` push 1.14 / punch 1.18, `target_shot_s` 2.4, `long_piece_s` 3.2.
 - Ambiente nuovo con Python 3.13: faster-whisper non apre i file con PyAV → l'audio si decodifica con ffmpeg (`load_audio` in `scripts/reel_audio.py`), già fatto negli script.
 
+## B-roll (dal Reel #22)
+- Federico gira b-roll con la camera posteriore (4K): riconoscili dal formato e da contact sheet (6 fotogrammi per clip). Mettili sui "punti" del racconto, con la sua voce sotto: `<work>/brolls.json` (vedi `examples/reel22_brolls.json`), tempi sulla timeline finale presi da `rough_words.json`.
+- Scegli gli istanti in cui lui è in scena (verifica con fotogrammi), sfoca targhe/indirizzi/dati personali (`blur`), niente b-roll su numeri grandi, battute chiave e frasi-ritornello.
+- Se c'è un brief: rispetta durata, testi a schermo e file da consegnare (es. `REELnn_copertina.jpg` senza sottotitoli). Da qui non si può salvare su ~/COWORK né caricare video grandi su Drive: consegna con SendUserFile e dillo.
+
 ## Regole di stile (approvate da Federico)
 
 **Montaggio**

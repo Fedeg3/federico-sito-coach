@@ -52,3 +52,10 @@
 - Più dinamico (49 pezzi in 2:08), viso schiarito con `grade`, copertina a 3 frasi dentro la zona sicura, popup della copertina del quaderno da "Martedì esce il mio quaderno" a "te lo mando appena esce".
 - Tagli fini: "Poi ~~parte~~ la parte onesta" (il primo taglio lasciava la coda di "parte", sentita come "dalla": controlla sempre la trascrizione del montato), "più ~~di~~ una porta", "~~Ovvio,~~ parlane". Whisper aveva inventato un "Grazie." finale: rimosso da `rough_words.json`.
 - Controllo zona sicura: `ffmpeg -ss 1 -i REEL.mp4 -frames:v 1 -vf "drawbox=y=0:w=iw:h=270:color=red@0.25:t=fill,drawbox=y=ih-480:w=iw:h=480:color=red@0.25:t=fill" safe.png`.
+
+# Esempio: Reel #22 «Sabato compio 70 anni» (11 novembre 2026) — primo con b-roll
+- Brief .md di Federico (su Drive) + teleprompter. 5 clip parlati (frontale 1080p) + 8 b-roll (posteriore 4K, `rotation -90`; Whisper ci "sente" frasi inventate: ignorale).
+- `brolls.json`: `[{clip, out_start, out_end, src_start, grade, blur:[[x,y,w,h]]}]` sulla timeline finale: la voce continua, il video passa al b-roll (zoom lento). Mai b-roll su numeri, battute chiave e "Avrei potuto dire: ormai".
+- Dati personali: targhe visibili dalla finestra → `blur` sulla fascia della finestra (0,0,1080,760). Komoot non usato: mostra 18 km (contraddice "oltre 100 km") e la zona di casa.
+- Bilanciamento del bianco caldo (parete Cr 132 / Cb 117, viso Cr 152): `colorbalance` verso il blu + `curves` → viso Y 119→134, Cr 145; parete quasi neutra.
+- Copertina «70 / ormai?» con `{\fs220}`/`{\fs96}` dentro `{COVER}`, numeri grandi «1», «2», «3» 1 s e «1 2 3» su "Tre volte". `REEL22_copertina.jpg` = fotogramma senza sottotitoli (ass con la sola copertina).
