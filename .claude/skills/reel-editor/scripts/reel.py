@@ -188,10 +188,11 @@ def _render(plan, out, ass=None, final=False):
     for j, br in enumerate(brolls):
         k = len(ins) // 2 if False else None
         d = br['out_end'] - br['out_start']
-        ins += ['-ss', f"{br['src_start']:.3f}", '-t', f'{d + 0.2:.3f}', '-i', W(f"raw/{br['clip']}.mp4")]
+        sp = br.get('speed', 1.0)   # <1 = rallentato (es. 0.6 per una panoramica lenta, una sola passata)
+        ins += ['-ss', f"{br['src_start']:.3f}", '-t', f'{d * sp + 0.2:.3f}', '-i', W(f"raw/{br['clip']}.mp4")]
         idx = sum(1 for x in ins if x == '-i') - 1
         z = br.get('zoom', 1.08); n = max(int(d * 30), 1)
-        chain = (f"[{idx}:v]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,fps=30,"
+        chain = (f"[{idx}:v]setpts=(PTS-STARTPTS)/{sp},scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,fps=30,"
                  f"scale=2160:3840,zoompan=z='1+({z}-1)*on/{n}':x='(iw-iw/zoom)/2':y='(ih-ih/zoom)/2':d=1:s=1080x1920:fps=30,"
                  f"{br.get('grade', 'eq=contrast=1.04:saturation=1.05')}")
         if br.get('blur'):
@@ -286,7 +287,7 @@ def cmd_ass(ov_path, keywords=None, fix=(), karaoke=False):
              .replace('{/STRIKE}', r'{\s0\alpha&H00&}').replace('\n', '\\N')
         style = 'Title'
         if t.startswith('{COVER}'):      # titolo di copertina: Anton nero su riquadro bianco (stile "Strong" di Edits)
-            style, t = 'Cover', t[len('{COVER}'):].replace(Y, r'{\c&H0000C8&}').replace(Wh, r'{\c&H000000&}')
+            style, t = 'Cover', t[len('{COVER}'):].replace(Y, '{\\c' + STYLE.get('cover', {}).get('accent', '&H0000C8&') + '}').replace(Wh, r'{\c&H000000&}')
         fad = r'{\fad(0,120)}' if style == 'Cover' else r'{\fad(120,80)}'   # copertina piena dal fotogramma 0
         ev.append(f'Dialogue: 1,{_ts(a)},{_ts(b)},{style},,0,0,0,,{fad}{t}')
     hdr = f"""[Script Info]
@@ -301,7 +302,7 @@ Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour,
 Style: Sub,{STYLE['font']},{S['size']},&H00FFFFFF,&H00FFFFFF,&H00000000,&H80000000,0,0,0,0,100,100,1,0,1,7,3,{S.get('align', 2)},80,80,{S['margin_v']},1
 Style: SubK,{STYLE['font']},{S['size']},&H0000D7FF,&H00FFFFFF,&H00000000,&H80000000,0,0,0,0,100,100,1,0,1,7,3,{S.get('align', 2)},80,80,{S['margin_v']},1
 Style: Title,{STYLE['font']},{T['size']},&H00FFFFFF,&H00FFFFFF,&H28000000,&H28000000,0,0,0,0,100,100,1,0,3,22,0,8,60,60,{T['margin_v']},1
-Style: Cover,{STYLE['cover']['font']},{STYLE['cover']['size']},&H00000000,&H00000000,&H00FFFFFF,&H00FFFFFF,0,0,0,0,100,100,2,0,3,24,0,8,60,60,{STYLE['cover']['margin_v']},1
+Style: Cover,{STYLE['cover']['font']},{STYLE['cover']['size']},&H00000000,&H00000000,&H00FFFFFF,&H00FFFFFF,0,0,0,0,100,100,{STYLE['cover'].get('spacing', 2)},0,3,24,0,8,60,60,{STYLE['cover']['margin_v']},1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text

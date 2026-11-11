@@ -1,43 +1,38 @@
 [
  {
   "clip": "150831",
-  "out_start": 15.15,
-  "out_end": 21.0,
+  "out_start": 15.85,
+  "out_end": 25.15,
   "src_start": 0.0,
-  "grade": "eq=contrast=1.05:saturation=1.06:gamma=1.03"
- },
- {
-  "clip": "150851",
-  "out_start": 21.0,
-  "out_end": 24.45,
-  "src_start": 0.6,
-  "grade": "eq=contrast=1.05:saturation=1.06:gamma=1.03"
+  "grade": "eq=contrast=1.05:saturation=1.06:gamma=1.03",
+  "speed": 0.62,
+  "zoom": 1.04
  },
  {
   "clip": "143916",
-  "out_start": 32.0,
-  "out_end": 35.0,
+  "out_start": 32.7,
+  "out_end": 35.7,
   "src_start": 2.0,
   "grade": "eq=contrast=1.05:saturation=1.06:gamma=1.03"
  },
  {
   "clip": "143540",
-  "out_start": 35.0,
-  "out_end": 38.2,
+  "out_start": 35.7,
+  "out_end": 38.9,
   "src_start": 8.0,
   "grade": "eq=contrast=1.05:saturation=1.06:gamma=1.03"
  },
  {
   "clip": "144058",
-  "out_start": 38.2,
-  "out_end": 40.95,
+  "out_start": 38.9,
+  "out_end": 41.65,
   "src_start": 49.3,
   "grade": "eq=contrast=1.05:saturation=1.06:gamma=1.03"
  },
  {
   "clip": "151518",
-  "out_start": 51.5,
-  "out_end": 56.0,
+  "out_start": 52.2,
+  "out_end": 56.7,
   "src_start": 1.0,
   "grade": "eq=contrast=1.05:saturation=1.06:gamma=1.03",
   "blur": [
@@ -51,8 +46,8 @@
  },
  {
   "clip": "151639",
-  "out_start": 56.0,
-  "out_end": 60.5,
+  "out_start": 56.7,
+  "out_end": 61.2,
   "src_start": 3.0,
   "grade": "eq=contrast=1.05:saturation=1.06:gamma=1.03",
   "blur": [
@@ -66,8 +61,8 @@
  },
  {
   "clip": "151736",
-  "out_start": 60.5,
-  "out_end": 65.1,
+  "out_start": 61.2,
+  "out_end": 65.8,
   "src_start": 6.0,
   "grade": "eq=contrast=1.05:saturation=1.06:gamma=1.03",
   "blur": [

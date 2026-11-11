@@ -59,3 +59,4 @@
 - Dati personali: targhe visibili dalla finestra → `blur` sulla fascia della finestra (0,0,1080,760). Komoot non usato: mostra 18 km (contraddice "oltre 100 km") e la zona di casa.
 - Bilanciamento del bianco caldo (parete Cr 132 / Cb 117, viso Cr 152): `colorbalance` verso il blu + `curves` → viso Y 119→134, Cr 145; parete quasi neutra.
 - Copertina «70 / ormai?» con `{\fs220}`/`{\fs96}` dentro `{COVER}`, numeri grandi «1», «2», «3» 1 s e «1 2 3» su "Tre volte". `REEL22_copertina.jpg` = fotogramma senza sottotitoli (ass con la sola copertina).
+- Correzioni di Federico sul #22: titolo d'apertura 0–4 s in stile Reel 21 (ora default in `style.json`); il taglio dopo «ormai» del gancio era 0,3 s troppo presto (troncava la «i»: lui allunga le vocali finali → finisci il taglio sul silenzio, non sulla fine della parola stimata da Whisper); b-roll libri: un solo clip, una sola passata lenta (`speed` 0.62 in `brolls.json`), mai ripetere la stessa panoramica.

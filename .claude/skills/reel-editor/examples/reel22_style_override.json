@@ -13,9 +13,11 @@
   "margin_v": 330
  },
  "cover": {
-  "font": "Poppins Black",
-  "size": 74,
-  "margin_v": 345
+  "font": "Poppins ExtraBold",
+  "size": 72,
+  "margin_v": 345,
+  "spacing": 0,
+  "accent": "&H001C1CD4&"
  },
  "subs": {
   "margin_v": 450

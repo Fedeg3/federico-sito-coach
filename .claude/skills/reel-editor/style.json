@@ -27,10 +27,12 @@
     "target_shot_s": 4.0
   },
   "cover": {
-    "font": "Poppins Black",
-    "size": 74,
+    "font": "Poppins ExtraBold",
+    "size": 72,
     "margin_v": 345,
-    "_note": "Scelta di Federico (Reel #20) come sostituto di 'Strong' di Edits: Poppins Black (Google Fonts), nero su bianco. Anton era troppo stretto. Alternativa scartata: Archivo Black. Visibile dal fotogramma 0 (niente dissolvenza in entrata). Riquadro dentro la zona sicura: 321-664 px."
+    "_note": "Titolo d'apertura = stile Reel 21 (approvato da Federico, Reel #22): Poppins ExtraBold 72 maiuscolo, nero su riquadri bianchi centrati, spaziatura 0, riga chiave in rosso &H001C1CD4&, dal fotogramma 0 per 4 s, riquadro da ~320 px.",
+    "spacing": 0,
+    "accent": "&H001C1CD4&"
   },
   "_safe_zone": "Zona sicura Reels IG: niente testo nei primi 270 px in alto (barra Instagram). Titoli e copertina partono da 300 px (Reel #20: prima uscivano in alto)."
 }
