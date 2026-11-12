@@ -1,0 +1,27 @@
+{
+ "_note": "Reel #22 v2: clip all'aperto (sole, vento). Soglia silenzi -30dB, denoise leggero, grade per pelle arrossata e ombre dure, sottotitoli a 380 (mento a ~1380 px), zoom piu' leggeri.",
+ "pause_keep_s": 0.06,
+ "zoom": {
+  "push": 1.08,
+  "punch": 1.1,
+  "long_piece_s": 3.2,
+  "target_shot_s": 2.4,
+  "face_y": 0.42
+ },
+ "grade": "colorbalance=rm=-0.04:gm=0.0:bm=0.02,curves=all='0/0 0.10/0.13 0.25/0.29 0.5/0.53 0.75/0.77 1/0.98',eq=saturation=0.94:contrast=1.0",
+ "titles": {
+  "margin_v": 330
+ },
+ "cover": {
+  "font": "Poppins ExtraBold",
+  "size": 72,
+  "margin_v": 345,
+  "spacing": 0,
+  "accent": "&H001C1CD4&"
+ },
+ "subs": {
+  "margin_v": 380
+ },
+ "silence_db": "-30dB",
+ "audio_pre": "afftdn=nf=-28,"
+}

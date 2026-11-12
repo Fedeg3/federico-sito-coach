@@ -1,0 +1,77 @@
+[
+ {
+  "clip": "150831",
+  "out_start": 15.95,
+  "out_end": 24.75,
+  "src_start": 0.0,
+  "speed": 0.62,
+  "zoom": 1.04,
+  "grade": "eq=contrast=1.05:saturation=1.06:gamma=1.03"
+ },
+ {
+  "clip": "143916",
+  "out_start": 33.5,
+  "out_end": 36.3,
+  "src_start": 2.0,
+  "grade": "eq=contrast=1.05:saturation=1.06:gamma=1.03"
+ },
+ {
+  "clip": "143540",
+  "out_start": 36.3,
+  "out_end": 39.0,
+  "src_start": 8.0,
+  "grade": "eq=contrast=1.05:saturation=1.06:gamma=1.03"
+ },
+ {
+  "clip": "144058",
+  "out_start": 39.0,
+  "out_end": 41.5,
+  "src_start": 49.6,
+  "grade": "eq=contrast=1.05:saturation=1.06:gamma=1.03"
+ },
+ {
+  "clip": "151518",
+  "out_start": 49.58,
+  "out_end": 53.5,
+  "src_start": 1.0,
+  "grade": "eq=contrast=1.05:saturation=1.06:gamma=1.03",
+  "blur": [
+   [
+    0,
+    0,
+    1080,
+    760
+   ]
+  ]
+ },
+ {
+  "clip": "151639",
+  "out_start": 53.5,
+  "out_end": 57.4,
+  "src_start": 3.0,
+  "grade": "eq=contrast=1.05:saturation=1.06:gamma=1.03",
+  "blur": [
+   [
+    0,
+    0,
+    1080,
+    760
+   ]
+  ]
+ },
+ {
+  "clip": "151736",
+  "out_start": 57.4,
+  "out_end": 61.2,
+  "src_start": 6.0,
+  "grade": "eq=contrast=1.05:saturation=1.06:gamma=1.03",
+  "blur": [
+   [
+    0,
+    0,
+    1080,
+    760
+   ]
+  ]
+ }
+]

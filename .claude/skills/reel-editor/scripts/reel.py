@@ -77,7 +77,8 @@ def cmd_words(prompt):
 
 
 # ---------------------------------------------------------------- cut
-def _silences(path, noise='-38dB', d=0.32):
+def _silences(path, noise=None, d=0.32):
+    noise = noise or STYLE.get('silence_db', '-38dB')   # all'aperto (vento) serve una soglia più alta, es. -30dB
     o = subprocess.run(['ffmpeg', '-nostats', '-i', path, '-af', f'silencedetect=noise={noise}:d={d}', '-f', 'null', '-'],
                        capture_output=True, text=True).stderr
     s = [float(x) for x in re.findall(r'silence_start: ([\d.]+)', o)]
@@ -167,7 +168,7 @@ def _render(plan, out, ass=None, final=False):
     open(lst, 'w').write(''.join(f"file '{p}'\n" for p in parts))
     # correzione colore/luce: style "grade" (es. curves per schiarire il viso), default leggero
     grade = STYLE.get('grade', 'eq=contrast=1.04:saturation=1.08')
-    apost = ('highpass=f=80,acompressor=threshold=-20dB:ratio=3:attack=5:release=120,'
+    apost = (STYLE.get('audio_pre', '') + 'highpass=f=80,acompressor=threshold=-20dB:ratio=3:attack=5:release=120,'
              'loudnorm=I=-14:TP=-1.5:LRA=9,aresample=48000')
     venc = (['-preset', 'slow', '-crf', '20', '-maxrate', '12M', '-bufsize', '24M'] if final
             else ['-preset', 'veryfast', '-crf', '22'])
@@ -179,7 +180,7 @@ def _render(plan, out, ass=None, final=False):
         ins += ['-loop', '1', '-t', f'{e + 1:.2f}', '-i', p['img']]
         fc.append(f"[{i}:v]scale={p.get('w', 620)}:-1,format=rgba,"
                   f"fade=t=in:st={s:.2f}:d={fd}:alpha=1,fade=t=out:st={e - fd:.2f}:d={fd}:alpha=1[p{i}]")
-        fc.append(f"[{last}][p{i}]overlay=x=(W-w)/2:y={p.get('y', 320)}:enable='between(t,{s:.2f},{e:.2f})'"
+        fc.append(f"[{last}][p{i}]overlay=x={p.get('x', '(W-w)/2')}:y={p.get('y', 320)}:enable='between(t,{s:.2f},{e:.2f})'"
                   f":eof_action=pass[v{i}]")
         last = f'v{i}'
     # b-roll: <work>/brolls.json = [{clip, out_start, out_end, src_start, zoom?, blur?: [[x,y,w,h],...], grade?}]
