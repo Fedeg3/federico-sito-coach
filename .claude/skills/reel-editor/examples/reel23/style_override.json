@@ -1,6 +1,6 @@
 {
  "_note": "Reel #23: all'aperto, sole; pelle arrossata e viso luminoso -> rosso giu', alte luci recuperate. Viso piu' basso -> sottotitoli 320.",
- "pause_keep_s": 0.14,
+ "pause_keep_s": 0.05,
  "zoom": {
   "push": 1.1,
   "punch": 1.13,
@@ -14,7 +14,7 @@
  },
  "cover": {
   "font": "Poppins ExtraBold",
-  "size": 72,
+  "size": 92,
   "margin_v": 345,
   "spacing": 0,
   "accent": "&H001C1CD4&"

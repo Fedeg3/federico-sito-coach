@@ -3,7 +3,7 @@
   "font": "Montserrat Thin Black",
   "whisper_model": "large-v3-turbo",
   "whisper_prompt": "Federico, ciclismo, salita, cronometro, coach, DIALOGO.",
-  "pause_keep_s": 0.12,
+  "pause_keep_s": 0.05,
   "subs": {
     "size": 82,
     "margin_v": 290,
@@ -28,11 +28,12 @@
   },
   "cover": {
     "font": "Poppins ExtraBold",
-    "size": 72,
+    "size": 92,
     "margin_v": 345,
     "_note": "Titolo d'apertura = stile Reel 21 (approvato da Federico, Reel #22): Poppins ExtraBold 72 maiuscolo, nero su riquadri bianchi centrati, spaziatura 0, riga chiave in rosso &H001C1CD4&, dal fotogramma 0 per 4 s, riquadro da ~320 px.",
     "spacing": 0,
     "accent": "&H001C1CD4&"
   },
-  "_safe_zone": "Zona sicura Reels IG: niente testo nei primi 270 px in alto (barra Instagram). Titoli e copertina partono da 300 px (Reel #20: prima uscivano in alto)."
+  "_safe_zone": "Zona sicura Reels IG: niente testo nei primi 270 px in alto (barra Instagram). Titoli e copertina partono da 300 px (Reel #20: prima uscivano in alto).",
+  "_ritmo": "Federico (Reel #23): mai lasciare pause per raggiungere la durata minima del brief: il ritmo conta più dei secondi. Titolo d'apertura più grande (92)."
 }

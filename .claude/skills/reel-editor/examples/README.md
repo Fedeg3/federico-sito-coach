@@ -66,3 +66,4 @@
 - Brief + copione `.md` su Drive (REELS). 7 clip all'aperto, nessun b-roll. Durata minima del brief 80 s: il montato stretto veniva 77 s → lasciate pause naturali dopo le frasi chiave (fine clip sul silenzio) e `pause_keep_s` 0.14 → 80,4 s. Mai togliere o allungare il parlato.
 - Tolto «Ossia» a inizio clip; sottotitoli: «vincente»→«avvincente», «riesce»→«riesci», CTA «scrivi il dialogo e li mando» → «SCRIVI DIALOGO E TE LI MANDO».
 - Musica richiesta dal brief ma nessun brano libero disponibile: consegnato senza, suggerito di aggiungerla dalla libreria musicale di Instagram al momento della pubblicazione.
+- Correzione di Federico: pause tolte (meglio 77 s con ritmo che 80 s con pause), titolo 0:00 più grande (Poppins ExtraBold 92). Attenzione: in `{COVER}` dopo una riga `{Y}` rimetti `{W}`, altrimenti anche le righe seguenti restano rosse.
